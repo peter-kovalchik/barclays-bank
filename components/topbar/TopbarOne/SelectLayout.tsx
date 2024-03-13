@@ -30,7 +30,8 @@ const SelectLayout = () => {
       <ul
         className={`absolute top-full bg-n0 dark:bg-bg4 duration-300 origin-top shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] rounded-lg z-20 left-0 p-2 w-full ${
           open ? "opacity-100 scale-100 visible" : "opacity-0 scale-0 invisible"
-        }`}>
+        }`}
+      >
         {layoutlist.map((item) => (
           <li
             onClick={() => {
@@ -40,7 +41,8 @@ const SelectLayout = () => {
             className={`p-2 block select-none rounded-md hover:text-primary cursor-pointer duration-300 ${
               layout == item ? "bg-primary text-n0 hover:!text-n0" : ""
             }`}
-            key={item}>
+            key={item}
+          >
             {item}
           </li>
         ))}

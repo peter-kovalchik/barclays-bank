@@ -132,7 +132,8 @@ const LiveUsers = () => {
       </div>
       <div
         ref={mapContainer}
-        className="max-lg:py-5 max-md:max-h-[400px] max-sm:max-h-[300px]"></div>
+        className="max-lg:py-5 max-md:max-h-[400px] max-sm:max-h-[300px]"
+      ></div>
     </div>
   );
 };

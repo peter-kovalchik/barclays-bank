@@ -38,14 +38,14 @@ const SidebarDetached = ({
         }
       }
     },
-    [setSidebar]
+    [setSidebar],
   );
 
   useEffect(() => {
     sidebarData.map(({ items }) =>
       items.map(({ submenus, name }) =>
-        submenus.map(({ url }) => (url == path ? setActiveMenu(name) : ""))
-      )
+        submenus.map(({ url }) => (url == path ? setActiveMenu(name) : "")),
+      ),
     );
   }, [path]);
 
@@ -65,10 +65,12 @@ const SidebarDetached = ({
         sidebarIsOpen
           ? "max-xl:translate-x-0 visible"
           : "max-xl:-translate-x-full invisible"
-      } duration-300 sidebar xl:fixed xl:max-w-[300px] xxl:max-w-[350px] rounded-xl h-full top-28 `}>
+      } duration-300 sidebar xl:fixed xl:max-w-[300px] xxl:max-w-[350px] rounded-xl h-full top-28 `}
+    >
       <div
         ref={sidebarRef}
-        className="overflow-y-auto max-h-[800px] bg-n0 dark:bg-bg4">
+        className="overflow-y-auto max-h-[800px] bg-n0 dark:bg-bg4"
+      >
         <div className="px-4 xxl:px-6 xxxl:px-8">
           {sidebarData.map(({ id, items, title }) => (
             <React.Fragment key={id}>
@@ -81,7 +83,8 @@ const SidebarDetached = ({
                         key={id}
                         className={`relative rounded-xl duration-300 ${
                           activeMenu == name && "bg-primary/5 dark:bg-bg3 "
-                        }`}>
+                        }`}
+                      >
                         <button
                           onClick={() =>
                             setActiveMenu((p) => (p == name ? "" : name))
@@ -90,12 +93,14 @@ const SidebarDetached = ({
                             activeMenu == name && "bg-primary text-n0"
                           } ${path == name && "bg-primary text-n0"} ${
                             isActive(submenus) && "bg-primary text-n0"
-                          }`}>
+                          }`}
+                        >
                           <span className="flex items-center gap-2">
                             <span
                               className={`text-primary group-hover:text-n0 ${
                                 activeMenu == name && " !text-n0"
-                              } ${isActive(submenus) && " !text-n0"}`}>
+                              } ${isActive(submenus) && " !text-n0"}`}
+                            >
                               {icon}
                             </span>
                             <span className="font-medium">{name}</span>
@@ -115,12 +120,14 @@ const SidebarDetached = ({
                                   windowSize! < 1200 &&
                                     setSidebar(!sidebarIsOpen);
                                 }}
-                                key={title}>
+                                key={title}
+                              >
                                 <Link
                                   className={`font-medium flex items-center gap-2 py-3 hover:text-primary duration-300 capitalize px-3 xxxl:px-6 ${
                                     path == url && "text-primary"
                                   }`}
-                                  href={url}>
+                                  href={url}
+                                >
                                   <i className="las la-minus text-xl"></i>{" "}
                                   <span>{title}</span>
                                 </Link>
@@ -129,7 +136,7 @@ const SidebarDetached = ({
                           </ul>
                         </AnimateHeight>
                       </li>
-                    )
+                    ),
                 )}
               </ul>
             </React.Fragment>

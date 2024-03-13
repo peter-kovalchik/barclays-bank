@@ -1,12 +1,12 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -37,7 +37,7 @@ const config: Config = {
         bg3: "#23262B",
         bg4: "#1D1E24",
         lightbg1: "#00aeef",
-        lightbg2: "#F6F8FE"
+        lightbg2: "#F6F8FE",
       },
       screens: {
         sm: "576px",
@@ -46,13 +46,13 @@ const config: Config = {
         xl: "1200px",
         xxl: "1400px",
         xxxl: "1600px",
-        "4xl": "1800px"
+        "4xl": "1800px",
       },
       animation: {
-        'spin-slow': 'spin 2s linear infinite',
-      }
+        "spin-slow": "spin 2s linear infinite",
+      },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;

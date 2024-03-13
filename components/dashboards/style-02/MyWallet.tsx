@@ -36,7 +36,8 @@ const MyWallet = () => {
           navigation={{
             prevEl: ".prev-wallet",
             nextEl: ".next-wallet",
-          }}>
+          }}
+        >
           {wallets.map((wallet) => (
             <SwiperSlide key={wallet}>
               <div className="flex justify-center">

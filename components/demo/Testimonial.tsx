@@ -78,7 +78,8 @@ const Testimonial = () => {
                 slidesPerView: 2,
                 spaceBetween: 12,
               },
-            }}>
+            }}
+          >
             {userReviews.map(({ id, designation, img, name, review }) => (
               <SwiperSlide key={id} className="p-3">
                 <div className="shadow-[0px_6px_30px_0px_rgba(0,0,0,0.06)] bg-n0 dark:bg-bg4 p-3 rounded-xl">
@@ -87,7 +88,8 @@ const Testimonial = () => {
                       {Array.from({ length: 5 }).map((item, index) => (
                         <i
                           key={index}
-                          className="las la-star text-[#FFC700] text-lg"></i>
+                          className="las la-star text-[#FFC700] text-lg"
+                        ></i>
                       ))}
                     </ul>
                     <p className="md:text-lg mb-6 xl:mb-8">{review}</p>

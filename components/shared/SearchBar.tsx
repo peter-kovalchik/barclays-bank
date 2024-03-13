@@ -13,8 +13,9 @@ const SearchBar = ({
       onSubmit={(e) => e.preventDefault()}
       className={cn(
         "bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 flex gap-3 rounded-[30px]  focus-within:border-primary p-1 xxl:p-2 items-center justify-between max-w-[200px] xxl:max-w-[319px] w-full",
-        classes
-      )}>
+        classes,
+      )}
+    >
       <input
         type="text"
         placeholder="Search"

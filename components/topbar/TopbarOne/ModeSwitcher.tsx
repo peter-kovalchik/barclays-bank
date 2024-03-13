@@ -21,7 +21,8 @@ const ModeSwitcher = () => {
     <button
       aria-label="dark mode switch"
       onClick={handleThemeSwitch}
-      className={`w-10 h-10 md:w-12 shrink-0 md:h-12 rounded-full bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500`}>
+      className={`w-10 h-10 md:w-12 shrink-0 md:h-12 rounded-full bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500`}
+    >
       {theme == "light" ? (
         <i className="las la-moon text-2xl"></i>
       ) : (

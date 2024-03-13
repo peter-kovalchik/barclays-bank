@@ -32,7 +32,8 @@ const AddContact = () => {
         <div className="col-span-2 md:col-span-1">
           <label
             htmlFor="account"
-            className="mb-4 md:text-lg font-medium block">
+            className="mb-4 md:text-lg font-medium block"
+          >
             Account Number
           </label>
           <input
@@ -59,7 +60,8 @@ const AddContact = () => {
         <div className="col-span-2 md:col-span-1">
           <label
             htmlFor="currency"
-            className="mb-4 md:text-lg font-medium block">
+            className="mb-4 md:text-lg font-medium block"
+          >
             Currency
           </label>
           <Dropdown
@@ -103,14 +105,16 @@ const AddContact = () => {
             />
             <i
               className="las la-calendar absolute ltr:right-4 rtl:left-4 top-1/2 -translate-y-1/2 cursor-pointer"
-              onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}></i>
+              onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
+            ></i>
           </div>
         </div>
 
         <div className="col-span-2 md:col-span-1">
           <label
             htmlFor="deposits"
-            className="md:text-lg font-medium block mb-4">
+            className="md:text-lg font-medium block mb-4"
+          >
             Current Deposits
           </label>
           <input

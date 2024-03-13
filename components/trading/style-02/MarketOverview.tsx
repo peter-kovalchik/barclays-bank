@@ -398,7 +398,7 @@ const MarketOverview = () => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value.toLowerCase();
     const result = tradingData.filter((item) =>
-      item.title.toLowerCase().includes(searchTerm)
+      item.title.toLowerCase().includes(searchTerm),
     );
     setTableData(result);
   };
@@ -427,21 +427,24 @@ const MarketOverview = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 min-w-[210px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[210px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Titile <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Amount <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("charge")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Charge <IconSelector size={18} />
                 </div>
@@ -449,14 +452,16 @@ const MarketOverview = () => {
               <th className="text-start py-5 min-w-[160px]">Highlight</th>
               <th
                 onClick={() => sortData("change")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Change <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 min-w-[130px] cursor-pointer">
+                className="text-start py-5 min-w-[130px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -468,11 +473,12 @@ const MarketOverview = () => {
             {displayedData.map(
               (
                 { id, status, amount, change, charge, icon1, icon2, title },
-                index
+                index,
               ) => (
                 <tr
                   key={id}
-                  className="hover:bg-primary/5 dark:hover:bg-bg3 duration-300 border-b border-n30 dark:border-n500 first:border-t">
+                  className="hover:bg-primary/5 dark:hover:bg-bg3 duration-300 border-b border-n30 dark:border-n500 first:border-t"
+                >
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-3">
                       <div className="flex shrink-0">
@@ -517,7 +523,8 @@ const MarketOverview = () => {
                       } ${
                         status == TradingStatus.Pending &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -533,7 +540,7 @@ const MarketOverview = () => {
                     </div>
                   </td>
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

@@ -8,7 +8,7 @@ const LiveUsers = dynamic(
   () => import("@/components/dashboards/style-03/Users"),
   {
     ssr: false,
-  }
+  },
 );
 const page = () => {
   return (

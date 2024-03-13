@@ -31,7 +31,8 @@ const MonthlyRewards = () => {
       {rewards.map(({ title, amount, icon, percent }) => (
         <div
           key={title}
-          className="bb-dashed mb-4 pb-4 lg:mb-6 lg:pb-6 flex gap-4 xxl:gap-6 items-center">
+          className="bb-dashed mb-4 pb-4 lg:mb-6 lg:pb-6 flex gap-4 xxl:gap-6 items-center"
+        >
           <div className="text-primary px-3 py-2.5 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-xl">
             {icon}
           </div>
@@ -45,7 +46,8 @@ const MonthlyRewards = () => {
               <div className="rounded-lg grow h-1 bg-primary/5 dark:bg-n600">
                 <div
                   style={{ width: `${percent}%` }}
-                  className="h-1 bg-primary rounded-lg"></div>
+                  className="h-1 bg-primary rounded-lg"
+                ></div>
               </div>
             </div>
           </div>
@@ -53,7 +55,8 @@ const MonthlyRewards = () => {
       ))}
       <Link
         className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
-        href="#">
+        href="#"
+      >
         See More{" "}
         <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
       </Link>

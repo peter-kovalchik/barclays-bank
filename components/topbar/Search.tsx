@@ -23,13 +23,15 @@ const Search = () => {
     <div className="relative" ref={ref}>
       <button
         onClick={toggleOpen}
-        className="p-1.5 sm:p-2 lg:p-3 border rounded-full bg-n0 dark:bg-bg4 border-n30 dark:border-n500">
+        className="p-1.5 sm:p-2 lg:p-3 border rounded-full bg-n0 dark:bg-bg4 border-n30 dark:border-n500"
+      >
         <IconSearch />
       </button>
       <div
         className={`bg-n0 z-10 p-3 sm:p-4 border dark:border-n500 dark:bg-bg4 sm:w-[450px] rounded-md -right-[150px] sm:right-0 shadow-lg absolute top-[105%] duration-300 ${
           open ? "visible opacity-100" : "invisible opacity-0"
-        }`}>
+        }`}
+      >
         <form className="flex gap-4 items-center">
           <input
             type="text"

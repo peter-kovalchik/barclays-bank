@@ -22,11 +22,13 @@ const TopbarFive = ({
   return (
     <nav className="bg-n0 dark:bg-bg4  w-full mx-auto fixed z-30">
       <div
-        className={`px-3 py-3 duration-300 navbar-top max-w-[1850px] w-full mx-auto md:py-4 xl:py-6 sm:gap-3 flex justify-between items-center`}>
+        className={`px-3 py-3 duration-300 navbar-top max-w-[1850px] w-full mx-auto md:py-4 xl:py-6 sm:gap-3 flex justify-between items-center`}
+      >
         <div className="flex grow items-center justify-start gap-4 xxl:gap-6">
           <button
             onClick={() => setSidebar(!sidebarIsOpen)}
-            className="xl:hidden">
+            className="xl:hidden"
+          >
             <i className="las la-bars"></i>
           </button>
           <Link href="/" className="shrink-0">

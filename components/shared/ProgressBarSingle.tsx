@@ -25,7 +25,7 @@ const ProgressBarSingle = ({
       },
       {
         threshold: 0.2, // Adjust this threshold as needed
-      }
+      },
     );
 
     if (progressRef) {
@@ -44,11 +44,13 @@ const ProgressBarSingle = ({
       ref={progress}
       className={`bar ${
         height ? height : "h-2"
-      } rounded-full bg-opacity-20 ${bg}`}>
+      } rounded-full bg-opacity-20 ${bg}`}
+    >
       <div
         className={`rounded-full ${width} ${bg} ${
           isInView ? "progress-grow" : ""
-        } ${height ? height : "h-2"}`}></div>
+        } ${height ? height : "h-2"}`}
+      ></div>
     </div>
   );
 };

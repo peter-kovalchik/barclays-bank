@@ -22,32 +22,34 @@ const series = [
 const seriesMonth = [
   {
     name: "This Month",
-    data: [0, 80, 34, 65, 74, 112, 25, 180, 45, 138, 150, 53, 34, 65, 74, 112]
+    data: [0, 80, 34, 65, 74, 112, 25, 180, 45, 138, 150, 53, 34, 65, 74, 112],
   },
   {
-    name: "Last Months", 
-    data: [0, 80, 65, 28, 185, 205, 105, 145, 175, 125, 180, 130, 65, 28, 185, 74],
-  }
-]
+    name: "Last Months",
+    data: [
+      0, 80, 65, 28, 185, 205, 105, 145, 175, 125, 180, 130, 65, 28, 185, 74,
+    ],
+  },
+];
 
 const seriesWeek = [
   {
     name: "This Week",
-    data: [0, 80, 34, 65, 74, 112, 25]
+    data: [0, 80, 34, 65, 74, 112, 25],
   },
   {
-    name: "Last Week", 
+    name: "Last Week",
     data: [0, 80, 65, 28, 185, 205, 105],
-  }
-]
+  },
+];
 
 const selectedValue = {
   year: "Last Year",
   month: "Last Month",
-  week: "Last Weeks"
-}
+  week: "Last Weeks",
+};
 
-const yearCategoreis =  [
+const yearCategoreis = [
   "Jan",
   "Feb",
   "Mar",
@@ -60,7 +62,7 @@ const yearCategoreis =  [
   "Oct",
   "Nov",
   "Dec",
-]
+];
 
 const monthCategories = [
   "1",
@@ -78,8 +80,8 @@ const monthCategories = [
   "24",
   "26",
   "28",
-  "30"
-]
+  "30",
+];
 
 const weekCategories = [
   "Monday",
@@ -88,19 +90,18 @@ const weekCategories = [
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday"
-]
+  "Sunday",
+];
 
 const PaymentOverviewChart = () => {
   const [selected, setSelected] = useState(options[0]);
   const { theme } = useTheme();
 
   const chartCategories = useMemo(() => {
-    if(selected === selectedValue.year) return yearCategoreis 
-    if(selected === selectedValue.month) return monthCategories
-    if(selected === selectedValue.week) return weekCategories
-  }, [selected])
-
+    if (selected === selectedValue.year) return yearCategoreis;
+    if (selected === selectedValue.month) return monthCategories;
+    if (selected === selectedValue.week) return weekCategories;
+  }, [selected]);
 
   const chartData: ApexOptions = {
     chart: {
@@ -215,11 +216,11 @@ const PaymentOverviewChart = () => {
   };
 
   const memoedSeries = useMemo(() => {
-   if(selected === selectedValue.year) return series 
-   if(selected === selectedValue.month) return seriesMonth
-   if(selected === selectedValue.week) return seriesWeek
-   return series
-  }, [selected])
+    if (selected === selectedValue.year) return series;
+    if (selected === selectedValue.month) return seriesMonth;
+    if (selected === selectedValue.week) return seriesWeek;
+    return series;
+  }, [selected]);
 
   return (
     <div className="col-span-12 md:col-span-7 xxl:col-span-8 box overflow-x-hidden">

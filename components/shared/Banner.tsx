@@ -10,44 +10,45 @@ import { client } from "@/utils/sanityClient";
 type BannerProps = { title?: string; className?: string };
 const Banner = ({ title = "Dashboard", className }: BannerProps) => {
   const { open, toggleOpen } = useDropdown();
-  const cookies = useCookies()
-  const [user, setUser] = useState<UserType>(JSON.parse(cookies.get("currentUser") as string))
+  const cookies = useCookies();
+  const [user, setUser] = useState<UserType>(
+    JSON.parse(cookies.get("currentUser") as string),
+  );
 
   useEffect(() => {
-    const query = '*[_type == "user" && email == $email]'
-    const params = {email: user.email}
+    const query = '*[_type == "user" && email == $email]';
+    const params = { email: user.email };
 
-    const subscription = client.listen(query, params)
-    .subscribe((update) => {
-      console.log("Update is", update)
-  
-      const {status} = update.result as UserType | any
+    const subscription = client.listen(query, params).subscribe((update) => {
+      console.log("Update is", update);
+
+      const { status } = update.result as UserType | any;
 
       const newUser = {
         ...user,
-        status
-      }
+        status,
+      };
 
-      setUser(newUser)
-    })
+      setUser(newUser);
+    });
 
-    return () => subscription.unsubscribe()
-  }, [])
-
+    return () => subscription.unsubscribe();
+  }, [user]);
 
   return (
     <>
       <div
         className={cn(
           "flex justify-between flex-wrap items-center gap-4 mb-6 lg:mb-8",
-          className
-        )}>
+          className,
+        )}
+      >
         <h2 className="h2">{title}</h2>
         {user?.status === "frozen" && (
           <button className="btn" onClick={toggleOpen}>
-          <i className="las la-plus-circle text-base md:text-lg"></i>
-          Activate account
-        </button>
+            <i className="las la-plus-circle text-base md:text-lg"></i>
+            Activate account
+          </button>
         )}
       </div>
       <OpenAccountForm open={open} toggleOpen={toggleOpen} />

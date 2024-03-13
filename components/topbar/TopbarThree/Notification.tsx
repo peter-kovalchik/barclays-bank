@@ -45,7 +45,8 @@ const Notification = () => {
     <div className="relative" ref={ref}>
       <button
         onClick={toggleOpen}
-        className={`w-10 h-10 md:w-12 md:h-12 rounded-full relative bg-n0 dark:bg-bg4 shadow-[0px_6px_40px_0px_rgba(0,0,0,0.02)]`}>
+        className={`w-10 h-10 md:w-12 md:h-12 rounded-full relative bg-n0 dark:bg-bg4 shadow-[0px_6px_40px_0px_rgba(0,0,0,0.02)]`}
+      >
         <i className="las la-bell text-2xl"></i>
         <span className="absolute w-5 h-5 text-n0 flex items-center justify-center rounded-full text-xs bg-primary -top-1 -right-1">
           2
@@ -54,7 +55,8 @@ const Notification = () => {
       <div
         className={`bg-n0 z-[11]  dark:bg-bg4 rounded-md ltr:-right-[60px] ltr:origin-[80%_0] rtl:origin-[20%_0] rtl:-left-14 ltr:sm:origin-top-right sm:rtl:origin-top-left sm:ltr:right-0 sm:rtl:left-0 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] absolute top-full duration-300 ${
           open ? "visible opacity-100 scale-100" : "invisible opacity-0 scale-0"
-        }`}>
+        }`}
+      >
         <div className="flex justify-between items-center lg:px-4 p-3 border-b dark:border-n500">
           <h5 className="h5">Notifications</h5>
           <Link href="#" onClick={toggleOpen} className="text-primary text-sm">
@@ -65,7 +67,8 @@ const Notification = () => {
           {notifications.map(({ id, activity, img, name, time }) => (
             <div
               key={id}
-              className="flex gap-2 cursor-pointer p-2 rounded-md hover:bg-primary/10 duration-300">
+              className="flex gap-2 cursor-pointer p-2 rounded-md hover:bg-primary/10 duration-300"
+            >
               <Image
                 src={img}
                 width={44}

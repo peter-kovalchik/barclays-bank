@@ -21,19 +21,23 @@ const ModeSwitcherTwo = () => {
     <button
       aria-label="dark mode switch"
       onClick={handleThemeSwitch}
-      className={`w-[60px] h-8 bg-primary p-1 relative rounded-[40px] flex justify-center items-center gap-2`}>
+      className={`w-[60px] h-8 bg-primary p-1 relative rounded-[40px] flex justify-center items-center gap-2`}
+    >
       <i
         className={`las la-sun text-xl relative z-[2] ${
           theme == "dark" ? "text-n0" : "text-primary"
-        }`}></i>
+        }`}
+      ></i>
       <i
         className={`las la-moon text-xl relative z-[2] ${
           theme == "light" ? "text-n0" : "text-primary"
-        }`}></i>
+        }`}
+      ></i>
       <div
         className={`absolute duration-300 transition-all left-1 rounded-full w-6 h-6 bg-n0 top-1 ${
           theme == "light" ? "translate-x-0" : "translate-x-7"
-        }`}></div>
+        }`}
+      ></div>
     </button>
   );
 };

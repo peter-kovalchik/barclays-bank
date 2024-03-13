@@ -45,15 +45,18 @@ const Action = ({
       <div
         className={`${open ? "block" : "hidden"} absolute ${
           fromBottom ? "bottom-0" : "top-0"
-        } ltr:right-5 rtl:left-5 z-30 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] min-w-[130px] p-1.5 rounded-md bg-n0 dark:bg-bg4`}>
+        } ltr:right-5 rtl:left-5 z-30 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] min-w-[130px] p-1.5 rounded-md bg-n0 dark:bg-bg4`}
+      >
         <button
           onClick={showDetails}
-          className="py-1.5 hover:bg-primary w-full text-start rounded-md hover:text-n30 duration-300 block px-3">
+          className="py-1.5 hover:bg-primary w-full text-start rounded-md hover:text-n30 duration-300 block px-3"
+        >
           See Details
         </button>
         <button
           onClick={handleDelete}
-          className="py-1.5 hover:bg-primary w-full text-start rounded-md hover:text-n30 duration-300 block px-3">
+          className="py-1.5 hover:bg-primary w-full text-start rounded-md hover:text-n30 duration-300 block px-3"
+        >
           Delete
         </button>
       </div>

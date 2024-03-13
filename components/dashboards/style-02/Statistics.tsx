@@ -109,7 +109,8 @@ const Statistics = () => {
       {statisticsData.map(({ title, amount, growth }) => (
         <div
           key={title}
-          className="col-span-6 sm:col-span-3 md:col-span-6 lg:col-span-3 xxl:col-span-2 max-xxl:box flex justify-between items-center overflow-x-hidden xxl:px-4 xxl:ltr:first:pl-0 xxl:last:ltr:pr-0 gap-3">
+          className="col-span-6 sm:col-span-3 md:col-span-6 lg:col-span-3 xxl:col-span-2 max-xxl:box flex justify-between items-center overflow-x-hidden xxl:px-4 xxl:ltr:first:pl-0 xxl:last:ltr:pr-0 gap-3"
+        >
           <div>
             <p className="font-medium mb-4">{title}</p>
             <div className="flex gap-2 items-center">

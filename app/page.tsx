@@ -1,13 +1,11 @@
 import SignInPage from "./auth/sign-in/page";
 
-
 const HomePage = async () => {
-  return ( 
+  return (
     <main className="overflow-x-hidden">
       <SignInPage />
     </main>
   );
 };
-
 
 export default HomePage;

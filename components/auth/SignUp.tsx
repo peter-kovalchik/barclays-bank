@@ -14,7 +14,8 @@ const SignUp = () => {
             <div className="col-span-2 md:col-span-1">
               <label
                 htmlFor="name"
-                className="md:text-lg font-medium block mb-3">
+                className="md:text-lg font-medium block mb-3"
+              >
                 First Name
               </label>
               <input
@@ -28,7 +29,8 @@ const SignUp = () => {
             <div className="col-span-2 md:col-span-1">
               <label
                 htmlFor="lname"
-                className="md:text-lg font-medium block mb-3">
+                className="md:text-lg font-medium block mb-3"
+              >
                 Last Name
               </label>
               <input
@@ -52,7 +54,8 @@ const SignUp = () => {
           />
           <label
             htmlFor="referralcode"
-            className="md:text-lg font-medium block mb-4">
+            className="md:text-lg font-medium block mb-4"
+          >
             Someone invited you over?
           </label>
           <div className=" bg-n0 dark:bg-bg4 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3 mb-7 relative">

@@ -2,7 +2,7 @@
 import { sidebarData } from "@/public/data/sidebarData";
 import logoDark from "@/public/images/logo-with-text-dark.png";
 import logoWhite from "@/public/images/logo-with-text.png";
-import barclaysLogo from "@/public/images/barclays_logo.png"
+import barclaysLogo from "@/public/images/barclays_logo.png";
 import useWindowSize from "@/utils/useWindowSize";
 import { IconX } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
@@ -32,9 +32,9 @@ const SidebarVertical = ({
   const { theme } = useTheme();
   const { windowSize } = useWindowSize();
   const sidebarRef = useRef<HTMLDivElement | null>(null);
-  const router = useRouter()
+  const router = useRouter();
 
-  console.log("Active menu is", activeMenu)
+  console.log("Active menu is", activeMenu);
 
   const handleClickOutside = useCallback(
     (event: MouseEvent) => {
@@ -49,19 +49,17 @@ const SidebarVertical = ({
         }
       }
     },
-    [setSidebar]
+    [setSidebar],
   );
 
   useEffect(() => {
     sidebarData.map(({ items }) =>
-      items.map(({ submenus, name, url  }) => {
-        if(url && url == path) setActiveMenu(name)
-        submenus?.map(({ url }) => (url == path ? setActiveMenu(name) : ""))
+      items.map(({ submenus, name, url }) => {
+        if (url && url == path) setActiveMenu(name);
+        submenus?.map(({ url }) => (url == path ? setActiveMenu(name) : ""));
 
-        return
-      }
-        
-      )
+        return;
+      }),
     );
   }, [path]);
 
@@ -82,16 +80,12 @@ const SidebarVertical = ({
           ? "translate-x-0 visible"
           : "ltr:-translate-x-full rtl:translate-x-full invisible"
       } duration-300 sidebar fixed ltr:left-0 rtl:right-0 h-full bg-n0 dark:bg-bg4 top-0`}
-      ref={sidebarRef}>
+      ref={sidebarRef}
+    >
       <div className={`p-4 xl:p-6 xxxl:p-[31px]`}>
         <div className="flex justify-between items-center">
           <Link href="/">
-            <Image
-              width={174}
-              height={38}
-              src={barclaysLogo}
-              alt="logo"
-            />
+            <Image width={174} height={38} src={barclaysLogo} alt="logo" />
           </Link>
           <button onClick={() => setSidebar(false)} className="xl:hidden">
             <IconX />
@@ -113,23 +107,27 @@ const SidebarVertical = ({
                         key={id}
                         className={`relative rounded-xl duration-300 ${
                           activeMenu == name && "bg-primary/5 dark:bg-bg3 "
-                        }`}>
+                        }`}
+                      >
                         <button
                           onClick={() => {
-                            setActiveMenu((p) => (p == name && !url ? "" : name))
-                            if(url) router.push(url as string) 
-                          }
-                          }
+                            setActiveMenu((p) =>
+                              p == name && !url ? "" : name,
+                            );
+                            if (url) router.push(url as string);
+                          }}
                           className={`w-full px-4 group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl hover:bg-primary hover:text-n0 duration-300 ${
                             activeMenu == name && "bg-primary text-n0"
                           } ${path == name && "bg-primary text-n0"} ${
                             isActive(submenus || [url]) && "bg-primary text-n0"
-                          }`}>
+                          }`}
+                        >
                           <span className="flex items-center gap-2">
                             <span
                               className={`text-primary self-center -mb-1 group-hover:text-n0 ${
                                 activeMenu == name && " !text-n0"
-                              } ${isActive(submenus || [url]) && " !text-n0"}`}>
+                              } ${isActive(submenus || [url]) && " !text-n0"}`}
+                            >
                               {icon}
                             </span>
                             <span className="font-medium">{name}</span>
@@ -140,7 +138,9 @@ const SidebarVertical = ({
                             !url && <i className="las text-xl la-plus"></i>
                           )}
                         </button>
-                        <AnimateHeight height={activeMenu == name && !url ? "auto" : 0}>
+                        <AnimateHeight
+                          height={activeMenu == name && !url ? "auto" : 0}
+                        >
                           <ul className={`px-3 4xl:px-5 py-3 menu`}>
                             {submenus?.map(({ title, url }) => (
                               <li
@@ -149,12 +149,14 @@ const SidebarVertical = ({
                                   windowSize! < 1200 &&
                                     setSidebar(!sidebarIsOpen);
                                 }}
-                                key={title}>
+                                key={title}
+                              >
                                 <Link
                                   className={`font-medium flex items-center gap-2 py-3 hover:text-primary duration-300 capitalize  ${
                                     path == url && "text-primary"
                                   }`}
-                                  href={url}>
+                                  href={url}
+                                >
                                   <i className="las la-minus text-xl"></i>{" "}
                                   <span>{title}</span>
                                 </Link>
@@ -163,7 +165,7 @@ const SidebarVertical = ({
                           </ul>
                         </AnimateHeight>
                       </li>
-                    )
+                    ),
                 )}
               </ul>
             </React.Fragment>
@@ -176,7 +178,8 @@ const SidebarVertical = ({
           <ul>
             <li>
               <button
-                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}>
+                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}
+              >
                 <span className="flex items-center gap-2">
                   <span className={`text-primary self-center -mb-1`}>
                     <i className="las la-dollar-sign"></i>
@@ -185,7 +188,8 @@ const SidebarVertical = ({
                 </span>
               </button>
               <button
-                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}>
+                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}
+              >
                 <span className="flex items-center gap-2">
                   <span className={`text-primary self-center -mb-1`}>
                     <i className="las la-euro-sign"></i>
@@ -194,7 +198,8 @@ const SidebarVertical = ({
                 </span>
               </button>
               <button
-                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}>
+                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}
+              >
                 <span className="flex items-center gap-2">
                   <span className={`text-primary self-center -mb-1`}>
                     <i className="las la-pound-sign"></i>
@@ -203,7 +208,8 @@ const SidebarVertical = ({
                 </span>
               </button>
               <button
-                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}>
+                className={`px-4 w-full group flex justify-between items-center xxxl:px-6 py-2.5 lg:py-3 rounded-xl `}
+              >
                 <span className="flex items-center gap-2">
                   <span className={`text-primary self-center -mb-1`}>
                     <i className="las la-plus-circle"></i>

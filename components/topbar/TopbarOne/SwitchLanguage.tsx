@@ -15,7 +15,8 @@ const SwitchLanguage = () => {
       <div
         className={`bg-n0  dark:bg-bg4 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] rounded-md ltr:right-0 rtl:left-0 ltr:origin-top-right rtl:origin-top-left absolute top-full duration-300 ${
           open ? "visible opacity-100 scale-100" : "invisible opacity-0 scale-0"
-        }`}>
+        }`}
+      >
         <ul className="flex flex-col w-32 bg-n0 p-1 rounded-md dark:bg-bg4">
           {languages.map((lang) => (
             <li
@@ -26,7 +27,8 @@ const SwitchLanguage = () => {
               }}
               className={`px-4 block py-2 rounded-md cursor-pointer duration-300 hover:text-primary ${
                 selected == lang && "bg-primary text-n0 hover:!text-n0"
-              }`}>
+              }`}
+            >
               {lang}
             </li>
           ))}

@@ -34,22 +34,22 @@ export default function RootLayout({
 }) {
   return (
     <SessionWrapper>
-    <html lang="en" className="!scroll-smooth">
-      <body className={`${inter.className} text-n500 dark:text-n30`}>
-        <ThemeProvider>
-          <LayoutProvider>
-            <UserContextProvider>
-            <div>
-              <Next13NProgress color="#00aeef" height={3} />
-              {/* <NestedLayout> */}
-              {children}
-              {/* </NestedLayout> */}
-            </div>
-            </UserContextProvider>
-          </LayoutProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+      <html lang="en" className="!scroll-smooth">
+        <body className={`${inter.className} text-n500 dark:text-n30`}>
+          <ThemeProvider>
+            <LayoutProvider>
+              <UserContextProvider>
+                <div>
+                  <Next13NProgress color="#00aeef" height={3} />
+                  {/* <NestedLayout> */}
+                  {children}
+                  {/* </NestedLayout> */}
+                </div>
+              </UserContextProvider>
+            </LayoutProvider>
+          </ThemeProvider>
+        </body>
+      </html>
     </SessionWrapper>
   );
 }

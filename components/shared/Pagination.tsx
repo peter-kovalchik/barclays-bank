@@ -31,8 +31,9 @@ const Pagination = ({
           <button
             onClick={prevPage}
             className={cn(
-              "hover:bg-primary text-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary"
-            )}>
+              "hover:bg-primary text-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary",
+            )}
+          >
             <i className="las la-angle-left text-lg"></i>
           </button>
         </li>
@@ -44,8 +45,9 @@ const Pagination = ({
                 "hover:bg-primary text-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary",
                 {
                   "bg-primary text-n0": currentPage == page,
-                }
-              )}>
+                },
+              )}
+            >
               {page}
             </button>
           </li>
@@ -54,8 +56,9 @@ const Pagination = ({
           <button
             onClick={nextPage}
             className={cn(
-              "hover:bg-primary text-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary"
-            )}>
+              "hover:bg-primary text-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary",
+            )}
+          >
             <i className="las la-angle-right text-lg"></i>
           </button>
         </li>

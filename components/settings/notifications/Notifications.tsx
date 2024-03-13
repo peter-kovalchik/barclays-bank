@@ -151,7 +151,8 @@ const Notifications = () => {
               ({ id, desc, status, title }) => (
                 <div
                   key={id}
-                  className="flex items-center gap-3 justify-between">
+                  className="flex items-center gap-3 justify-between"
+                >
                   <div>
                     <p className="font-medium text-base sm:text-lg lg:text-xl mb-2">
                       {title}
@@ -160,7 +161,7 @@ const Notifications = () => {
                   </div>
                   <Switch label={title} isChecked={status} />
                 </div>
-              )
+              ),
             )}
           </div>
         </div>

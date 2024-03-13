@@ -12,12 +12,12 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 });
 
 const selectedValues = {
-  year: "Last Year", 
-  month: "Last Month", 
-  week: "Last Week"
-}
+  year: "Last Year",
+  month: "Last Month",
+  week: "Last Week",
+};
 
-const yearSeries =  [
+const yearSeries = [
   {
     data: [
       {
@@ -50,9 +50,9 @@ const yearSeries =  [
       },
     ],
   },
-]
+];
 
-const monthSeries =  [
+const monthSeries = [
   {
     data: [
       {
@@ -85,9 +85,9 @@ const monthSeries =  [
       },
     ],
   },
-]
+];
 
-const weekSeries =  [
+const weekSeries = [
   {
     data: [
       {
@@ -120,7 +120,7 @@ const weekSeries =  [
       },
     ],
   },
-]
+];
 
 const DeopositsAccountChart = () => {
   const [selected, setSelected] = useState(options[0]);
@@ -129,12 +129,12 @@ const DeopositsAccountChart = () => {
   const { dir } = useLayout();
 
   const memoedSeries = useMemo(() => {
-    if(selected === selectedValues.year) return yearSeries
-    if(selected === selectedValues.month) return monthSeries
-    if(selected === selectedValues.week) return weekSeries
+    if (selected === selectedValues.year) return yearSeries;
+    if (selected === selectedValues.month) return monthSeries;
+    if (selected === selectedValues.week) return weekSeries;
 
-    return yearSeries
-  }, [selected])
+    return yearSeries;
+  }, [selected]);
 
   const chartData: ApexOptions = {
     series: memoedSeries,

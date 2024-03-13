@@ -45,8 +45,8 @@ const weekSeries = [
 const selectedValue = {
   year: "Last Year",
   month: "Last Month",
-  week: "Last Weeks"
-}
+  week: "Last Weeks",
+};
 
 const IncomeExpenseChart = () => {
   const [selected, setSelected] = useState(options[0]);
@@ -54,10 +54,10 @@ const IncomeExpenseChart = () => {
   const { dir } = useLayout();
 
   const memoedSeries = useMemo(() => {
-    if(selected === selectedValue.year) return yearSeries
-    if(selected === selectedValue.month) return monthSeries
-    if(selected === selectedValue.week) return weekSeries
-  }, [selected])
+    if (selected === selectedValue.year) return yearSeries;
+    if (selected === selectedValue.month) return monthSeries;
+    if (selected === selectedValue.week) return weekSeries;
+  }, [selected]);
 
   const chartData: ApexOptions = {
     chart: {

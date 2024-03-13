@@ -9,7 +9,7 @@ import {
 } from "@tabler/icons-react";
 import { signOut } from "next-auth/react";
 // import { cookies } from "next/headers";
-import {useCookies} from "next-client-cookies"
+import { useCookies } from "next-client-cookies";
 import Image from "next/image";
 import Link from "next/link";
 export const profileLinks = [
@@ -42,13 +42,13 @@ export const profileLinks = [
 
 const Profile = () => {
   const { open, ref, toggleOpen } = useDropdown();
-  const cookies = useCookies()
-  const user = JSON.parse(cookies.get("currentUser") as string)
+  const cookies = useCookies();
+  const user = JSON.parse(cookies.get("currentUser") as string);
 
   const logout = () => {
-    signOut()
-    cookies.remove("currentUser")
-  }
+    signOut();
+    cookies.remove("currentUser");
+  };
 
   return (
     <div className="relative shrink-0" ref={ref}>
@@ -64,7 +64,8 @@ const Profile = () => {
       <div
         className={`bg-n0 z-20  dark:bg-bg4 ltr:origin-top-right rtl:origin-top-left rounded-md ltr:right-0 rtl:left-0 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] absolute top-full duration-300 ${
           open ? "visible opacity-100 scale-100" : "invisible opacity-0 scale-0"
-        }`}>
+        }`}
+      >
         <div className="flex flex-col text-center items-center lg:p-4 p-3 border-b dark:border-n500">
           <Image
             src="/images/profile.png"
@@ -82,7 +83,8 @@ const Profile = () => {
               <Link
                 onClick={() => title === "Logout" && logout()}
                 href={url}
-                className="flex items-center gap-2 p-2 rounded-md duration-300 hover:bg-primary hover:text-n0">
+                className="flex items-center gap-2 p-2 rounded-md duration-300 hover:bg-primary hover:text-n0"
+              >
                 <span>{icon}</span>
                 {title}
               </Link>

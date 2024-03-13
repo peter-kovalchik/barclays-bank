@@ -41,7 +41,8 @@ const CreateAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="number"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Phone Number
             </label>
             <input
@@ -55,7 +56,8 @@ const CreateAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="currency"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Select Currency
             </label>
             <Dropdown
@@ -81,7 +83,8 @@ const CreateAccountForm = ({
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="expire"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Expiry Date
             </label>
             <input
@@ -95,7 +98,8 @@ const CreateAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="amount"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Amount
             </label>
             <input
@@ -109,7 +113,8 @@ const CreateAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="status"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Select Status
             </label>
             <Dropdown

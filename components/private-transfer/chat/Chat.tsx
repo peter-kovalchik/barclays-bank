@@ -68,21 +68,24 @@ const Chat = () => {
     <>
       <button
         onClick={() => setOpenMenu(!openMenu)}
-        className="md:hidden flex items-center gap-2 min-w-max py-2 px-3 relative z-[3] rounded-lg bg-primary text-n0">
+        className="md:hidden flex items-center gap-2 min-w-max py-2 px-3 relative z-[3] rounded-lg bg-primary text-n0"
+      >
         <IconUsers size={20} className="shrink-0" /> <span>Contacts</span>
       </button>
       <div
         onClick={() => setOpenMenu(false)}
         className={`absolute md:hidden md:invisible inset-0 z-[2] ${
           openMenu ? "block visible" : "hidden invisible"
-        }`}></div>
+        }`}
+      ></div>
       <div className="rounded-2xl bg-n0 dark:bg-bg4 shadow-3 grid grid-cols-12 relative max-md:mt-3">
         <div
           className={`p-2 sm:p-4 duration-500 md:p-6 xl:p-8 max-md:w-[280px] max-md:max-h-[600px] max-md:overflow-y-auto max-md:rounded-xl max-md:absolute max-md:left-0 z-[3] max-md:bg-n0 max-md:dark:bg-bg4 max-md:top-0 md:col-span-5 xxl:col-span-4 md:border-r border-n30 dark:border-n500 ${
             openMenu
               ? "max-md:translate-x-0 max-md:visible max-md:opacity-100"
               : "max-md:-translate-x-[120%] max-md:opacity-0 max-md:invisible"
-          }`}>
+          }`}
+        >
           <div className="flex items-center justify-between flex-wrap">
             <div className="w-10 h-10 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0">
               <Image
@@ -108,13 +111,15 @@ const Chat = () => {
             />
             <button
               type="button"
-              className="grid place-content-center  w-10 h-10 rounded-full border-0 bg-primary text-white shrink-0">
+              className="grid place-content-center  w-10 h-10 rounded-full border-0 bg-primary text-white shrink-0"
+            >
               <IconSearch className="h-5 w-5" />
             </button>
           </form>
           <div
             className="max-h-[600px] overflow-y-auto scrollbar-hidden mt-5 md:mt-0"
-            style={{ overflowY: "auto" }}>
+            style={{ overflowY: "auto" }}
+          >
             <ul className="flex flex-col gap-2">
               {allfriends.map((friend) => {
                 const { id, img, message, name, time, badge } = friend;
@@ -124,11 +129,13 @@ const Chat = () => {
                     onClick={() => {
                       setCurrentChat(id);
                       windowSize! < 768 && setOpenMenu(false);
-                    }}>
+                    }}
+                  >
                     <div
                       className={`flex flex-wrap items-center cursor-pointer gap-4 p-2 justify-center md:justify-start rounded-lg hover:bg-secondary1/10 ${
                         currentChat == friend.id && "bg-secondary1/20"
-                      } duration-300`}>
+                      } duration-300`}
+                    >
                       <div className="md:w-11 md:h-11 w-8 h-8 relative z-[1] rounded-full shrink-0">
                         <Image
                           width={44}
@@ -155,7 +162,8 @@ const Chat = () => {
                           <span
                             className={`inline-block text-xs ${
                               badge && "text-primary"
-                            }`}>
+                            }`}
+                          >
                             {time}
                           </span>
                         </div>
@@ -188,12 +196,14 @@ const Chat = () => {
               <div className="flex gap-3 items-center justify-content-end flex-wrap">
                 <Link
                   href="#"
-                  className="inline-block shrink-0 hover:text-primary">
+                  className="inline-block shrink-0 hover:text-primary"
+                >
                   <IconPhone className="w-6 h-6" />
                 </Link>
                 <Link
                   href="#"
-                  className="inline-block shrink-0 hover:text-primary">
+                  className="inline-block shrink-0 hover:text-primary"
+                >
                   <IconVideo className="w-6 h-6" />
                 </Link>
               </div>
@@ -201,7 +211,8 @@ const Chat = () => {
           </div>
           <div
             id="chatbox"
-            className="max-h-[640px] md:min-h-[620px] scrollbar-hidden bg-secondary1/5 dark:bg-bg3 p-4 md:p-6 xl:py-8 overflow-y-auto mx-3 lg:mx-6 rounded-2xl">
+            className="max-h-[640px] md:min-h-[620px] scrollbar-hidden bg-secondary1/5 dark:bg-bg3 p-4 md:p-6 xl:py-8 overflow-y-auto mx-3 lg:mx-6 rounded-2xl"
+          >
             <ul className="flex flex-col justify-end">
               {allfriends.map(
                 (friend) =>
@@ -211,7 +222,8 @@ const Chat = () => {
                       <div
                         className={`flex flex-col items-start ${
                           person == "you" ? "items-end" : "items-start"
-                        }`}>
+                        }`}
+                      >
                         {person == "self" && (
                           <div className="w-8 h-8 xl:w-12 xl:h-12 md:mb-2">
                             <Image
@@ -229,7 +241,8 @@ const Chat = () => {
                             person == "you"
                               ? "md:arrow-bottom bg-primary dark:bg-primary text-n0"
                               : "md:arrow-top"
-                          }`}>
+                          }`}
+                        >
                           <p className="text-sm md:text-base">{message}</p>
                         </div>
                         {person == "you" && (
@@ -245,7 +258,7 @@ const Chat = () => {
                         )}
                       </div>
                     </li>
-                  ))
+                  )),
               )}
             </ul>
           </div>
@@ -254,7 +267,8 @@ const Chat = () => {
               <div className="shrink-0">
                 <label
                   htmlFor="file"
-                  className="inline-block hover:text-primary cursor-pointer">
+                  className="inline-block hover:text-primary cursor-pointer"
+                >
                   <input type="file" name="file" id="file" className="hidden" />
                   <IconCirclePlus className="w-6 h-6" />
                 </label>
@@ -267,7 +281,8 @@ const Chat = () => {
               <div className="shrink-0">
                 <label
                   htmlFor="img"
-                  className="inline-block hover:text-primary">
+                  className="inline-block hover:text-primary"
+                >
                   <input type="file" name="img" id="img" className="hidden" />
                   <IconCamera className="w-6 h-6" />
                 </label>
@@ -280,7 +295,8 @@ const Chat = () => {
             </div>
             <form
               onSubmit={handleSubmit}
-              className="flex items-center flex-grow p-1 md:p-2 border border-n30 dark:border-n500 bg-secondary1/5 dark:bg-bg3 rounded-full">
+              className="flex items-center flex-grow p-1 md:p-2 border border-n30 dark:border-n500 bg-secondary1/5 dark:bg-bg3 rounded-full"
+            >
               <input
                 type="text"
                 placeholder="Type message..."
@@ -290,7 +306,8 @@ const Chat = () => {
               />
               <button
                 type="submit"
-                className="grid place-content-center w-8 md:w-10 h-8 md:h-10 rounded-full border-0 bg-primary text-white shrink-0">
+                className="grid place-content-center w-8 md:w-10 h-8 md:h-10 rounded-full border-0 bg-primary text-white shrink-0"
+              >
                 <IconSend className="w-5 h-5" />
               </button>
             </form>

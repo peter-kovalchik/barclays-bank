@@ -387,7 +387,7 @@ const PaymentAccount = () => {
     const result = transactionsData.filter(
       (item) =>
         item.currency.long.toLowerCase().includes(searchTerm) ||
-        item.account.includes(searchTerm)
+        item.account.includes(searchTerm),
     );
     setTableData(result);
   };
@@ -417,28 +417,32 @@ const PaymentAccount = () => {
               <tr className="bg-secondary1/5 dark:bg-bg3">
                 <th
                   onClick={() => sortData("account")}
-                  className="text-start py-5 px-6 min-w-[230px] cursor-pointer">
+                  className="text-start py-5 px-6 min-w-[230px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Account Number <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("currency")}
-                  className="text-start py-5 min-w-[100px] cursor-pointer">
+                  className="text-start py-5 min-w-[100px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Currency <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("balance")}
-                  className="text-start py-5 min-w-[130px] cursor-pointer">
+                  className="text-start py-5 min-w-[130px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Account Balance <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("money")}
-                  className="text-start py-5 min-w-[120px] cursor-pointer">
+                  className="text-start py-5 min-w-[120px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Money <IconSelector size={18} />
                   </div>
@@ -448,7 +452,8 @@ const PaymentAccount = () => {
                 </th>
                 <th
                   onClick={() => sortData("status")}
-                  className="text-start py-5 cursor-pointer">
+                  className="text-start py-5 cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Status <IconSelector size={18} />
                   </div>
@@ -469,11 +474,12 @@ const PaymentAccount = () => {
                     id,
                     status,
                   },
-                  index
+                  index,
                 ) => (
                   <tr
                     key={id}
-                    className="even:bg-secondary1/5 dark:even:bg-bg3">
+                    className="even:bg-secondary1/5 dark:even:bg-bg3"
+                  >
                     <td className="py-2 px-6">
                       <div className="flex items-center gap-3">
                         <Image
@@ -516,7 +522,8 @@ const PaymentAccount = () => {
                         } ${
                           status == TransactionStatus.Pending &&
                           "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                        }`}>
+                        }`}
+                      >
                         {status}
                       </span>
                     </td>
@@ -528,7 +535,7 @@ const PaymentAccount = () => {
                       </div>
                     </td>
                   </tr>
-                )
+                ),
               )}
             </tbody>
           </table>

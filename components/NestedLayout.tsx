@@ -24,7 +24,7 @@ export default function RootLayout({
   const { windowSize } = useWindowSize();
   const [customizerOpen, setCustomizerOpen] = useState(false);
 
-      useEffect(() => {
+  useEffect(() => {
     if (window.innerWidth > 1200) {
       setSidebarIsOpen(true);
     } else {
@@ -114,7 +114,8 @@ export default function RootLayout({
             onClick={() => setSidebarIsOpen(false)}
             className={`absolute xl:hidden w-10 h-10 top-3 md:top-4 ltr:left-3 cursor-pointer rtl:right-3 z-[31] ${
               sidebarIsOpen ? "max-xl:block" : "hidden"
-            }`}></div>
+            }`}
+          ></div>
         </>
       )}
 
@@ -130,14 +131,16 @@ export default function RootLayout({
           "xl:ltr:ml-[280px] xxxl:ltr:ml-[360px] xl:rtl:mr-[280px] xxxl:rtl:mr-[360px]"
         } ${
           sidebarIsOpen && layout == "Hovered" && "xl:ltr:ml-24 xl:rtl:mr-24"
-        } ${layout == "Horizontal" && windowSize! > 1400 && "!pt-[172px]"}`}>
+        } ${layout == "Horizontal" && windowSize! > 1400 && "!pt-[172px]"}`}
+      >
         <div
           className={`px-3 relative sm:px-4 xxxl:px-6 py-6 lg:py-8 duration-300 ${
             layout == "Horizontal" && "max-w-[1850px] mx-auto xxl:px-3"
           } ${
             layout == "Detached" &&
             "max-w-[1850px] mx-auto xxl:px-3 grid grid-cols-12 gap-4 xxl:gap-6"
-          }`}>
+          }`}
+        >
           {layout == "Detached" && (
             <SidebarDetached
               sidebarIsOpen={sidebarIsOpen}
@@ -149,7 +152,8 @@ export default function RootLayout({
               sidebarIsOpen &&
               layout == "Detached" &&
               "xl:ltr:ml-[300px] xxl:ltr:ml-[350px] xl:rtl:mr-[300px] xxl:rtl:mr-[350px]"
-            }`}>
+            }`}
+          >
             {children}
           </div>
         </div>
@@ -159,7 +163,8 @@ export default function RootLayout({
 
         <button
           onClick={() => setCustomizerOpen(true)}
-          className="fixed ltr:right-4 rtl:left-4 z-50 top-1/2 bg-primary text-n0 w-10 h-10 rounded-full flex items-center justify-center">
+          className="fixed ltr:right-4 rtl:left-4 z-50 top-1/2 bg-primary text-n0 w-10 h-10 rounded-full flex items-center justify-center"
+        >
           <i className="las la-cog animate-spin-slow"></i>
         </button>
 

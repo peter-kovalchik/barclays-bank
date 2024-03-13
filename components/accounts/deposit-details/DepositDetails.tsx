@@ -91,7 +91,8 @@ const DepositDetails = () => {
           </div>
           <Link
             href="#"
-            className="text-primary font-semibold flex items-center gap-2  mb-6 lg:mb-8 bb-dashed pb-6">
+            className="text-primary font-semibold flex items-center gap-2  mb-6 lg:mb-8 bb-dashed pb-6"
+          >
             More Card <i className="las la-arrow-right"></i>
           </Link>
           <div className="flex gap-4 lg:gap-6">
@@ -100,7 +101,8 @@ const DepositDetails = () => {
             </Link>
             <Link
               href="#"
-              className="btn-outline flex justify-center w-full lg:py-2.5">
+              className="btn-outline flex justify-center w-full lg:py-2.5"
+            >
               Cancel
             </Link>
           </div>

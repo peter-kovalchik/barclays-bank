@@ -49,7 +49,8 @@ const GetInTouch = () => {
         <div className="col-span-2 md:col-span-1">
           <label
             htmlFor="country"
-            className="md:text-lg font-medium block mb-4">
+            className="md:text-lg font-medium block mb-4"
+          >
             Country
           </label>
           <Dropdown
@@ -63,7 +64,8 @@ const GetInTouch = () => {
         <div className="col-span-2">
           <label
             htmlFor="message"
-            className="md:text-lg font-medium block mb-4">
+            className="md:text-lg font-medium block mb-4"
+          >
             Message
           </label>
           <textarea
@@ -71,7 +73,8 @@ const GetInTouch = () => {
             className="w-full text-sm bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
             placeholder="Enter Your Message..."
             id="message"
-            required></textarea>
+            required
+          ></textarea>
         </div>
         <div className="col-span-2">
           <button className="btn px-6">Send Message</button>

@@ -35,7 +35,8 @@ const StartDesign = () => {
           </p>
           <Link
             href="/dashboards/style-01"
-            className="text-primary font-semibold flex items-center gap-2">
+            className="text-primary font-semibold flex items-center gap-2"
+          >
             <span>See It In Action</span>
             <i className="las la-arrow-right"></i>
           </Link>

@@ -67,8 +67,8 @@ const twoWeeksSeries = [
 const selectedValue = {
   month: "Last 1 Month",
   twoWeeks: "Last 15 Days",
-  week: "Last 7 Days"
-}
+  week: "Last 7 Days",
+};
 
 const TransactionOverview = () => {
   const [selected, setSelected] = useState(options[0]);
@@ -94,12 +94,12 @@ const TransactionOverview = () => {
   ];
 
   const memoedSeries = useMemo(() => {
-    if(selected === selectedValue.month) return monthSeries 
-    if(selected === selectedValue.twoWeeks) return twoWeeksSeries
-    if(selected === selectedValue.week) return weekSeries
+    if (selected === selectedValue.month) return monthSeries;
+    if (selected === selectedValue.twoWeeks) return twoWeeksSeries;
+    if (selected === selectedValue.week) return weekSeries;
 
-    return monthSeries
-  }, [selected])
+    return monthSeries;
+  }, [selected]);
 
   const chartData: ApexOptions = {
     chart: {

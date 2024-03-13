@@ -23,11 +23,13 @@ const TopBarOne = ({
         sidebarIsOpen && layout == "Vertical"
           ? "w-full xl:ltr:w-[calc(100%-280px)] xxxl:ltr:w-[calc(100%-336px)] xl:ltr:ml-[280px] xxxl:ltr:ml-[336px] xl:rtl:w-[calc(100%-280px)] xxxl:rtl:w-[calc(100%-336px)] xl:rtl:mr-[280px] xxxl:rtl:mr-[336px]"
           : "w-full"
-      }  gap-3 bg-n0 dark:bg-bg4 fixed flex justify-between items-center`}>
+      }  gap-3 bg-n0 dark:bg-bg4 fixed flex justify-between items-center`}
+    >
       <div className="flex grow gap-4 xxl:gap-6 items-center">
         <button
           onClick={() => setSidebar(!sidebarIsOpen)}
-          className="bg-primary text-n0 rounded-s-2xl text-xl px-0.5 flex items-center py-2.5">
+          className="bg-primary text-n0 rounded-s-2xl text-xl px-0.5 flex items-center py-2.5"
+        >
           <i className="las la-angle-left text-lg"></i>
         </button>
         <SelectLayout />

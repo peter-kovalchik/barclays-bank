@@ -1,23 +1,26 @@
-import { client } from "@/utils/sanityClient"
-import NextAuth from "next-auth"
-import CredentialsProvider from "next-auth/providers/credentials"
-import { cookies } from "next/headers"
+import { client } from "@/utils/sanityClient";
+import NextAuth from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import { cookies } from "next/headers";
 
 export const authOptions = {
   providers: [
     CredentialsProvider({
       async authorize(credentials, request) {
-        console.log("Credentials from next auth", credentials)
-        console.log("Request from Credentials Provider", request)
+        console.log("Credentials from next auth", credentials);
+        console.log("Request from Credentials Provider", request);
 
-        const {email, password} = credentials
-        
-        const authUser = await client.fetch(`*[_type == "user" && email == $email && password == $password]`, {
-          email,
-          password
-        })
+        const { email, password } = credentials;
 
-        console.log("Auth user from Credentials Provider", authUser)
+        const authUser = await client.fetch(
+          `*[_type == "user" && email == $email && password == $password]`,
+          {
+            email,
+            password,
+          },
+        );
+
+        console.log("Auth user from Credentials Provider", authUser);
         // const authResponse = await fetch("/api/auth/signin", {
         //   method: "POST",
         //   headers: {
@@ -27,22 +30,22 @@ export const authOptions = {
         // })
 
         if (!authUser?.length) {
-          return null
+          return null;
         }
 
-        cookies().set("currentUser", JSON.stringify(authUser[0]))
+        cookies().set("currentUser", JSON.stringify(authUser[0]));
 
-        console.log("Auth user is", authUser)
+        console.log("Auth user is", authUser);
 
-        return authUser[0]
+        return authUser[0];
       },
     }),
   ],
   pages: {
-    signIn: "/auth/sign-in"
-  }
-}
+    signIn: "/auth/sign-in",
+  },
+};
 
-const handler = NextAuth(authOptions)
+const handler = NextAuth(authOptions);
 
-export {handler as GET, handler as POST}
+export { handler as GET, handler as POST };

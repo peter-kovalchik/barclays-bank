@@ -32,7 +32,8 @@ const PaymentActions = () => {
         <div
           key={id}
           onClick={toggleOpen}
-          className="col-span-12 cursor-pointer border border-dashed duration-300 border-transparent hover:border-primary lg:col-span-6 xxxl:col-span-4 box  bg-primary/5 dark:bg-bg3 flex items-center gap-4 4xl:gap-6 xl:p-3 min-[1880px]:p-6">
+          className="col-span-12 cursor-pointer border border-dashed duration-300 border-transparent hover:border-primary lg:col-span-6 xxxl:col-span-4 box  bg-primary/5 dark:bg-bg3 flex items-center gap-4 4xl:gap-6 xl:p-3 min-[1880px]:p-6"
+        >
           <span className="bg-n0 dark:bg-bg4 w-10 h-10 xxl:w-16 xxl:h-16 flex items-center justify-center shrink-0 rounded-full shadow-[0px_6px_40px_0px_rgba(0,0,0,0.02)]">
             {icon}
           </span>

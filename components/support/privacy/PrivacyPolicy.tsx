@@ -279,7 +279,7 @@ const PrivacyPolicy = () => {
     const result = privacyRules.filter(
       (item) =>
         item.title.toLowerCase().includes(searchTerm) ||
-        item.desc.toLowerCase().includes(searchTerm)
+        item.desc.toLowerCase().includes(searchTerm),
     );
     setRules(result);
   };
@@ -309,7 +309,8 @@ const PrivacyPolicy = () => {
         {displayedData.map(({ id, desc, title }) => (
           <div
             key={id}
-            className="col-span-12 md:col-span-6 xxl:col-span-4 box xl:p-6 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 ">
+            className="col-span-12 md:col-span-6 xxl:col-span-4 box xl:p-6 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 "
+          >
             <Link href="#" className="h5 mb-4 block">
               {title}
             </Link>

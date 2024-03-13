@@ -79,7 +79,8 @@ const CreativeLayouts = () => {
             {whyusData.map(({ id, desc, img, imgDark, title }) => (
               <div
                 key={id}
-                className="col-span-2 lg:col-span-1 after:inset-0 after:duration-500 block rounded-xl relative">
+                className="col-span-2 lg:col-span-1 after:inset-0 after:duration-500 block rounded-xl relative"
+              >
                 <Image
                   src={theme == "dark" ? imgDark : img}
                   className="relative z-[2]"

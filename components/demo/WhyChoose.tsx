@@ -99,7 +99,8 @@ const WhyChoose = () => {
             {whyusData.map(({ id, desc, icon, title }) => (
               <div
                 key={id}
-                className="col-span-12 md:col-span-6 lg:col-span-4 box p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.06)]">
+                className="col-span-12 md:col-span-6 lg:col-span-4 box p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.06)]"
+              >
                 <div className="flex items-center gap-4 xxl:gap-6 p-4 md:p-5 xl:p-6 rounded-xl bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500">
                   <div className="hexagon shrink-0 bg-n0 dark:bg-bg4 flex items-center justify-center shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)]">
                     {icon}

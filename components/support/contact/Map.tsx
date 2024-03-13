@@ -9,7 +9,8 @@ const Map = () => {
         className="rounded-xl border border-n30 dark:border-n500"
         allowFullScreen={true}
         loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"></iframe>
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
   );
 };

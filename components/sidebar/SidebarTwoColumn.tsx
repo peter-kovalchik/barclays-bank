@@ -41,14 +41,14 @@ const SidebarTwoColumn = ({
         }
       }
     },
-    [setSidebar]
+    [setSidebar],
   );
 
   useEffect(() => {
     sidebarData.map(({ items }) =>
       items.map(({ submenus, name }) =>
-        submenus.map(({ url }) => (url == path ? setActiveMenu(name) : ""))
-      )
+        submenus.map(({ url }) => (url == path ? setActiveMenu(name) : "")),
+      ),
     );
   }, [path]);
   const isActive = (submenus: any[]) => {
@@ -68,14 +68,16 @@ const SidebarTwoColumn = ({
           ? "translate-x-0 visible"
           : "ltr:-translate-x-full rtl:translate-x-full invisible"
       } duration-300 sidebar fixed ltr:left-0 rtl:right-0 h-full top-0`}
-      ref={sidebarRef}>
+      ref={sidebarRef}
+    >
       <div className="flex">
         <div className="h-screen shrink-0 bg-primary/5 dark:bg-bg3">
           <div className="p-3.5 xxxl:p-[22px]">
             <div className="flex justify-between items-center">
               <Link
                 href="/"
-                className="rounded-full p-2 inline-block border border-n30 dark:border-n500 bg-n0 dark:bg-bg3">
+                className="rounded-full p-2 inline-block border border-n30 dark:border-n500 bg-n0 dark:bg-bg3"
+              >
                 <Image
                   width={36}
                   height={36}
@@ -103,7 +105,8 @@ const SidebarTwoColumn = ({
                         submenus && (
                           <li
                             key={id}
-                            className={`inline-block rounded-xl duration-300`}>
+                            className={`inline-block rounded-xl duration-300`}
+                          >
                             <button
                               onClick={() => setActiveMenu(name)}
                               className={`group h-12 w-12 rounded-full hover:bg-primary bg-n0 border border-n30 dark:bg-bg3 dark:border-n500 hover:text-n0 duration-300 ${
@@ -115,21 +118,24 @@ const SidebarTwoColumn = ({
                               } ${
                                 isActive(submenus) &&
                                 "bg-primary text-n0 dark:bg-primary"
-                              }`}>
+                              }`}
+                            >
                               <span
                                 className={`text-primary group-hover:text-n0 ${
                                   activeMenu == name && " !text-n0"
-                                } ${isActive(submenus) && " !text-n0"}`}>
+                                } ${isActive(submenus) && " !text-n0"}`}
+                              >
                                 {icon}
                               </span>
                             </button>
                           </li>
-                        )
+                        ),
                     )}
                   </ul>
                   <div className="pt-20">
                     <button
-                      className={`group h-12 w-12 rounded-full hover:bg-primary bg-n0 border border-n30 dark:bg-bg3 dark:border-n500 hover:text-n0 duration-300 `}>
+                      className={`group h-12 w-12 rounded-full hover:bg-primary bg-n0 border border-n30 dark:bg-bg3 dark:border-n500 hover:text-n0 duration-300 `}
+                    >
                       <span className={`text-primary group-hover:text-n0 `}>
                         <i className="las la-sign-out-alt"></i>
                       </span>
@@ -145,7 +151,8 @@ const SidebarTwoColumn = ({
             <div>
               <button
                 onClick={() => setSidebar(false)}
-                className="xl:hidden absolute top-3 right-3 z-20">
+                className="xl:hidden absolute top-3 right-3 z-20"
+              >
                 <IconX />
               </button>
               <Link href="/">
@@ -174,12 +181,14 @@ const SidebarTwoColumn = ({
                                 windowSize! < 1200 &&
                                   setSidebar(!sidebarIsOpen);
                               }}
-                              key={title}>
+                              key={title}
+                            >
                               <Link
                                 className={`font-medium block hover:text-primary duration-300 py-3 ${
                                   path == url && "text-primary"
                                 }`}
-                                href={url}>
+                                href={url}
+                              >
                                 <i className="las la-minus text-xl"></i> {title}
                               </Link>
                             </li>

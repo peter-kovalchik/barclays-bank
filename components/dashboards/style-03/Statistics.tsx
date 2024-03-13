@@ -5,19 +5,18 @@ import { client } from "@/utils/sanityClient";
 import { useCookies } from "next-client-cookies";
 import { useEffect, useState } from "react";
 
-const formatCurrency = (amount = 0, locale = 'en-US', currency = 'EUR') => {
+const formatCurrency = (amount = 0, locale = "en-US", currency = "EUR") => {
   return new Intl.NumberFormat(locale, {
-    style: 'currency',
+    style: "currency",
     currency: currency,
   }).format(amount);
 };
 
-
-
-const Statistics = async () => {
-  const cookies = useCookies()
-  const [user, setUser] = useState<UserType>(JSON.parse(cookies.get("currentUser") as string))
-
+const Statistics = () => {
+  const cookies = useCookies();
+  const [user, setUser] = useState<UserType>(
+    JSON.parse(cookies.get("currentUser") as string),
+  );
 
   const statesData = [
     {
@@ -51,14 +50,21 @@ const Statistics = async () => {
   ];
 
   useEffect(() => {
-    const query = '*[_type == "user" && email == $email]'
-    const params = {email: user.email}
+    const query = '*[_type == "user" && email == $email]';
+    const params = { email: user.email };
 
-    const subscription = client.listen(query, params)
-    .subscribe((update) => {
-      console.log("Update is", update)
-  
-      const {name, email, total_income, total_transactions, total_spending, spending_goal, password} = update.result as UserType | any
+    const subscription = client.listen(query, params).subscribe((update) => {
+      console.log("Update is", update);
+
+      const {
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+      } = update.result as UserType | any;
 
       const newUser = {
         ...user,
@@ -68,26 +74,26 @@ const Statistics = async () => {
         total_transactions,
         total_spending,
         spending_goal,
-        password
-      }
+        password,
+      };
 
-      console.log("New user is", newUser)
+      console.log("New user is", newUser);
 
-      cookies.set("currentUser", JSON.stringify(newUser))
-  
-      setUser(newUser)
-    })
+      cookies.set("currentUser", JSON.stringify(newUser));
 
-    return () => subscription.unsubscribe()
-  }, [])
- 
+      setUser(newUser);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [cookies, user]);
 
   return (
     <>
       {statesData.map(({ amount, percent, icon, title, color }) => (
         <div
           key={title}
-          className="col-span-12 sm:col-span-6 xxxl:col-span-3 box p-4 bg-n0 dark:bg-bg4 4xl:px-8 4xl:py-6">
+          className="col-span-12 sm:col-span-6 xxxl:col-span-3 box p-4 bg-n0 dark:bg-bg4 4xl:px-8 4xl:py-6"
+        >
           <div className="flex justify-between items-center mb-4 lg:mb-6 pb-4 lg:pb-6 bb-dashed">
             <span className="font-medium">{title}</span>
             {/* <OptionsHorizontal /> */}
@@ -101,8 +107,9 @@ const Statistics = async () => {
               <span
                 className={cn(
                   "flex items-center gap-1 whitespace-nowrap",
-                  color
-                )}>
+                  color,
+                )}
+              >
                 <i className="las la-arrow-up text-lg"></i> {percent}%
               </span>
             </div>

@@ -16,14 +16,16 @@ const Customizer = ({ customizerOpen, setCustomizerOpen }: customizerTypes) => {
       onClick={() => setCustomizerOpen(false)}
       className={cn("z-[60] duration-500", {
         "fixed inset-0 bg-n900 bg-opacity-20": customizerOpen,
-      })}>
+      })}
+    >
       <aside
         onClick={(e) => e.stopPropagation()}
         className={`w-[280px] xxxl:w-[336px] shadow-sm z-[52] ${
           customizerOpen
             ? "translate-x-0 visible"
             : "ltr:translate-x-full rtl:-translate-x-full invisible"
-        } duration-300 sidebar fixed ltr:right-0 rtl:left-0 h-full bg-n0 dark:bg-bg4 top-0`}>
+        } duration-300 sidebar fixed ltr:right-0 rtl:left-0 h-full bg-n0 dark:bg-bg4 top-0`}
+      >
         <div className="p-4 flex justify-between items-center border-b border-n30 dark:border-n500">
           <div>
             <h5 className="h5 mb-2">Theme customizer</h5>
@@ -42,8 +44,9 @@ const Customizer = ({ customizerOpen, setCustomizerOpen }: customizerTypes) => {
               className={cn(
                 "flex items-center gap-2 px-3 py-2 rounded-lg",
                 { "bg-primary text-n0": theme == "light" },
-                { "bg-transparent border border-n500": theme == "dark" }
-              )}>
+                { "bg-transparent border border-n500": theme == "dark" },
+              )}
+            >
               <i className="las la-sun"></i>
               <span>Light </span>
             </button>
@@ -52,8 +55,9 @@ const Customizer = ({ customizerOpen, setCustomizerOpen }: customizerTypes) => {
               className={cn(
                 "flex items-center gap-2 px-3 py-2 rounded-lg",
                 { "bg-primary": theme == "dark" },
-                { "bg-transparent border border-n30": theme == "light" }
-              )}>
+                { "bg-transparent border border-n30": theme == "light" },
+              )}
+            >
               <i className="las la-moon"></i>
               <span>Dark </span>
             </button>
@@ -71,8 +75,9 @@ const Customizer = ({ customizerOpen, setCustomizerOpen }: customizerTypes) => {
                 {
                   "bg-transparent border border-n30 dark:border-n500":
                     dir == "rtl",
-                }
-              )}>
+                },
+              )}
+            >
               <span>LTR</span>
             </button>
             <button
@@ -83,8 +88,9 @@ const Customizer = ({ customizerOpen, setCustomizerOpen }: customizerTypes) => {
                 {
                   "bg-transparent border border-n30 dark:border-n500":
                     dir == "ltr",
-                }
-              )}>
+                },
+              )}
+            >
               <span>RTL</span>
             </button>
           </div>
@@ -95,9 +101,10 @@ const Customizer = ({ customizerOpen, setCustomizerOpen }: customizerTypes) => {
                 onClick={() => changeLayout(singleLayout)}
                 className={cn(
                   "border border-n30 dark:border-n500 rounded-lg px-4 py-2",
-                  { "bg-primary text-n0": layout == singleLayout }
+                  { "bg-primary text-n0": layout == singleLayout },
                 )}
-                key={singleLayout}>
+                key={singleLayout}
+              >
                 {singleLayout}
               </button>
             ))}

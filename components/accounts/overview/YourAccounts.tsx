@@ -104,14 +104,16 @@ const YourAccounts = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 min-w-[300px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[300px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Title <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5 min-w-[120px] cursor-pointer">
+                className="text-start py-5 min-w-[120px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Amount <IconSelector size={18} />
                 </div>
@@ -122,7 +124,8 @@ const YourAccounts = () => {
             {tableData.map(({ title, amount, icon, time }) => (
               <tr
                 key={title}
-                className="hover:bg-primary/5 dark:hover:bg-bg3 border-b border-n40 first:border-t duration-500 dark:border-n500">
+                className="hover:bg-primary/5 dark:hover:bg-bg3 border-b border-n40 first:border-t duration-500 dark:border-n500"
+              >
                 <td className="py-2 px-6">
                   <div className="flex items-center gap-3">
                     <Image
@@ -151,7 +154,8 @@ const YourAccounts = () => {
       </div>
       <Link
         className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
-        href="#">
+        href="#"
+      >
         See More{" "}
         <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
       </Link>

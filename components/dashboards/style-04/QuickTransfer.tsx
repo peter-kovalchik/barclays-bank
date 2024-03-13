@@ -16,7 +16,8 @@ const QuickTransfer = () => {
         <div
           className={`box border border-n30 dark:border-n500 bg-primary/5 dark:bg-bg3 xl:p-3 xxl:p-4  ${
             flipped ? "order-3" : "order-1"
-          }`}>
+          }`}
+        >
           <div className="flex justify-between gap-3 bb-dashed items-center text-sm mb-4 pb-4">
             <p>Spend</p>
             <p>Balance : 10,000 USD</p>
@@ -32,13 +33,15 @@ const QuickTransfer = () => {
         </div>
         <button
           onClick={() => setFlipped((prev) => !prev)}
-          className="p-2 border order-2 border-n30 dark:border-n500 self-center -my-4 relative z-[2] rounded-lg bg-n0 dark:bg-bg4 text-primary">
+          className="p-2 border order-2 border-n30 dark:border-n500 self-center -my-4 relative z-[2] rounded-lg bg-n0 dark:bg-bg4 text-primary"
+        >
           <i className="las la-exchange-alt rotate-90"></i>
         </button>
         <div
           className={`box border border-n30 dark:border-n500 bg-primary/5 dark:bg-bg3 xl:p-3 xxl:p-4  ${
             flipped ? "order-1" : "order-3"
-          }`}>
+          }`}
+        >
           <div className="flex justify-between gap-3 bb-dashed items-center text-sm mb-4 pb-4">
             <p>Receive</p>
             <p>Balance : 10,000 USD</p>

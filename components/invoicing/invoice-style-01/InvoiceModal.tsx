@@ -41,7 +41,8 @@ const InvoiceModal = ({ open, toggleOpen }: ModalType) => {
       open={open}
       toggleOpen={toggleOpen}
       width="max-w-[1334px]"
-      height="max-sm:min-h-[1300px] min-h-[880px]">
+      height="max-sm:min-h-[1300px] min-h-[880px]"
+    >
       <div className="bb-dashed border-secondary1/20 mb-4 pb-4 lg:mb-6 lg:pb-6">
         <h4 className="h4">Invoice UI</h4>
       </div>
@@ -73,7 +74,8 @@ const InvoiceModal = ({ open, toggleOpen }: ModalType) => {
               {invoiceData.map(({ title, city, rate, total }) => (
                 <tr
                   key={title}
-                  className="border-b border-n30 dark:border-n500 first:border-t">
+                  className="border-b border-n30 dark:border-n500 first:border-t"
+                >
                   <td className="py-5 px-6">{title}</td>
                   <td className="py-5 px-6">{rate}%</td>
                   <td className="py-5 px-6">{city}</td>

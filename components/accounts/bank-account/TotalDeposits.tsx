@@ -202,7 +202,7 @@ const TotalDeposits = () => {
       (item) =>
         item.title.toLowerCase().includes(searchTerm) ||
         item.expire.toLowerCase().includes(searchTerm) ||
-        item.status.includes(searchTerm)
+        item.status.includes(searchTerm),
     );
     setTableData(result);
   };
@@ -234,42 +234,48 @@ const TotalDeposits = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 min-w-[230px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[230px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Title <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("rate")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Rate <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("balance")}
-                className="text-start py-5 min-w-[200px] cursor-pointer">
+                className="text-start py-5 min-w-[200px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Account Balance <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("interest")}
-                className="text-start py-5 min-w-[200px] cursor-pointer">
+                className="text-start py-5 min-w-[200px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Account Interest <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("expire")}
-                className="text-start py-5 min-w-[130px] cursor-pointer">
+                className="text-start py-5 min-w-[130px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Expiry Date <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 cursor-pointer min-w-[100px]">
+                className="text-start py-5 cursor-pointer min-w-[100px]"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -281,11 +287,12 @@ const TotalDeposits = () => {
             {displayedData.map(
               (
                 { balance, expire, id, status, interest, rate, title },
-                index
+                index,
               ) => (
                 <tr
                   key={id}
-                  className="hover:bg-primary/5 dark:hover:bg-bg3 border-b border-n30 dark:border-n500 first:border-t">
+                  className="hover:bg-primary/5 dark:hover:bg-bg3 border-b border-n30 dark:border-n500 first:border-t"
+                >
                   <td className="py-2 px-6">
                     <div className="flex items-center gap-3">
                       <i className="las la-wallet text-primary"></i>
@@ -322,7 +329,8 @@ const TotalDeposits = () => {
                       } ${
                         status == TransactionStatus.paused &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -338,7 +346,7 @@ const TotalDeposits = () => {
                     </div>
                   </td> */}
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

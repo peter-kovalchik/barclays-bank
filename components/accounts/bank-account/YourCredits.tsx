@@ -25,7 +25,7 @@ type Credit = {
   interest: number;
   status: TransactionStatus;
   isChecked: boolean;
-  cardInfo: string
+  cardInfo: string;
 };
 type Order = "ASC" | "DSC";
 
@@ -41,7 +41,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Cancelled,
     isChecked: false,
-    cardInfo: '**2961 - Exp: 02/28'
+    cardInfo: "**2961 - Exp: 02/28",
   },
   {
     id: 3,
@@ -63,7 +63,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Paused,
     isChecked: false,
-    cardInfo: '**7469 - Exp: 01/25'
+    cardInfo: "**7469 - Exp: 01/25",
   },
   {
     id: 4,
@@ -74,7 +74,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**6865 - Exp: 07/29'
+    cardInfo: "**6865 - Exp: 07/29",
   },
   {
     id: 5,
@@ -85,7 +85,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Paused,
     isChecked: false,
-    cardInfo: '**6471 - Exp: 08/26'
+    cardInfo: "**6471 - Exp: 08/26",
   },
   {
     id: 6,
@@ -96,7 +96,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**0510 - Exp: 11/26'
+    cardInfo: "**0510 - Exp: 11/26",
   },
   {
     id: 8,
@@ -107,7 +107,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**8206 - Exp: 07/30'
+    cardInfo: "**8206 - Exp: 07/30",
   },
   {
     id: 9,
@@ -118,7 +118,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**2212 - Exp: 12/26'
+    cardInfo: "**2212 - Exp: 12/26",
   },
   {
     id: 10,
@@ -129,7 +129,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Paused,
     isChecked: false,
-    cardInfo: '**5571 - Exp: 06/29'
+    cardInfo: "**5571 - Exp: 06/29",
   },
   {
     id: 11,
@@ -140,7 +140,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**0933 - Exp: 01/28'
+    cardInfo: "**0933 - Exp: 01/28",
   },
   {
     id: 12,
@@ -151,7 +151,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Cancelled,
     isChecked: false,
-    cardInfo: '**8020 - Exp: 10/27'
+    cardInfo: "**8020 - Exp: 10/27",
   },
   {
     id: 13,
@@ -162,7 +162,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Paused,
     isChecked: false,
-    cardInfo: '**7728 - Exp: 09/29'
+    cardInfo: "**7728 - Exp: 09/29",
   },
   {
     id: 14,
@@ -173,7 +173,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**2313 - Exp: 02/25'
+    cardInfo: "**2313 - Exp: 02/25",
   },
   {
     id: 15,
@@ -184,7 +184,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Paused,
     isChecked: false,
-    cardInfo: '**0386 - Exp: 12/26'
+    cardInfo: "**0386 - Exp: 12/26",
   },
   {
     id: 16,
@@ -195,7 +195,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 17,
@@ -206,7 +206,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Cancelled,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 18,
@@ -217,7 +217,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 19,
@@ -228,7 +228,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 20,
@@ -239,7 +239,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Paused,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 21,
@@ -250,7 +250,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Cancelled,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 22,
@@ -261,7 +261,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
   {
     id: 23,
@@ -272,7 +272,7 @@ const CreditsData: Credit[] = [
     interest: 25415,
     status: TransactionStatus.Active,
     isChecked: false,
-    cardInfo: '**4291 - Exp: 12/26'
+    cardInfo: "**4291 - Exp: 12/26",
   },
 ];
 const options = ["Recent", "Name", "Amount"];
@@ -332,7 +332,7 @@ const YourCredits = () => {
       setTableData(tempData);
     } else {
       let tempData = tableData.map((item) =>
-        item.title === name ? { ...item, isChecked: checked } : item
+        item.title === name ? { ...item, isChecked: checked } : item,
       );
       setTableData(tempData);
     }
@@ -343,7 +343,7 @@ const YourCredits = () => {
   };
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const result = CreditsData.filter((item) =>
-      item.title.toLowerCase().includes(e.target.value.toLowerCase())
+      item.title.toLowerCase().includes(e.target.value.toLowerCase()),
     );
     setTableData(result);
   };
@@ -383,35 +383,40 @@ const YourCredits = () => {
               </th> */}
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 cursor-pointer min-w-[330px]">
+                className="text-start py-5 px-6 cursor-pointer min-w-[330px]"
+              >
                 <div className="flex items-center gap-1">
-                  Title  <IconSelector size={18} />
+                  Title <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("rate")}
-                className="text-start py-5 min-w-[80px] cursor-pointer">
+                className="text-start py-5 min-w-[80px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Rate <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("balance")}
-                className="text-start py-5 min-w-[200px] cursor-pointer">
+                className="text-start py-5 min-w-[200px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Account Balance <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("interest")}
-                className="text-start py-5 min-w-[200px] cursor-pointer">
+                className="text-start py-5 min-w-[200px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Account Interest <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -423,14 +428,15 @@ const YourCredits = () => {
             {displayedData.map(
               (
                 { title, status, isChecked, balance, cardImg, interest, rate },
-                index
+                index,
               ) => (
                 <tr
                   key={title}
                   className={cn(
                     "border-b first:border-t border-n30 dark:border-n500",
-                    { "bg-primary/5 dark:bg-bg3": isChecked }
-                  )}>
+                    { "bg-primary/5 dark:bg-bg3": isChecked },
+                  )}
+                >
                   {/* <td className="text-start px-6">
                     <input
                       type="checkbox"
@@ -488,7 +494,8 @@ const YourCredits = () => {
                       } ${
                         status == TransactionStatus.Paused &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -504,7 +511,7 @@ const YourCredits = () => {
                     </div>
                   </td> */}
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

@@ -16,7 +16,8 @@ const AddCard = ({ toggleOpen, open }: ModalProps) => {
           <div className="col-span-2">
             <label
               htmlFor="card-number"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Card Number
             </label>
             <div className="bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl relative">
@@ -39,7 +40,8 @@ const AddCard = ({ toggleOpen, open }: ModalProps) => {
           <div className="col-span-2">
             <label
               htmlFor="holder"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Card Holder
             </label>
             <input
@@ -54,7 +56,8 @@ const AddCard = ({ toggleOpen, open }: ModalProps) => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="month"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Month
             </label>
             <input

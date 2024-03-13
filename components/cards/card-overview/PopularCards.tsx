@@ -63,8 +63,9 @@ const PopularCards = () => {
               key={id}
               className={cn(
                 "col-span-12 text-n0 sm:col-span-6 lg:col-span-4 4xl:col-span-3 rounded-xl p-5 relative overflow-hidden after:absolute after:rounded-full after:w-[300px] after:h-[300px] after:bg-[#FFC861] after:top-[45%] after:ltr:left-[60%] after:rtl:right-[60%]",
-                background
-              )}>
+                background,
+              )}
+            >
               <div className="mb-3 sm:mb-6 flex justify-between items-center">
                 <div>
                   <p className="text-xs mb-1">Deposits Balance</p>
@@ -103,7 +104,8 @@ const PopularCards = () => {
             <p className="font-medium mb-2">Add New Credit Card</p>
             <button
               className="text-sm text-primary"
-              onClick={() => setOpenModal(true)}>
+              onClick={() => setOpenModal(true)}
+            >
               Add Now
             </button>
           </div>

@@ -13,7 +13,7 @@ enum TransactionStatus {
   Successful = "Successful",
   Pending = "Pending",
   Cancelled = "Cancelled",
-  Frozen = "Frozen"
+  Frozen = "Frozen",
 }
 
 type Transaction = {
@@ -98,7 +98,7 @@ const PaymentAccount = () => {
       (item) =>
         item.bank.name.toLowerCase().includes(searchTerm) ||
         item.currency.long.toLowerCase().includes(searchTerm) ||
-        item.account.includes(searchTerm)
+        item.account.includes(searchTerm),
     );
     setTableData(result);
   };
@@ -127,28 +127,32 @@ const PaymentAccount = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("account")}
-                className="text-start py-5 px-6 cursor-pointer min-w-[220px]">
+                className="text-start py-5 px-6 cursor-pointer min-w-[220px]"
+              >
                 <div className="flex items-center gap-1">
                   Account Number <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("currency")}
-                className="text-start py-5 min-w-[120px] cursor-pointer">
+                className="text-start py-5 min-w-[120px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Currency <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("balance")}
-                className="text-start py-5 min-w-[180px] cursor-pointer">
+                className="text-start py-5 min-w-[180px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Account Balance <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 cursor-pointer min-w-[120px]">
+                className="text-start py-5 cursor-pointer min-w-[120px]"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -160,7 +164,7 @@ const PaymentAccount = () => {
             {displayedData.map(
               (
                 { icon, account, balance, bank, currency, expire, id, status },
-                index
+                index,
               ) => (
                 <tr key={id} className="even:bg-secondary1/5 dark:even:bg-bg3">
                   <td className="py-2 px-6">
@@ -196,12 +200,14 @@ const PaymentAccount = () => {
                         status === TransactionStatus.Successful &&
                         "bg-primary/10 dark:bg-bg3 text-primary"
                       } ${
-                        status === TransactionStatus.Cancelled || TransactionStatus.Frozen  &&
-                        "bg-secondary2/10 dark:bg-bg3 text-secondary2"
+                        status === TransactionStatus.Cancelled ||
+                        (TransactionStatus.Frozen &&
+                          "bg-secondary2/10 dark:bg-bg3 text-secondary2")
                       } ${
                         status == TransactionStatus.Pending &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -217,7 +223,7 @@ const PaymentAccount = () => {
                     </div>
                   </td> */}
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

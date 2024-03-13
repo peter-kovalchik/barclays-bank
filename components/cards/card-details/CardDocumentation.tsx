@@ -135,7 +135,7 @@ const CardDocumentation = () => {
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const result = documentations.filter((item) =>
-      item.title.toLowerCase().includes(e.target.value.toLowerCase())
+      item.title.toLowerCase().includes(e.target.value.toLowerCase()),
     );
     setTableData(result);
   };
@@ -172,7 +172,8 @@ const CardDocumentation = () => {
             {displayedData.map(({ title, type }) => (
               <tr
                 key={title}
-                className="hover:bg-secondary1/5 dark:hover:bg-bg3 duration-500 border-b border-n30 dark:border-n500">
+                className="hover:bg-secondary1/5 dark:hover:bg-bg3 duration-500 border-b border-n30 dark:border-n500"
+              >
                 <td className="p-5">{title}</td>
                 <td className="p-5">{type}</td>
                 <td className="p-5">

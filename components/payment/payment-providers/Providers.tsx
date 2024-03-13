@@ -611,21 +611,24 @@ const PaymentProviders = () => {
     <>
       <button
         onClick={() => setOpenMenu(!openMenu)}
-        className="md:hidden flex items-center gap-2 min-w-max py-2 px-3 relative z-[3] rounded-lg bg-primary text-n0">
+        className="md:hidden flex items-center gap-2 min-w-max py-2 px-3 relative z-[3] rounded-lg bg-primary text-n0"
+      >
         <i className="las la-bars"></i> <span>Menu</span>
       </button>
       <div
         onClick={() => setOpenMenu(false)}
         className={`absolute md:hidden md:invisible inset-0 z-[2] ${
           openMenu ? "block visible" : "hidden invisible"
-        }`}></div>
+        }`}
+      ></div>
       <div className="grid grid-cols-12 relative gap-4 xxl:gap-6 max-md:mt-3">
         <div
           className={`max-md:box md:bg-transparent duration-500 max-md:w-[280px] max-md:max-h-[600px] max-md:overflow-y-auto max-md:rounded-xl max-md:absolute max-md:left-0 z-[3] max-md:bg-n0 max-md:dark:bg-bg4 max-md:top-0 md:col-span-5 xl:col-span-4 max-md:min-w-[300px] ${
             openMenu
               ? "max-md:translate-x-0 max-md:visible max-md:opacity-100"
               : "max-md:-translate-x-[120%] max-md:opacity-0 max-md:invisible"
-          }`}>
+          }`}
+        >
           <div className="md:box sticky top-20">
             <div className="bb-dashed border-secondary1/20 mb-4 pb-4 lg:mb-6 lg:pb-6">
               <SearchBar
@@ -643,8 +646,9 @@ const PaymentProviders = () => {
                       {
                         "p-3 xxl:p-4 xxxl:p-6 rounded-xl border border-dashed border-primary bg-primary/5":
                           title == activeTab,
-                      }
-                    )}>
+                      },
+                    )}
+                  >
                     <div>
                       <p className="text-base xxl:text-lg font-medium">
                         {title}
@@ -660,7 +664,8 @@ const PaymentProviders = () => {
             </ul>
             <Link
               className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
-              href="#">
+              href="#"
+            >
               See More{" "}
               <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
             </Link>
@@ -677,20 +682,23 @@ const PaymentProviders = () => {
                 nodeRef={nodeRef}
                 in={activeTab == title}
                 timeout={500}
-                key={title}>
+                key={title}
+              >
                 {(state) => (
                   <div
                     ref={nodeRef}
                     style={{
                       ...defaultStyle,
                       ...transitionStyles[state as keyof TransitionStyles],
-                    }}>
+                    }}
+                  >
                     {activeTab == title && (
                       <div className="grid grid-cols-12 gap-4 xxl:gap-6">
                         {services.map(({ title, icon, price }) => (
                           <div
                             key={title}
-                            className="col-span-12 min-[430px]:col-span-6 border border-n30 hover:border-primary hover:border-dashed duration-300 py-5 dark:border-n500 dark:hover:border-primary min-[600px]:col-span-4 md:col-span-6 xxl:col-span-4 4xl:col-span-3 box p-3 xl:p-6 bg-primary/5 dark:bg-bg3 flex flex-col items-center">
+                            className="col-span-12 min-[430px]:col-span-6 border border-n30 hover:border-primary hover:border-dashed duration-300 py-5 dark:border-n500 dark:hover:border-primary min-[600px]:col-span-4 md:col-span-6 xxl:col-span-4 4xl:col-span-3 box p-3 xl:p-6 bg-primary/5 dark:bg-bg3 flex flex-col items-center"
+                          >
                             <div className="bg-n0 mb-6 dark:bg-bg4 rounded-full text-3xl w-[52px] h-[52px] flex items-center justify-center shrink-0 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.04)]">
                               {icon}
                             </div>

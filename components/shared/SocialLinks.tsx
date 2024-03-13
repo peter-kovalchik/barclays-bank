@@ -11,7 +11,8 @@ const SocialLinks = () => {
         <Link
           href="#"
           aria-label="social link"
-          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary">
+          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary"
+        >
           <Facebook size={22} />
         </Link>
       </li>
@@ -19,7 +20,8 @@ const SocialLinks = () => {
         <Link
           href="#"
           aria-label="social link"
-          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary">
+          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary"
+        >
           <Twitter size={22} />
         </Link>
       </li>
@@ -27,7 +29,8 @@ const SocialLinks = () => {
         <Link
           href="#"
           aria-label="social link"
-          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary">
+          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary"
+        >
           <Skype size={22} />
         </Link>
       </li>
@@ -35,7 +38,8 @@ const SocialLinks = () => {
         <Link
           href="#"
           aria-label="social link"
-          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary">
+          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary"
+        >
           <IconBrandInstagram size={22} />
         </Link>
       </li>
@@ -43,7 +47,8 @@ const SocialLinks = () => {
         <Link
           href="#"
           aria-label="social link"
-          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary">
+          className="p-1 md:p-1.5 xxxl:p-2 hover:bg-primary hover:text-n0 duration-300 inline-flex text-primary rounded-full border border-primary"
+        >
           <IconBrandLinkedin size={22} />
         </Link>
       </li>

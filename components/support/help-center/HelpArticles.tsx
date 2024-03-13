@@ -210,7 +210,7 @@ const HelpArticles = () => {
       (item) =>
         item.title.toLowerCase().includes(searchTerm) ||
         item.desc.toLowerCase().includes(searchTerm) ||
-        item.topic.toLowerCase().includes(searchTerm)
+        item.topic.toLowerCase().includes(searchTerm),
     );
     setArticles(result);
   };
@@ -240,7 +240,8 @@ const HelpArticles = () => {
         {displayedData.map(({ id, desc, title, topic }) => (
           <div
             key={id}
-            className="col-span-12 md:col-span-6 xxl:col-span-4 box xl:p-6 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 ">
+            className="col-span-12 md:col-span-6 xxl:col-span-4 box xl:p-6 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 "
+          >
             <p className="font-medium mb-3 text-secondary1">{topic}</p>
             <Link href="#" className="h5 mb-4 block">
               {title}

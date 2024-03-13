@@ -289,7 +289,7 @@ const TotalExchange = () => {
       (item) =>
         item.from.toLowerCase().includes(searchTerm) ||
         item.medium.toLowerCase().includes(searchTerm) ||
-        item.status.includes(searchTerm)
+        item.status.includes(searchTerm),
     );
     setTableData(result);
   };
@@ -318,21 +318,24 @@ const TotalExchange = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("from")}
-                className="text-start py-5 px-6 min-w-[180px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[180px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Currency <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("money")}
-                className="text-start py-5 min-w-[130px] cursor-pointer">
+                className="text-start py-5 min-w-[130px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Money <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("medium")}
-                className="text-start py-5 min-w-[130px] cursor-pointer">
+                className="text-start py-5 min-w-[130px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Medium <IconSelector size={18} />
                 </div>
@@ -341,7 +344,8 @@ const TotalExchange = () => {
               <th className="text-start py-5 min-w-[130px]">Time</th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 cursor-pointer">
+                className="text-start py-5 cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -354,7 +358,8 @@ const TotalExchange = () => {
               ({ id, status, from, to, date, medium, money, time }, index) => (
                 <tr
                   key={id}
-                  className="hover:bg-primary/5 dark:hover:bg-bg3 duration-500 border-b border-n30 dark:border-n500 first:border-t">
+                  className="hover:bg-primary/5 dark:hover:bg-bg3 duration-500 border-b border-n30 dark:border-n500 first:border-t"
+                >
                   <td className="py-5 px-6">
                     <div className="flex items-center gap-3">
                       <span className="font-medium">{from}</span>
@@ -379,7 +384,8 @@ const TotalExchange = () => {
                       } ${
                         status == TransactionStatus.paused &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -395,7 +401,7 @@ const TotalExchange = () => {
                     </div>
                   </td>
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

@@ -20,7 +20,8 @@ const DetailsModal = ({ open, toggleOpen }: DetailsType) => {
       open={open}
       toggleOpen={toggleOpen}
       width="max-w-[496px]"
-      height="min-h-[980px]">
+      height="min-h-[980px]"
+    >
       <div className="bb-dashed border-secondary1/20 pb-4 mb-4 lg:mb-6 lg:pb-6">
         <h4 className="h4">Transaction Details</h4>
       </div>
@@ -51,7 +52,8 @@ const DetailsModal = ({ open, toggleOpen }: DetailsType) => {
           style={{ border: 0 }}
           allowFullScreen={true}
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"></iframe>
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
       <div className="flex justify-center gap-4 flex-wrap lg:gap-6">
         <button className="flex items-center gap-2">

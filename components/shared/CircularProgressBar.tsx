@@ -37,7 +37,8 @@ const CircularProgressBar = ({
         textAnchor="middle"
         dy=".3em"
         fontSize="16"
-        fill="#5a67d8">
+        fill="#5a67d8"
+      >
         {percentage}%
       </text>
     </svg>

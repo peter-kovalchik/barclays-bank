@@ -84,7 +84,7 @@ const Navbar = () => {
     const result = demoData.filter(
       ({ title, url }) =>
         title.toLowerCase().includes(searchTerm) ||
-        url.toLowerCase().includes(searchTerm)
+        url.toLowerCase().includes(searchTerm),
     );
     setSearchResult(result);
   };
@@ -107,7 +107,7 @@ const Navbar = () => {
     };
 
     const selectedElement = document.getElementById(
-      `searchResultItem-${selectedIndex}`
+      `searchResultItem-${selectedIndex}`,
     );
     if (selectedElement) {
       selectedElement.scrollIntoView({
@@ -127,11 +127,13 @@ const Navbar = () => {
     <div
       className={`fixed top-0 w-full max-lg:bg-n0 dark:max-lg:bg-bg4 max-lg:shadow-lg z-10 ${
         scrolled && "bg-n0 dark:bg-bg3 shadow-lg"
-      }`}>
+      }`}
+    >
       <nav
         className={`container top-0 flex duration-500 justify-between items-center gap-2 py-3 md:py-4 lg:py-6 xxl:py-8 ${
           scrolled && "lg:py-4 xxl:!py-5"
-        }`}>
+        }`}
+      >
         <div className="flex items-center gap-2 sm:gap-4 xl:gap-6">
           <Link href="/" className="shrink-0">
             <Image
@@ -154,7 +156,8 @@ const Navbar = () => {
                 scrolled ? "bg-primary/5 dark:bg-bg4" : "bg-n0 "
               } ${
                 path == "/demos" && "bg-primary/5 dark:bg-n900"
-              }  flex gap-3 rounded-[30px] border lg:border-none max-md:border-n30 dark:border-n500 lg:border-transparent px-2 items-center justify-between xxl:w-[336px]`}>
+              }  flex gap-3 rounded-[30px] border lg:border-none max-md:border-n30 dark:border-n500 lg:border-transparent px-2 items-center justify-between xxl:w-[336px]`}
+            >
               <input
                 type="text"
                 placeholder="E.g. dashboard, invoice.."
@@ -169,15 +172,17 @@ const Navbar = () => {
             {searchResult.length > 0 ? (
               <div
                 ref={resultsRef}
-                className={`absolute top-[110%] left-0 max-h-[350px] overflow-y-auto right-0 p-1 rounded-lg flex flex-col bg-n0 dark:bg-bg4`}>
+                className={`absolute top-[110%] left-0 max-h-[350px] overflow-y-auto right-0 p-1 rounded-lg flex flex-col bg-n0 dark:bg-bg4`}
+              >
                 {searchResult.map(({ id, title, url }, index) => (
                   <Link
                     key={id}
                     href={url}
                     className={cn(
                       "flex flex-col gap-1 p-2 hover:bg-primary/5 dark:hover:bg-bg3 rounded-lg duration-300",
-                      { "bg-primary/5 dark:bg-bg3": index == selectedIndex }
-                    )}>
+                      { "bg-primary/5 dark:bg-bg3": index == selectedIndex },
+                    )}
+                  >
                     <p className="font-medium text-sm xl:text-base">{title}</p>
                     <span className="text-xs">{url}</span>
                   </Link>
@@ -194,7 +199,8 @@ const Navbar = () => {
             menuOpen
               ? "bg-n0 dark:bg-bg4 w-full left-0 right-0 p-4 flex text-start translate-x-0 justify-start max-lg:flex-col"
               : "max-lg:hidden max-lg:-translate-x-full"
-          }`}>
+          }`}
+        >
           <li>
             <Link href="#pages">Prebuilt Pages</Link>
           </li>

@@ -152,7 +152,7 @@ const LatestTransactions = () => {
       setTableData(tempData);
     } else {
       let tempData = tableData.map((item) =>
-        item.title === name ? { ...item, isChecked: checked } : item
+        item.title === name ? { ...item, isChecked: checked } : item,
       );
       setTableData(tempData);
     }
@@ -163,7 +163,7 @@ const LatestTransactions = () => {
   };
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const result = transactionsData.filter((item) =>
-      item.title.toLowerCase().includes(e.target.value)
+      item.title.toLowerCase().includes(e.target.value),
     );
     setTableData(result);
   };
@@ -203,7 +203,8 @@ const LatestTransactions = () => {
               </th>
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 cursor-pointer min-w-[330px]">
+                className="text-start py-5 px-6 cursor-pointer min-w-[330px]"
+              >
                 <div className="flex items-center gap-1">
                   Title <IconSelector size={18} />
                 </div>
@@ -211,21 +212,24 @@ const LatestTransactions = () => {
               <th className="text-start py-5 min-w-[120px]">Invoice</th>
               <th
                 onClick={() => sortData("medium")}
-                className="text-start py-5 min-w-[120px] cursor-pointer">
+                className="text-start py-5 min-w-[120px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Medium <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5  min-w-[120px] cursor-pointer">
+                className="text-start py-5  min-w-[120px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Transaction <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 cursor-pointer">
+                className="text-start py-5 cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -246,11 +250,12 @@ const LatestTransactions = () => {
                   status,
                   isChecked,
                 },
-                index
+                index,
               ) => (
                 <tr
                   key={title}
-                  className="even:bg-secondary1/5 dark:even:bg-bg3">
+                  className="even:bg-secondary1/5 dark:even:bg-bg3"
+                >
                   <td className="text-start px-6">
                     <input
                       type="checkbox"
@@ -289,7 +294,8 @@ const LatestTransactions = () => {
                       } ${
                         status == TransactionStatus.Pending &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -305,7 +311,7 @@ const LatestTransactions = () => {
                     </div>
                   </td>
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>
@@ -327,7 +333,8 @@ const LatestTransactions = () => {
       {tableData.length > 0 && (
         <Link
           className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
-          href="#">
+          href="#"
+        >
           See More{" "}
           <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
         </Link>

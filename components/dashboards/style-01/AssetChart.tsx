@@ -387,7 +387,7 @@ const AssetChart = () => {
           "area-datetime",
           "zoomX",
           new Date("28 Jan 2013").getTime(),
-          new Date("27 Feb 2013").getTime()
+          new Date("27 Feb 2013").getTime(),
         );
         break;
       case "six_months":
@@ -395,7 +395,7 @@ const AssetChart = () => {
           "area-datetime",
           "zoomX",
           new Date("27 Sep 2012").getTime(),
-          new Date("27 Feb 2013").getTime()
+          new Date("27 Feb 2013").getTime(),
         );
         break;
       case "one_year":
@@ -403,7 +403,7 @@ const AssetChart = () => {
           "area-datetime",
           "zoomX",
           new Date("27 Feb 2012").getTime(),
-          new Date("27 Feb 2013").getTime()
+          new Date("27 Feb 2013").getTime(),
         );
         break;
       case "ytd":
@@ -411,7 +411,7 @@ const AssetChart = () => {
           "area-datetime",
           "zoomX",
           new Date("01 Jan 2013").getTime(),
-          new Date("27 Feb 2013").getTime()
+          new Date("27 Feb 2013").getTime(),
         );
         break;
       case "all":
@@ -419,7 +419,7 @@ const AssetChart = () => {
           "area-datetime",
           "zoomX",
           new Date("23 Jan 2012").getTime(),
-          new Date("27 Feb 2013").getTime()
+          new Date("27 Feb 2013").getTime(),
         );
         break;
       default:
@@ -437,7 +437,8 @@ const AssetChart = () => {
               onClick={() => updateData(long)}
               className={`text-xs px-4 py-2 font-medium first:rounded-s-lg last:rounded-e-lg ${
                 selection == long && "bg-primary text-n0"
-              }`}>
+              }`}
+            >
               {short}
             </button>
           ))}

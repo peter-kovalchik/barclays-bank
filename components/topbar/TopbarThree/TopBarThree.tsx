@@ -24,11 +24,13 @@ const TopBarThree = ({
         sidebarIsOpen && layout == "Hovered"
           ? "w-full xl:w-[calc(100%-96px)] xl:ltr:ml-24 xl:rtl:mr-24"
           : "w-full"
-      }  md:py-4 xl:py-6 gap-3 bg-lightbg2 dark:bg-bg3 fixed flex justify-between items-center`}>
+      }  md:py-4 xl:py-6 gap-3 bg-lightbg2 dark:bg-bg3 fixed flex justify-between items-center`}
+    >
       <div className="flex grow gap-4 xxl:gap-5 items-center">
         <button
           onClick={() => setSidebar(!sidebarIsOpen)}
-          className="bg-primary text-n0 rounded-e-2xl flex items-center py-3">
+          className="bg-primary text-n0 rounded-e-2xl flex items-center py-3"
+        >
           <i className="las la-angle-left text-xl"></i>
         </button>
         <SelectLayout />

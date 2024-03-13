@@ -47,7 +47,8 @@ const SocialMedia = () => {
         {extensionsList.map(({ id, title, icon, link, connected }) => (
           <div
             key={id}
-            className="p-4 sm:p-5 md:p-6 bg-primary/5 dark:bg-bg3 flex-wrap gap-4 rounded-xl border border-n30 dark:border-n500 flex justify-between items-center">
+            className="p-4 sm:p-5 md:p-6 bg-primary/5 dark:bg-bg3 flex-wrap gap-4 rounded-xl border border-n30 dark:border-n500 flex justify-between items-center"
+          >
             <div className="flex items-center gap-4 md:gap-6">
               <div className="bg-n0 dark:bg-bg4 rounded-full text-primary py-2 px-3 text-3xl">
                 {icon}

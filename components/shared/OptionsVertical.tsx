@@ -24,12 +24,14 @@ const OptionsVertical = ({ fromBottom }: { fromBottom?: boolean }) => {
       <ul
         className={`${open ? "block" : "hidden"} absolute ${
           fromBottom ? "bottom-0" : "top-0"
-        } ltr:right-5 rtl:left-5 z-30  min-w-[122px] shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] p-1.5 rounded-md bg-n0 dark:bg-bg4`}>
+        } ltr:right-5 rtl:left-5 z-30  min-w-[122px] shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] p-1.5 rounded-md bg-n0 dark:bg-bg4`}
+      >
         {options.map(({ title, url }) => (
           <li key={title}>
             <Link
               href={url}
-              className="py-1.5 hover:bg-primary/5 dark:hover:bg-bg3 text-sm rounded-md duration-300 block px-3">
+              className="py-1.5 hover:bg-primary/5 dark:hover:bg-bg3 text-sm rounded-md duration-300 block px-3"
+            >
               {title}
             </Link>
           </li>

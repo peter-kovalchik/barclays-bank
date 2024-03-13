@@ -93,14 +93,16 @@ const YourReceipt = () => {
             <tr className="bg-primary/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 min-w-[230px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[230px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Title <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5 min-w-[130px] cursor-pointer">
+                className="text-start py-5 min-w-[130px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Transaction <IconSelector size={18} />
                 </div>
@@ -137,7 +139,8 @@ const YourReceipt = () => {
       </div>
       <Link
         className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
-        href="#">
+        href="#"
+      >
         See More{" "}
         <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
       </Link>

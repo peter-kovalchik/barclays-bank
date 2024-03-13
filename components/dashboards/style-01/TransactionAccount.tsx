@@ -110,7 +110,8 @@ const TransactionAccount = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 cursor-pointer min-w-[280px]">
+                className="text-start py-5 px-6 cursor-pointer min-w-[280px]"
+              >
                 <div className="flex items-center gap-1">
                   Title
                   <IconSelector size={18} />
@@ -118,7 +119,8 @@ const TransactionAccount = () => {
               </th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5 px-6 w-[20%] cursor-pointer">
+                className="text-start py-5 px-6 w-[20%] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Amount
                   <IconSelector size={18} />
@@ -157,7 +159,8 @@ const TransactionAccount = () => {
       </div>
       <Link
         className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
-        href="#">
+        href="#"
+      >
         See More{" "}
         <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
       </Link>

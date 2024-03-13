@@ -23,7 +23,8 @@ const InputPassword = ({
       />
       <span
         onClick={() => setShowPass(!showPass)}
-        className="absolute ltr:right-5 rtl:left-5 top-1/2 -translate-y-1/2 cursor-pointer">
+        className="absolute ltr:right-5 rtl:left-5 top-1/2 -translate-y-1/2 cursor-pointer"
+      >
         {showPass ? <IconEye /> : <IconEyeOff />}
       </span>
     </div>

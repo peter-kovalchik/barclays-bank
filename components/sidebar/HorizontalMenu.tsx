@@ -19,25 +19,29 @@ const HorizontalMenu = () => {
             return (
               <li
                 key={id}
-                className="group relative cursor-pointer px-2 xxxl:px-3 py-2.5">
+                className="group relative cursor-pointer px-2 xxxl:px-3 py-2.5"
+              >
                 <span
                   className={`flex gap-1 items-center duration-300 hover:text-primary ${
                     isActive && "text-primary"
-                  }`}>
+                  }`}
+                >
                   <span className={`font-medium`}>{name}</span>
                   {submenus && <i className="las la-angle-down text-base"></i>}
                 </span>
 
                 {submenus && (
                   <ul
-                    className={`group-hover:event-unset pointer-events-none invisible absolute rtl:right-0 ltr:left-0 top-[120%] min-w-[200px] bg-n7 p-3 text-n2 opacity-0 duration-300 group-hover:visible group-hover:top-full group-hover:opacity-100 lg:px-5 bg-n0 dark:bg-bg3 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md`}>
+                    className={`group-hover:event-unset pointer-events-none invisible absolute rtl:right-0 ltr:left-0 top-[120%] min-w-[200px] bg-n7 p-3 text-n2 opacity-0 duration-300 group-hover:visible group-hover:top-full group-hover:opacity-100 lg:px-5 bg-n0 dark:bg-bg3 shadow-[rgba(99,99,99,0.2)_0px_2px_8px_0px] rounded-md`}
+                  >
                     {submenus.map(({ title, url }) => (
                       <li key={title} className="min-w-[180px]">
                         <Link
                           className={`relative inline-block py-2 hover:text-primary duration-200 after:absolute after:bottom-0 after:right-0 after:h-0.5 after:w-0 after:bg-secondary after:transition-all after:duration-300 hover:after:left-0 hover:after:right-auto hover:after:w-full ${
                             path == url && "text-primary"
                           }`}
-                          href={url}>
+                          href={url}
+                        >
                           {title}
                         </Link>
                       </li>
@@ -59,11 +63,13 @@ const HorizontalMenu = () => {
               return (
                 <li
                   key={id}
-                  className="min-w-[200px] w-full relative group/submenu">
+                  className="min-w-[200px] w-full relative group/submenu"
+                >
                   <button
                     className={`flex w-full justify-between items-center px-4 py-2.5 hover:text-primary duration-300 ${
                       isActive && "text-primary"
-                    }`}>
+                    }`}
+                  >
                     {name}{" "}
                     {submenus && (
                       <i className="las la-angle-right text-base"></i>
@@ -76,7 +82,8 @@ const HorizontalMenu = () => {
                           href={url}
                           className={`px-4 py-2.5 inline-block hover:text-primary duration-300 ${
                             path == url && "text-primary"
-                          }`}>
+                          }`}
+                        >
                           {title}
                         </Link>
                       </li>

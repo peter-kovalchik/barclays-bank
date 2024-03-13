@@ -43,7 +43,8 @@ const LatestTransactions = () => {
             cellPadding={0}
             cellSpacing={0}
             style={{ borderSpacing: "0 12px" }}
-            className="w-full whitespace-nowrap p-0 border-none border-separate">
+            className="w-full whitespace-nowrap p-0 border-none border-separate"
+          >
             <tbody>
               {displayedData.map(
                 (
@@ -58,7 +59,7 @@ const LatestTransactions = () => {
                     time,
                     title,
                   },
-                  index
+                  index,
                 ) => (
                   <tr key={id}>
                     <td>
@@ -110,7 +111,8 @@ const LatestTransactions = () => {
                           }  ${
                             status == TransactionStatus.Pending &&
                             "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                          }`}>
+                          }`}
+                        >
                           {status}
                         </span>
                       </div>
@@ -128,7 +130,7 @@ const LatestTransactions = () => {
                       </div>
                     </td>
                   </tr>
-                )
+                ),
               )}
             </tbody>
           </table>

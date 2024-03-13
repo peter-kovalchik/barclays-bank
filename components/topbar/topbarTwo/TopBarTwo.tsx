@@ -23,7 +23,8 @@ const TopBarTwo = ({
         sidebarIsOpen && layout == "Two Column"
           ? "w-full xxxl:w-[calc(100%-360px)] xl:w-[calc(100%-280px)] xxxl:ltr:ml-[360px] xl:ltr:ml-[280px] xxxl:rtl:mr-[360px] xl:rtl:mr-[280px]"
           : "w-full"
-      }   md:py-4 xxxl:py-6 gap-3 bg-n0 dark:bg-bg4 fixed flex justify-between items-center`}>
+      }   md:py-4 xxxl:py-6 gap-3 bg-n0 dark:bg-bg4 fixed flex justify-between items-center`}
+    >
       <div className="flex whitespace-nowrap gap-4 xxl:gap-6 items-center">
         <button onClick={() => setSidebar(!sidebarIsOpen)}>
           <i className="las la-bars text-2xl"></i>

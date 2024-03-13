@@ -15,7 +15,7 @@ const ProgressBar = ({ progressData }: { progressData: progressTypes[] }) => {
   const progress = useRef<HTMLUListElement | null>(null);
   useEffect(() => {
     const progressBars = Array.from(
-      document.getElementsByClassName("bar") as HTMLCollectionOf<HTMLElement>
+      document.getElementsByClassName("bar") as HTMLCollectionOf<HTMLElement>,
     );
     const observer = new IntersectionObserver(function (items) {
       items.forEach(function (item) {
@@ -48,7 +48,8 @@ const ProgressBar = ({ progressData }: { progressData: progressTypes[] }) => {
             <div
               className={` rounded-s-full ${width} ${bg} ${
                 isInView && "progress-grow"
-              } h-2`}></div>
+              } h-2`}
+            ></div>
           </div>
         </li>
       ))}

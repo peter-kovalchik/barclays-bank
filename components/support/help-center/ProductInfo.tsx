@@ -86,10 +86,12 @@ const ProductInfo = () => {
         {productInfoData.map(({ id, desc, icon, title }) => (
           <div
             key={id}
-            className="col-span-12 md:col-span-6 xxl:col-span-4 box xl:p-6 gap-3 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 flex justify-between items-center">
+            className="col-span-12 md:col-span-6 xxl:col-span-4 box xl:p-6 gap-3 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 flex justify-between items-center"
+          >
             <Link
               href="#"
-              className="flex gap-3 sm:gap-4 xxl:gap-6 items-center">
+              className="flex gap-3 sm:gap-4 xxl:gap-6 items-center"
+            >
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-[60px] md:h-[60px] shrink-0 flex items-center justify-center bg-n0 dark:bg-bg4 text-primary rounded-full shadow-[0px_6px_40px_0px_rgba(0,0,0,0.02)]">
                 {icon}
               </div>

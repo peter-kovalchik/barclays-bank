@@ -287,7 +287,7 @@ const MarketOverview = () => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value.toLowerCase();
     const result = tradingData.filter((item) =>
-      item.title.toLowerCase().includes(searchTerm)
+      item.title.toLowerCase().includes(searchTerm),
     );
     setTableData(result);
   };
@@ -316,42 +316,48 @@ const MarketOverview = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 min-w-[200px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[200px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Titile <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Amount <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("charge")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Charge <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("process")}
-                className="text-start py-5 min-w-[150px] cursor-pointer">
+                className="text-start py-5 min-w-[150px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Process <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("change")}
-                className="text-start py-5 min-w-[100px] cursor-pointer">
+                className="text-start py-5 min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Change <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 min-w-[130px] cursor-pointer">
+                className="text-start py-5 min-w-[130px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -373,7 +379,7 @@ const MarketOverview = () => {
                   title,
                   process,
                 },
-                index
+                index,
               ) => (
                 <tr key={id} className="even:bg-secondary1/5 dark:even:bg-bg3">
                   <td className="py-4 px-6">
@@ -405,7 +411,8 @@ const MarketOverview = () => {
                       <span className="block h-1 w-20 rounded-sm bg-primary/10">
                         <span
                           style={{ width: `${process}%` }}
-                          className="block h-1 rounded-sm bg-primary"></span>
+                          className="block h-1 rounded-sm bg-primary"
+                        ></span>
                       </span>
                     </span>
                   </td>
@@ -427,7 +434,8 @@ const MarketOverview = () => {
                       } ${
                         status == TradingStatus.Pending &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -443,7 +451,7 @@ const MarketOverview = () => {
                     </div>
                   </td>
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

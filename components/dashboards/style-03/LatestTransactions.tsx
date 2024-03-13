@@ -107,21 +107,24 @@ const LatestTransactions = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 min-w-[320px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[320px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Title <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("medium")}
-                className="text-start py-5 w-[20%] min-w-[100px] cursor-pointer">
+                className="text-start py-5 w-[20%] min-w-[100px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Medium <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5 w-[20%] pr-5 cursor-pointer">
+                className="text-start py-5 w-[20%] pr-5 cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Amount <IconSelector size={18} />
                 </div>

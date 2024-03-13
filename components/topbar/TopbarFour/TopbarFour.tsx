@@ -15,7 +15,8 @@ const TopbarFour = () => {
   return (
     <nav className="bg-[#F7F7FE] dark:bg-bg3 shadow-md w-full mx-auto fixed z-40">
       <div
-        className={`px-3 py-3 duration-300 navbar-top z-30 max-w-[1850px] w-full mx-auto md:py-4 xl:py-6 gap-3 flex justify-between items-center`}>
+        className={`px-3 py-3 duration-300 navbar-top z-30 max-w-[1850px] w-full mx-auto md:py-4 xl:py-6 gap-3 flex justify-between items-center`}
+      >
         <div className="flex items-center gap-4 xxl:gap-6">
           <div className="flex justify-between items-center">
             <Link href="/">

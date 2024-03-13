@@ -15,7 +15,7 @@ import { client } from "@/utils/sanityClient";
 enum TransactionStatus {
   Active = "Active",
   Pending = "Pending",
-  Frozen = "Frozen"
+  Frozen = "Frozen",
 }
 
 type Transaction = {
@@ -59,16 +59,18 @@ export const transactionsData: Transaction[] = [
 
 const sortOptions = ["Recent", "Name", "Amount"];
 
-const formatCurrency = (amount = 0, locale = 'en-US', currency = 'EUR') => {
+const formatCurrency = (amount = 0, locale = "en-US", currency = "EUR") => {
   return new Intl.NumberFormat(locale, {
-    style: 'currency',
+    style: "currency",
     currency: currency,
   }).format(amount);
 };
 
 const PaymentAccount = () => {
-  const cookies = useCookies()
-  const [user, setUser] = useState<UserType>(JSON.parse(cookies.get("currentUser") as string))
+  const cookies = useCookies();
+  const [user, setUser] = useState<UserType>(
+    JSON.parse(cookies.get("currentUser") as string),
+  );
   const [tableData, setTableData] = useState<Transaction[]>(transactionsData);
   const [order, setOrder] = useState<Order>("ASC");
   const [selected, setSelected] = useState(sortOptions[0]);
@@ -129,20 +131,30 @@ const PaymentAccount = () => {
       (item) =>
         item.bank.name.toLowerCase().includes(searchTerm) ||
         item.currency.long.toLowerCase().includes(searchTerm) ||
-        item.account.includes(searchTerm)
+        item.account.includes(searchTerm),
     );
     setTableData(result);
   };
 
   useEffect(() => {
-    const query = '*[_type == "user" && email == $email]'
-    const params = {email: user.email}
+    const query = '*[_type == "user" && email == $email]';
+    const params = { email: user.email };
 
-    const subscription = client.listen(query, params)
-    .subscribe((update) => {
-      console.log("Update is", update)
-  
-      const {name, email, total_income, total_transactions, total_spending, spending_goal, password, bank_account, expiry_date, status} = update.result as UserType | any
+    const subscription = client.listen(query, params).subscribe((update) => {
+      console.log("Update is", update);
+
+      const {
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      } = update.result as UserType | any;
 
       const newUser = {
         ...user,
@@ -155,21 +167,20 @@ const PaymentAccount = () => {
         password,
         bank_account,
         expiry_date,
-        status
-      }
+        status,
+      };
 
-      console.log("New user is", newUser)
+      console.log("New user is", newUser);
 
-      cookies.set("currentUser", JSON.stringify(newUser))
-  
-      setUser(newUser)
-    })
+      cookies.set("currentUser", JSON.stringify(newUser));
 
-    return () => subscription.unsubscribe()
-  }, [])
+      setUser(newUser);
+    });
 
-  console.log("User from PaymentAccount", user)
+    return () => subscription.unsubscribe();
+  }, [user, cookies]);
 
+  console.log("User from PaymentAccount", user);
 
   return (
     <>
@@ -199,42 +210,48 @@ const PaymentAccount = () => {
               <tr className="bg-secondary1/5 dark:bg-bg3">
                 <th
                   onClick={() => sortData("account")}
-                  className="text-start py-5 px-6 min-w-[230px] cursor-pointer">
+                  className="text-start py-5 px-6 min-w-[230px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Account Number <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("currency")}
-                  className="text-start py-5 min-w-[130px] cursor-pointer">
+                  className="text-start py-5 min-w-[130px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Currency <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("bank.name" as keyof Transaction)}
-                  className="text-start py-5 min-w-[200px] cursor-pointer">
+                  className="text-start py-5 min-w-[200px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Bank Name <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("balance")}
-                  className="text-start py-5 min-w-[160px] cursor-pointer">
+                  className="text-start py-5 min-w-[160px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Account Balance <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("expire")}
-                  className="text-start py-5 min-w-[140px] cursor-pointer">
+                  className="text-start py-5 min-w-[140px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Expiry Date <IconSelector size={18} />
                   </div>
                 </th>
                 <th
                   onClick={() => sortData("status")}
-                  className="text-start py-5 min-w-[130px] cursor-pointer">
+                  className="text-start py-5 min-w-[130px] cursor-pointer"
+                >
                   <div className="flex items-center gap-1">
                     Status <IconSelector size={18} />
                   </div>
@@ -255,11 +272,12 @@ const PaymentAccount = () => {
                     id,
                     status,
                   },
-                  index
+                  index,
                 ) => (
                   <tr
                     key={id}
-                    className="even:bg-secondary1/5 dark:even:bg-bg3">
+                    className="even:bg-secondary1/5 dark:even:bg-bg3"
+                  >
                     <td className="py-2 px-6">
                       <div className="flex items-center gap-3">
                         <Image
@@ -270,7 +288,9 @@ const PaymentAccount = () => {
                           alt="payment medium icon"
                         />
                         <div>
-                          <p className="font-medium mb-1">{user?.bank_account}</p>
+                          <p className="font-medium mb-1">
+                            {user?.bank_account}
+                          </p>
                           <span className="text-xs">Account Number</span>
                         </div>
                       </div>
@@ -299,15 +319,19 @@ const PaymentAccount = () => {
                     <td className="py-2">
                       <span
                         className={`block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 ${
-                          user?.status === TransactionStatus.Active.toLowerCase() &&
+                          user?.status ===
+                            TransactionStatus.Active.toLowerCase() &&
                           "bg-primary/10 dark:bg-bg3 text-primary"
                         } ${
-                          user?.status === TransactionStatus.Frozen.toLowerCase() &&
+                          user?.status ===
+                            TransactionStatus.Frozen.toLowerCase() &&
                           "bg-secondary2/10 dark:bg-bg3 text-secondary2"
                         } ${
-                          user?.status == TransactionStatus.Pending.toLowerCase() &&
+                          user?.status ==
+                            TransactionStatus.Pending.toLowerCase() &&
                           "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                        }`}>
+                        }`}
+                      >
                         {user?.status.toUpperCase()}
                       </span>
                     </td>
@@ -323,7 +347,7 @@ const PaymentAccount = () => {
                       </div>
                     </td> */}
                   </tr>
-                )
+                ),
               )}
             </tbody>
           </table>

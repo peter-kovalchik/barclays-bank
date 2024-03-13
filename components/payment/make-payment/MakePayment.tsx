@@ -46,31 +46,16 @@ const MakePayment = () => {
             id="card_number"
             required
           />
-           <div className="flex gap-2 absolute right-5 top-[70%]">
-          <Image
-              src="/images/visa.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
-          <Image
+          <div className="flex gap-2 absolute right-5 top-[70%]">
+            <Image src="/images/visa.png" width={20} height={20} alt="img" />
+            <Image
               src="/images/mastercard.png"
               width={20}
               height={20}
               alt="img"
             />
-             <Image
-              src="/images/am-ex.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
-             <Image
-              src="/images/jcb.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
+            <Image src="/images/am-ex.png" width={20} height={20} alt="img" />
+            <Image src="/images/jcb.png" width={20} height={20} alt="img" />
           </div>
         </div>
         <div className="col-span-2 md:col-span-1">
@@ -88,7 +73,8 @@ const MakePayment = () => {
         <div className="col-span-2 md:col-span-1">
           <label
             htmlFor="account"
-            className="mb-4 md:text-lg font-medium block">
+            className="mb-4 md:text-lg font-medium block"
+          >
             Enter Account Number (IBAN code)
           </label>
           <input
@@ -102,7 +88,8 @@ const MakePayment = () => {
         <div className="col-span-2 md:col-span-1">
           <label
             htmlFor="currency"
-            className="mb-4 md:text-lg font-medium block">
+            className="mb-4 md:text-lg font-medium block"
+          >
             Currency
           </label>
           <Dropdown
@@ -146,7 +133,8 @@ const MakePayment = () => {
             />
             <i
               className="las la-calendar absolute ltr:right-4 rtl:left-4 top-1/2 -translate-y-1/2 cursor-pointer"
-              onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}></i>
+              onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
+            ></i>
           </div>
         </div>
 

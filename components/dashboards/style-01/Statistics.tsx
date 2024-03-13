@@ -34,7 +34,8 @@ const Statistics = () => {
       {statesData.map(({ amount, percent, series, title }) => (
         <div
           key={title}
-          className="col-span-12 min-[650px]:col-span-6 xxxl:col-span-3 box bg-n0 dark:bg-bg4">
+          className="col-span-12 min-[650px]:col-span-6 xxxl:col-span-3 box bg-n0 dark:bg-bg4"
+        >
           <div className="flex justify-between items-center mb-4 lg:mb-6 pb-4 lg:pb-6 bb-dashed">
             <span className="font-medium">{title}</span>
             <OptionsHorizontal />

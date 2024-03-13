@@ -26,8 +26,9 @@ const Dropdown = ({
         onClick={toggleOpen}
         className={cn(
           "border select-none cursor-pointer bg-primary/5 dark:bg-bg3 border-n30 text-sm md:text-base dark:border-n500 flex gap-2 justify-between items-center rounded-xl px-3 py-1.5 sm:px-4 sm:py-2",
-          btnClass
-        )}>
+          btnClass,
+        )}
+      >
         <div className="flex items-center gap-2 text-sm">
           {img}
           {selected}{" "}
@@ -42,8 +43,9 @@ const Dropdown = ({
           "absolute flex-col z-20 top-full invisible duration-300 origin-top min-w-max shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] opacity-0 max-h-40 overflow-y-auto right-0  bg-n0 dark:bg-bg4 p-1 rounded-md ",
           { "flex visible opacity-100 scale-100": open },
           { " invisible opacity-0 scale-0": !open },
-          contentClass
-        )}>
+          contentClass,
+        )}
+      >
         {items.map((item) => (
           <li
             onClick={() => {
@@ -53,7 +55,8 @@ const Dropdown = ({
             key={item}
             className={`px-4 py-2 cursor-pointer text-sm rounded-md duration-300 ${
               selected == item && "bg-primary/5 "
-            }`}>
+            }`}
+          >
             {item}
           </li>
         ))}

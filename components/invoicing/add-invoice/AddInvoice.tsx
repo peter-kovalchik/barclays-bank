@@ -32,7 +32,8 @@ const AddInvoice = () => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="template"
-              className="mb-4 md:text-lg font-medium block">
+              className="mb-4 md:text-lg font-medium block"
+            >
               Template
             </label>
             <Dropdown
@@ -47,7 +48,8 @@ const AddInvoice = () => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="category"
-              className="mb-4 md:text-lg font-medium block">
+              className="mb-4 md:text-lg font-medium block"
+            >
               Category
             </label>
             <Dropdown
@@ -71,7 +73,8 @@ const AddInvoice = () => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="invoice"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Invoice Number
             </label>
             <input
@@ -103,7 +106,8 @@ const AddInvoice = () => {
               />
               <i
                 className="las la-calendar absolute ltr:right-4 rtl:left-4 top-1/2 -translate-y-1/2 cursor-pointer"
-                onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}></i>
+                onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
+              ></i>
             </div>
           </div>
 
@@ -122,7 +126,8 @@ const AddInvoice = () => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="address"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Enter Address
             </label>
             <input
@@ -136,7 +141,8 @@ const AddInvoice = () => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="email"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Contact Email
             </label>
             <input
@@ -150,7 +156,8 @@ const AddInvoice = () => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="number"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Contact Number
             </label>
             <input
@@ -173,7 +180,8 @@ const AddInvoice = () => {
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="money"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Enter Money
             </label>
             <input
@@ -206,7 +214,8 @@ const AddInvoice = () => {
               placeholder="Enter Description..."
               rows={5}
               id="desc"
-              required></textarea>
+              required
+            ></textarea>
           </div>
         </div>
 

@@ -12,8 +12,8 @@ const OpenAccountForm = ({
   toggleOpen: () => void;
   open: boolean;
 }) => {
-  const cookies = useCookies()
-  const user = JSON.parse(cookies.get("currentUser") as string)
+  const cookies = useCookies();
+  const user = JSON.parse(cookies.get("currentUser") as string);
   const [cardData, setCardData] = useState({
     card_holder_name: "",
     card_number: "",
@@ -23,24 +23,24 @@ const OpenAccountForm = ({
     billing_state: "",
     billing_city: "",
     billing_address: "",
-    postal_code: ""
-  })
+    postal_code: "",
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCardData(prev => ({
+    setCardData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    
-    try {
-      console.log("user id is", user)
-      let usr: any = await client.getDocument(`${user._id}`)
+    e.preventDefault();
 
-      console.log("USR is", usr)
+    try {
+      console.log("user id is", user);
+      let usr: any = await client.getDocument(`${user._id}`);
+
+      console.log("USR is", usr);
 
       const creditCardDetails = {
         card_number: cardData.card_number,
@@ -51,21 +51,21 @@ const OpenAccountForm = ({
         billing_state: cardData.billing_state,
         billing_city: cardData.billing_city,
         address: cardData.billing_address,
-        postal_code: cardData.postal_code
-      }
-      
-      usr.credit_card = {...usr?.credit_card, ...creditCardDetails}
+        postal_code: cardData.postal_code,
+      };
 
-      const response = await client.createOrReplace(usr)
+      usr.credit_card = { ...usr?.credit_card, ...creditCardDetails };
 
-      console.log("Response from submit is", response)
+      const response = await client.createOrReplace(usr);
+
+      console.log("Response from submit is", response);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
-  console.log("Card data", cardData)
-  console.log("user is", user)
+  console.log("Card data", cardData);
+  console.log("user is", user);
 
   return (
     <Modal open={open} toggleOpen={toggleOpen} height="min-h-[1200px]">
@@ -92,70 +92,62 @@ const OpenAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="number"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Card Information
             </label>
             <div className="relative">
-            <input
-              onChange={handleChange}
-              name="card_number"
-              value={cardData?.card_number}
-              type="number"
-              className="w-full  bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-t-3xl px-6 py-2.5 md:py-3"
-              placeholder="1234 1234 1234 1234"
-              id="number"
-              required
-            />
-             <div className="flex gap-2 absolute right-5 top-[20%]">
-          <Image
-              src="/images/visa.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
-          <Image
-              src="/images/mastercard.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
-             <Image
-              src="/images/am-ex.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
-             <Image
-              src="/images/jcb.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
-             </div>
-             <div className="flex w-full bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-b-3xl px-6 py-2.5 md:py-3">
-              <input  
+              <input
                 onChange={handleChange}
-                name="expiration_date"
-                value={cardData?.expiration_date}
-                className="w-[100%] bg-transparent border-r-2" 
-                type="text" 
-                placeholder="MM/YY" />
-              <input 
-                 onChange={handleChange}
-                 name="cvc"
-                 value={cardData?.cvc}
-                className="w-[100%] bg-transparent pl-[10px]" 
-                type="text" 
-                placeholder="CVC" />
-              <Image
-              src="/images/cvc.png"
-              width={20}
-              height={20}
-              alt="img"
-            />
-             </div>
+                name="card_number"
+                value={cardData?.card_number}
+                type="number"
+                className="w-full  bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-t-3xl px-6 py-2.5 md:py-3"
+                placeholder="1234 1234 1234 1234"
+                id="number"
+                required
+              />
+              <div className="flex gap-2 absolute right-5 top-[20%]">
+                <Image
+                  src="/images/visa.png"
+                  width={20}
+                  height={20}
+                  alt="img"
+                />
+                <Image
+                  src="/images/mastercard.png"
+                  width={20}
+                  height={20}
+                  alt="img"
+                />
+                <Image
+                  src="/images/am-ex.png"
+                  width={20}
+                  height={20}
+                  alt="img"
+                />
+                <Image src="/images/jcb.png" width={20} height={20} alt="img" />
+              </div>
+              <div className="flex w-full bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-b-3xl px-6 py-2.5 md:py-3">
+                <input
+                  onChange={handleChange}
+                  name="expiration_date"
+                  value={cardData?.expiration_date}
+                  className="w-[100%] bg-transparent border-r-2"
+                  type="text"
+                  placeholder="MM/YY"
+                />
+                <input
+                  onChange={handleChange}
+                  name="cvc"
+                  value={cardData?.cvc}
+                  className="w-[100%] bg-transparent pl-[10px]"
+                  type="text"
+                  placeholder="CVC"
+                />
+                <Image src="/images/cvc.png" width={20} height={20} alt="img" />
+              </div>
             </div>
-           
           </div>
           <div className="flex col-span-2 justify-between items-center my-4 pb-4 bb-dashed lg:mb-6 lg:pb-6">
             <h4 className="h4">Billing Address</h4>
@@ -163,13 +155,14 @@ const OpenAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="amount"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Country
             </label>
             <input
-               onChange={handleChange}
-               name="billing_country"
-               value={cardData?.billing_country}
+              onChange={handleChange}
+              name="billing_country"
+              value={cardData?.billing_country}
               className="w-full  bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-6 py-2.5 md:py-3"
               placeholder="Enter country"
               id="amount"
@@ -179,7 +172,8 @@ const OpenAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="amount"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               State/Province
             </label>
             <input
@@ -195,7 +189,8 @@ const OpenAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="amount"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               City
             </label>
             <input
@@ -211,13 +206,14 @@ const OpenAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="amount"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Address
             </label>
             <input
-            onChange={handleChange}
-            name="billing_address"
-            value={cardData?.billing_address}
+              onChange={handleChange}
+              name="billing_address"
+              value={cardData?.billing_address}
               className="w-full  bg-secondary1/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-6 py-2.5 md:py-3"
               placeholder="Enter address"
               id="amount"
@@ -227,7 +223,8 @@ const OpenAccountForm = ({
           <div className="col-span-2">
             <label
               htmlFor="amount"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Postal Code
             </label>
             <input

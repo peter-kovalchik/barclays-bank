@@ -41,7 +41,8 @@ const AddDepositForm = ({
           <div className="col-span-2">
             <label
               htmlFor="number"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Account Number
             </label>
             <input
@@ -55,7 +56,8 @@ const AddDepositForm = ({
           <div className="col-span-2">
             <label
               htmlFor="currency"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Select Currency
             </label>
             <Dropdown
@@ -81,7 +83,8 @@ const AddDepositForm = ({
           <div className="col-span-2 md:col-span-1">
             <label
               htmlFor="expire"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Expiry Date
             </label>
             <input
@@ -95,7 +98,8 @@ const AddDepositForm = ({
           <div className="col-span-2">
             <label
               htmlFor="balance"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Account Balance
             </label>
             <input
@@ -109,7 +113,8 @@ const AddDepositForm = ({
           <div className="col-span-2">
             <label
               htmlFor="interest"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Account Interest
             </label>
             <input
@@ -123,7 +128,8 @@ const AddDepositForm = ({
           <div className="col-span-2">
             <label
               htmlFor="status"
-              className="md:text-lg font-medium block mb-4">
+              className="md:text-lg font-medium block mb-4"
+            >
               Status
             </label>
             <Dropdown

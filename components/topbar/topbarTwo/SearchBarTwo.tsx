@@ -2,7 +2,8 @@ const SearchBarTwo = () => {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="bg-primary/5 dark:bg-bg3 hidden border border-n30 dark:border-n500 lg:flex gap-3 rounded-[30px]  focus-within:border-primary px-2 items-center justify-between max-w-[319px] w-full">
+      className="bg-primary/5 dark:bg-bg3 hidden border border-n30 dark:border-n500 lg:flex gap-3 rounded-[30px]  focus-within:border-primary px-2 items-center justify-between max-w-[319px] w-full"
+    >
       <input
         type="text"
         placeholder="Search"

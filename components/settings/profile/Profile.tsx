@@ -39,7 +39,8 @@ const Profile = () => {
             <div className="col-span-2 md:col-span-1">
               <label
                 htmlFor="fname"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 First Name
               </label>
               <input
@@ -54,7 +55,8 @@ const Profile = () => {
             <div className="col-span-2 md:col-span-1">
               <label
                 htmlFor="lname"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Last Name
               </label>
               <input
@@ -69,7 +71,8 @@ const Profile = () => {
             <div className="col-span-2">
               <label
                 htmlFor="email"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Email
               </label>
               <input
@@ -84,7 +87,8 @@ const Profile = () => {
             <div className="col-span-2">
               <label
                 htmlFor="phone"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Phone (Optional)
               </label>
               <input
@@ -99,13 +103,15 @@ const Profile = () => {
             <div className="col-span-2">
               <label
                 htmlFor="phone"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Gender :
               </label>
               <div className="flex gap-5">
                 <label
                   htmlFor="male"
-                  className="flex items-center gap-2 cursor-pointer">
+                  className="flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="radio"
                     id="male"
@@ -117,7 +123,8 @@ const Profile = () => {
                 </label>
                 <label
                   htmlFor="female"
-                  className="flex items-center gap-2 cursor-pointer">
+                  className="flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="radio"
                     id="female"
@@ -128,7 +135,8 @@ const Profile = () => {
                 </label>
                 <label
                   htmlFor="other"
-                  className="flex items-center gap-2 cursor-pointer">
+                  className="flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="radio"
                     id="other"
@@ -143,7 +151,8 @@ const Profile = () => {
             <div className="col-span-2">
               <label
                 htmlFor="tagline"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Tagline :
               </label>
               <QuillEditor />
@@ -169,7 +178,8 @@ const Profile = () => {
             <div className="col-span-2">
               <label
                 htmlFor="location"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Location
               </label>
               <Dropdown
@@ -183,7 +193,8 @@ const Profile = () => {
             <div className="col-span-2 md:col-span-1">
               <label
                 htmlFor="address1"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Address 1
               </label>
               <input
@@ -198,7 +209,8 @@ const Profile = () => {
             <div className="col-span-2 md:col-span-1">
               <label
                 htmlFor="address2"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Address 2 (Optional)
               </label>
               <input
@@ -213,7 +225,8 @@ const Profile = () => {
             <div className="col-span-2">
               <label
                 htmlFor="zip"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Zip Code
               </label>
               <input
@@ -238,7 +251,8 @@ const Profile = () => {
             <div className="col-span-2">
               <label
                 htmlFor="privacy"
-                className="md:text-lg font-medium block mb-4">
+                className="md:text-lg font-medium block mb-4"
+              >
                 Who can see your profile photo?
               </label>
               <Dropdown

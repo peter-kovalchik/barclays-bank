@@ -357,7 +357,7 @@ const RecentInvoice = () => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value.toLowerCase();
     const result = invoiceData.filter((item) =>
-      item.title.toLowerCase().includes(searchTerm)
+      item.title.toLowerCase().includes(searchTerm),
     );
     setTableData(result);
   };
@@ -385,8 +385,9 @@ const RecentInvoice = () => {
                   "font-medium text-xs px-4 sm:px-5 xxxl:px-6 py-3.5",
                   {
                     "bg-primary text-n0 rounded-[32px]": option == activeFilter,
-                  }
-                )}>
+                  },
+                )}
+              >
                 {option}
               </button>
             ))}
@@ -409,7 +410,8 @@ const RecentInvoice = () => {
             <tr className="bg-secondary1/5 dark:bg-bg3">
               <th
                 onClick={() => sortData("title")}
-                className="text-start py-5 px-6 min-w-[230px] cursor-pointer">
+                className="text-start py-5 px-6 min-w-[230px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Title <IconSelector size={18} />
                 </div>
@@ -417,14 +419,16 @@ const RecentInvoice = () => {
               <th className="text-start py-5 min-w-[130px]">Invoice</th>
               <th
                 onClick={() => sortData("amount")}
-                className="text-start py-5 min-w-[130px] cursor-pointer">
+                className="text-start py-5 min-w-[130px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Amount <IconSelector size={18} />
                 </div>
               </th>
               <th
                 onClick={() => sortData("rate")}
-                className="text-start py-5 min-w-[80px] cursor-pointer">
+                className="text-start py-5 min-w-[80px] cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Rate <IconSelector size={18} />
                 </div>
@@ -433,7 +437,8 @@ const RecentInvoice = () => {
               <th className="text-start py-5 min-w-[130px]">Time</th>
               <th
                 onClick={() => sortData("status")}
-                className="text-start py-5 cursor-pointer">
+                className="text-start py-5 cursor-pointer"
+              >
                 <div className="flex items-center gap-1">
                   Status <IconSelector size={18} />
                 </div>
@@ -445,11 +450,12 @@ const RecentInvoice = () => {
             {displayedData.map(
               (
                 { id, status, title, invoice, time, amount, dueDate, rate },
-                index
+                index,
               ) => (
                 <tr
                   key={id}
-                  className="hover:bg-primary/5 dark:hover:bg-bg3 duration-500 border-b border-n30 dark:border-n500 first:border-t">
+                  className="hover:bg-primary/5 dark:hover:bg-bg3 duration-500 border-b border-n30 dark:border-n500 first:border-t"
+                >
                   <td className="py-5 px-6">
                     <div className="flex items-center gap-3">
                       <i className="las la-file text-primary"></i>
@@ -476,7 +482,8 @@ const RecentInvoice = () => {
                       } ${
                         status == InvoiceStatus.unpaid &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}>
+                      }`}
+                    >
                       {status}
                     </span>
                   </td>
@@ -488,7 +495,7 @@ const RecentInvoice = () => {
                     </div>
                   </td>
                 </tr>
-              )
+              ),
             )}
           </tbody>
         </table>

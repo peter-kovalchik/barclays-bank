@@ -36,7 +36,8 @@ const Statistics = () => {
       {statesData.map(({ amount, percent, title, icon, color }) => (
         <div
           key={title}
-          className="col-span-12 min-[650px]:col-span-6 xxxl:col-span-3 box bg-n0 dark:bg-bg4">
+          className="col-span-12 min-[650px]:col-span-6 xxxl:col-span-3 box bg-n0 dark:bg-bg4"
+        >
           <div className="flex items-center gap-4 xxxl:gap-6 mb-5 xxl:mb-7">
             <div className="text-primary px-3 py-2.5 bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-xl">
               {icon}

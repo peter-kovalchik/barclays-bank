@@ -15,7 +15,8 @@ const SingleLimit = ({ desc, limit, title, total }: limitType) => {
   return (
     <div
       key={title}
-      className="bg-primary/5 grow dark:bg-bg3 border rounded-xl gap-4 flex-wrap border-n30 dark:border-n500 p-4 md:p-6 xl:px-8 flex items-center justify-between">
+      className="bg-primary/5 grow dark:bg-bg3 border rounded-xl gap-4 flex-wrap border-n30 dark:border-n500 p-4 md:p-6 xl:px-8 flex items-center justify-between"
+    >
       <div>
         <p className="text-sm mb-2">{title}</p>
         <p className="font-medium text-xl">{desc}</p>
