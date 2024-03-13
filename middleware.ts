@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import type { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "./app/api/auth/[...nextauth]/route";
+
 
 export async function middleware(request: NextRequest) {
   console.log("Request from middleware", request);

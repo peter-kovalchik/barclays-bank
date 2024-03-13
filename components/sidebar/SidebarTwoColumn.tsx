@@ -46,8 +46,10 @@ const SidebarTwoColumn = ({
 
   useEffect(() => {
     sidebarData.map(({ items }) =>
-      items.map(({ submenus, name }) =>
-        submenus.map(({ url }) => (url == path ? setActiveMenu(name) : "")),
+      items.map(({ submenus, name }: any) =>
+        submenus.map(({ url }: any) =>
+          url == path ? setActiveMenu(name) : "",
+        ),
       ),
     );
   }, [path]);
@@ -174,25 +176,27 @@ const SidebarTwoColumn = ({
                     <div key={id}>
                       {activeMenu == name && (
                         <ul className="pt-4 max-xl:pt-8 px-2.5 xxxl:px-6">
-                          {submenus.map(({ title, url }) => (
-                            <li
-                              onClick={() => {
-                                setActiveMenu(name);
-                                windowSize! < 1200 &&
-                                  setSidebar(!sidebarIsOpen);
-                              }}
-                              key={title}
-                            >
-                              <Link
-                                className={`font-medium block hover:text-primary duration-300 py-3 ${
-                                  path == url && "text-primary"
-                                }`}
-                                href={url}
+                          {submenus?.length &&
+                            submenus.map(({ title, url }) => (
+                              <li
+                                onClick={() => {
+                                  setActiveMenu(name);
+                                  windowSize! < 1200 &&
+                                    setSidebar(!sidebarIsOpen);
+                                }}
+                                key={title}
                               >
-                                <i className="las la-minus text-xl"></i> {title}
-                              </Link>
-                            </li>
-                          ))}
+                                <Link
+                                  className={`font-medium block hover:text-primary duration-300 py-3 ${
+                                    path == url && "text-primary"
+                                  }`}
+                                  href={url}
+                                >
+                                  <i className="las la-minus text-xl"></i>{" "}
+                                  {title}
+                                </Link>
+                              </li>
+                            ))}
                         </ul>
                       )}
                     </div>

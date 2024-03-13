@@ -43,8 +43,10 @@ const SidebarDetached = ({
 
   useEffect(() => {
     sidebarData.map(({ items }) =>
-      items.map(({ submenus, name }) =>
-        submenus.map(({ url }) => (url == path ? setActiveMenu(name) : "")),
+      items.map(({ submenus, name }: any) =>
+        submenus.map(({ url }: any) =>
+          url == path ? setActiveMenu(name) : "",
+        ),
       ),
     );
   }, [path]);

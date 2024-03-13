@@ -3,7 +3,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { cookies } from "next/headers";
 
-export const authOptions = {
+const authOptions = {
   providers: [
     CredentialsProvider({
       async authorize(credentials, request) {

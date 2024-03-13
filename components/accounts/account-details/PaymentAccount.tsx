@@ -39,7 +39,7 @@ type SortDataFunction = (col: keyof Transaction) => void;
 const sortOptions = ["Recent", "Name", "Amount"];
 
 const PaymentAccount = () => {
-  const [tableData, setTableData] = useState<Transaction[]>(transactionsData);
+  const [tableData, setTableData] = useState<any>(transactionsData);
   const [order, setOrder] = useState<Order>("ASC");
   const [selected, setSelected] = useState(sortOptions[0]);
   const itemsPerPage = 10;
@@ -53,7 +53,7 @@ const PaymentAccount = () => {
     totalPages,
   } = usePagination(tableData.length, itemsPerPage);
 
-  const displayedData = tableData.slice(startIndex, endIndex + 1);
+  const displayedData: any = tableData.slice(startIndex, endIndex + 1);
 
   const sortData: SortDataFunction = (col) => {
     const [parentCol, childCol] = col.split(".");
@@ -89,7 +89,7 @@ const PaymentAccount = () => {
     }
   };
   const onDelete = (id: number) => {
-    const remained = tableData.filter((item) => item.id !== id);
+    const remained = tableData.filter((item: any) => item.id !== id);
     setTableData(remained);
   };
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -161,57 +161,58 @@ const PaymentAccount = () => {
             </tr>
           </thead>
           <tbody>
-            {displayedData.map(
-              (
-                { icon, account, balance, bank, currency, expire, id, status },
-                index,
-              ) => (
-                <tr key={id} className="even:bg-secondary1/5 dark:even:bg-bg3">
-                  <td className="py-2 px-6">
-                    <div className="flex items-center gap-3">
-                      <Image
-                        src={icon}
-                        width={32}
-                        height={32}
-                        className="rounded-full"
-                        alt="payment medium icon"
-                      />
-                      <div>
-                        <p className="font-medium mb-1">{account}</p>
-                        <span className="text-xs">Account Number</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="py-2">
+            {displayedData.map((itm: any) => (
+              <tr
+                key={itm.id}
+                className="even:bg-secondary1/5 dark:even:bg-bg3"
+              >
+                <td className="py-2 px-6">
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src={itm.icon}
+                      width={32}
+                      height={32}
+                      className="rounded-full"
+                      alt="payment medium icon"
+                    />
                     <div>
-                      <p className="font-medium">{currency.short}</p>
-                      <span className="text-xs">{currency.long}</span>
+                      <p className="font-medium mb-1">{itm.account}</p>
+                      <span className="text-xs">Account Number</span>
                     </div>
-                  </td>
-                  <td className="py-2">
-                    <div>
-                      <p className="font-medium">${balance.toLocaleString()}</p>
-                      <span className="text-xs">Account Balance</span>
-                    </div>
-                  </td>
-                  <td className="py-2">
-                    <span
-                      className={`block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 ${
-                        status === TransactionStatus.Successful &&
-                        "bg-primary/10 dark:bg-bg3 text-primary"
-                      } ${
-                        status === TransactionStatus.Cancelled ||
-                        (TransactionStatus.Frozen &&
-                          "bg-secondary2/10 dark:bg-bg3 text-secondary2")
-                      } ${
-                        status == TransactionStatus.Pending &&
-                        "bg-secondary3/10 dark:bg-bg3 text-secondary3"
-                      }`}
-                    >
-                      {status}
-                    </span>
-                  </td>
-                  {/* <td className="py-2">
+                  </div>
+                </td>
+                <td className="py-2">
+                  <div>
+                    <p className="font-medium">{itm.currency.short}</p>
+                    <span className="text-xs">{itm.currency.long}</span>
+                  </div>
+                </td>
+                <td className="py-2">
+                  <div>
+                    <p className="font-medium">
+                      ${itm.balance.toLocaleString()}
+                    </p>
+                    <span className="text-xs">Account Balance</span>
+                  </div>
+                </td>
+                <td className="py-2">
+                  <span
+                    className={`block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 ${
+                      status === TransactionStatus.Successful &&
+                      "bg-primary/10 dark:bg-bg3 text-primary"
+                    } ${
+                      status === TransactionStatus.Cancelled ||
+                      (TransactionStatus.Frozen &&
+                        "bg-secondary2/10 dark:bg-bg3 text-secondary2")
+                    } ${
+                      status == TransactionStatus.Pending &&
+                      "bg-secondary3/10 dark:bg-bg3 text-secondary3"
+                    }`}
+                  >
+                    {status}
+                  </span>
+                </td>
+                {/* <td className="py-2">
                     <div className="flex justify-center">
                       <Action
                         onDelete={() => onDelete(id)}
@@ -222,9 +223,8 @@ const PaymentAccount = () => {
                       />
                     </div>
                   </td> */}
-                </tr>
-              ),
-            )}
+              </tr>
+            ))}
           </tbody>
         </table>
         {tableData.length < 1 && (

@@ -39,7 +39,7 @@ type SortDataFunction = (col: keyof Transaction) => void;
 const sortOptions = ["Recent", "Name", "Amount"];
 
 const PaymentAccount = () => {
-  const [tableData, setTableData] = useState<Transaction[]>(transactionsData);
+  const [tableData, setTableData] = useState<any>(transactionsData);
   const [order, setOrder] = useState<Order>("ASC");
   const [selected, setSelected] = useState(sortOptions[0]);
   const itemsPerPage = 6;
@@ -89,7 +89,7 @@ const PaymentAccount = () => {
     }
   };
   const onDelete = (id: number) => {
-    const remained = tableData.filter((item) => item.id !== id);
+    const remained = tableData.filter((item: any) => item.id !== id);
     setTableData(remained);
   };
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -162,10 +162,16 @@ const PaymentAccount = () => {
           </thead>
           <tbody>
             {displayedData.map(
-              (
-                { icon, account, balance, bank, currency, expire, id, status },
-                index,
-              ) => (
+              ({
+                icon,
+                account,
+                balance,
+                bank,
+                currency,
+                expire,
+                id,
+                status,
+              }: any) => (
                 <tr key={id} className="even:bg-secondary1/5 dark:even:bg-bg3">
                   <td className="py-2 px-6">
                     <div className="flex items-center gap-3">
