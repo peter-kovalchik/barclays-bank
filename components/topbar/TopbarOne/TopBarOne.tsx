@@ -38,8 +38,8 @@ const TopBarOne = ({
       <div className="flex items-center gap-3 sm:gap-4 xxl:gap-6">
         <MobileSearch />
         <ModeSwitcher />
-        <Notification />
-        <MessageBtn />
+        {/* <Notification /> */}
+        {/* <MessageBtn /> */}
         <SwitchLanguage />
         <Profile />
       </div>

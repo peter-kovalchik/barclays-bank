@@ -7,9 +7,6 @@ const authOptions = {
   providers: [
     CredentialsProvider({
       async authorize(credentials, request) {
-        console.log("Credentials from next auth", credentials);
-        console.log("Request from Credentials Provider", request);
-
         const { email, password } = credentials;
 
         const authUser = await client.fetch(
@@ -20,7 +17,6 @@ const authOptions = {
           },
         );
 
-        console.log("Auth user from Credentials Provider", authUser);
         // const authResponse = await fetch("/api/auth/signin", {
         //   method: "POST",
         //   headers: {

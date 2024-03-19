@@ -27,7 +27,7 @@ export const LeftSideMenuItems = [
     name: "Cards",
     icon: <i className="las la-credit-card"></i>,
     submenus: [
-      { title: "Card Overview", url: "/cards/card-overview" },
+      // { title: "Card Overview", url: "/cards/card-overview" },
       { title: "Card Details", url: "/cards/card-details" },
     ],
   },
@@ -68,31 +68,31 @@ export const LeftSideMenuItems = [
     name: "Invoicing",
     icon: <i className="las la-file-invoice"></i>,
     submenus: [
-      { title: "Add New Invoice", url: "/invoicing/add-new" },
-      { title: "Invoice Style 01", url: "/invoicing/style-01" },
-      { title: "Invoice Style 02", url: "/invoicing/style-02" },
+      // { title: "Add New Invoice", url: "/invoicing/add-new" },
+      { title: "Invoice Details", url: "/invoicing/style-01" },
+      // { title: "Invoice Style 02", url: "/invoicing/style-02" },
     ],
   },
 ];
 
 export const rightSideMenuItems = [
-  {
-    id: 8,
-    name: "Trading",
-    icon: <i className="las la-chart-bar"></i>,
-    submenus: [
-      { title: "Trading Style 01", url: "/trading/style-01" },
-      { title: "Trading Style 02", url: "/trading/style-02" },
-      { title: "Trading Style 03", url: "/trading/style-03" },
-    ],
-  },
+  // {
+  //   id: 8,
+  //   name: "Trading",
+  //   icon: <i className="las la-chart-bar"></i>,
+  //   submenus: [
+  //     { title: "Trading Style 01", url: "/trading/style-01" },
+  //     { title: "Trading Style 02", url: "/trading/style-02" },
+  //     { title: "Trading Style 03", url: "/trading/style-03" },
+  //   ],
+  // },
   {
     id: 9,
     name: "Reports",
     icon: <i className="las la-chart-pie"></i>,
     submenus: [
-      { title: "Reports Style 01", url: "/reports/style-01" },
-      { title: "Reports Style 02", url: "/reports/style-02" },
+      // { title: "Reports Style 01", url: "/reports/style-01" },
+      { title: "Report Details", url: "/reports/style-02" },
     ],
   },
   {
@@ -102,29 +102,29 @@ export const rightSideMenuItems = [
     submenus: [
       { title: "Profile", url: "/settings/profile" },
       { title: "Security", url: "/settings/security" },
-      { title: "Social Network", url: "/settings/social-network" },
+      // { title: "Social Network", url: "/settings/social-network" },
       { title: "Notification", url: "/settings/notification" },
-      { title: "Payment Limits", url: "/settings/payment-limits" },
+      // { title: "Payment Limits", url: "/settings/payment-limits" },
     ],
   },
-  {
-    id: 11,
-    name: "Authentication",
-    icon: <i className="las la-user-circle"></i>,
-    submenus: [
-      { title: "Sign Up", url: "/auth/sign-up" },
-      { title: "Sign In", url: "/auth/sign-in" },
-      { title: "Sign In QR Code", url: "/auth/signin-qrcode" },
-      { title: "Error Page", url: "/auth/error" },
-    ],
-  },
+  // {
+  //   id: 11,
+  //   name: "Authentication",
+  //   icon: <i className="las la-user-circle"></i>,
+  //   submenus: [
+  //     { title: "Sign Up", url: "/auth/sign-up" },
+  //     { title: "Sign In", url: "/auth/sign-in" },
+  //     { title: "Sign In QR Code", url: "/auth/signin-qrcode" },
+  //     { title: "Error Page", url: "/auth/error" },
+  //   ],
+  // },
   {
     id: 12,
     name: "Support",
     icon: <i className="las la-handshake"></i>,
     submenus: [
-      { title: "Help Center", url: "/support/help-center" },
-      { title: "Privacy Policy", url: "/support/privacy-policy" },
+      // { title: "Help Center", url: "/support/help-center" },
+      // { title: "Privacy Policy", url: "/support/privacy-policy" },
       { title: "Contact Us", url: "/support/contact-us" },
     ],
   },

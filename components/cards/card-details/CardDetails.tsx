@@ -1,20 +1,78 @@
 "use client";
 import Dropdown from "@/components/shared/Dropdown";
+import { UserType } from "@/utils/UserContext";
+import { client } from "@/utils/sanityClient";
+import { useCookies } from "next-client-cookies";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const options = ["Visa"];
 
-const cardDetails = {
-  "Card Type": "Visa",
-  "Card Holder": "Felecia Brown",
-  Expires: "12/27",
-  "Card Number": "325 541 565 546",
-  "Total Balance": "99,245.54 USD",
-  "Total Debt": "9,546.45 USD",
+const formatCurrency = (amount = 0, locale = "en-US", currency = "EUR") => {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(amount);
 };
 
 const CardDetails = () => {
   const [selectedCard, setSelectedCard] = useState(options[0]);
+
+  const cookies = useCookies();
+  const [user, setUser] = useState<UserType>(
+    JSON.parse(cookies.get("currentUser") as string),
+  );
+
+  useEffect(() => {
+    const query = '*[_type == "user" && email == $email]';
+    const params = { email: user.email };
+
+    const subscription = client.listen(query, params).subscribe((update) => {
+      console.log("Update is", update);
+
+      const {
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      } = update.result as UserType | any;
+
+      const newUser = {
+        ...user,
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      };
+
+      cookies.set("currentUser", JSON.stringify(newUser));
+
+      setUser(newUser);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [user, cookies]);
+
+  const cardDetails = {
+    "Card Type": "Visa",
+    "Card Holder": `${user.name}`,
+    Expires: "01/26",
+    "Card Number": "4917 4845 8989 7107",
+    "Total Balance": `${formatCurrency(user.total_income)}`,
+    "Total Debt": "€ 0",
+  };
+
   return (
     <div className="box mb-4 xxl:mb-6">
       <div className="bb-dashed pb-4 mb-4 lg:mb-6 lg:pb-6 flex justify-between items-center">
@@ -40,7 +98,7 @@ const CardDetails = () => {
           <div className="flex justify-between items-start mb-3 sm:mb-4 lg:mb-8 xxxl:mb-14">
             <div>
               <p className="text-xs mb-1">Current Balance</p>
-              <h4 className="h4">80,700.00 USD</h4>
+              <h4 className="h4">{formatCurrency(user.total_income)}</h4>
             </div>
             <Image
               src="/images/visa-sm.png"
@@ -57,10 +115,10 @@ const CardDetails = () => {
           />
           <div className="flex justify-between items-end lg:mt-2">
             <div>
-              <p className="mb-1">Felecia Brown</p>
-              <p className="text-xs">•••• •••• •••• 8854</p>
+              <p className="mb-1">{user.name}</p>
+              <p className="text-xs">4917484589897107</p>
             </div>
-            <p className="text-n700 relative z-[1]">12/27</p>
+            <p className="text-n700 relative z-[1]">01/26</p>
           </div>
         </div>
         <ul className="flex flex-col gap-4">

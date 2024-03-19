@@ -40,8 +40,8 @@ const TopBarThree = ({
       <div className="flex items-center gap-3 shrink-0 justify-end sm:gap-4 xxl:gap-5">
         <MobileSearch btnClass="bg-n0 dark:bg-bg4 border-none" />
         <ModeSwitcher />
-        <MessageBtn />
-        <Notification />
+        {/* <MessageBtn /> */}
+        {/* <Notification /> */}
         <SwitchLanguage />
         <ProfileTwo />
       </div>

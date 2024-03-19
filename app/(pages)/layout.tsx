@@ -157,16 +157,16 @@ export default function RootLayout({
             {children}
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
 
         {/* Theme Customizer */}
 
-        <button
+        {/* <button
           onClick={() => setCustomizerOpen(true)}
           className="fixed ltr:right-4 rtl:left-4 z-50 top-1/2 bg-primary text-n0 w-10 h-10 rounded-full flex items-center justify-center"
         >
           <i className="las la-cog animate-spin-slow"></i>
-        </button>
+        </button> */}
 
         <Customizer
           setCustomizerOpen={setCustomizerOpen}

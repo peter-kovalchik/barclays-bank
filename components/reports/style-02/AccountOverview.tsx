@@ -10,7 +10,7 @@ const AccountOverview = () => {
     <div className="box xl:p-8">
       <div className="flex justify-between items-center flex-wrap gap-4 mb-4 pb-4 xl:pb-6 xl:mb-6 bb-dashed font-medium">
         <h4 className="h4">Accounts Overview</h4>
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <p className="text-xs sm:text-sm md:text-base">Sort By : </p>
           <Dropdown
             selected={selected}
@@ -18,7 +18,7 @@ const AccountOverview = () => {
             items={options}
             contentClass="min-w-max"
           />
-        </div>
+        </div> */}
       </div>
       <Statistics />
       <AccountBalanceChart />

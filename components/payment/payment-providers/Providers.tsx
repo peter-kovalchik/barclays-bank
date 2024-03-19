@@ -630,12 +630,12 @@ const PaymentProviders = () => {
           }`}
         >
           <div className="md:box sticky top-20">
-            <div className="bb-dashed border-secondary1/20 mb-4 pb-4 lg:mb-6 lg:pb-6">
+            {/* <div className="bb-dashed border-secondary1/20 mb-4 pb-4 lg:mb-6 lg:pb-6">
               <SearchBar
                 handleSearch={handleSearch}
                 classes=" bg-primary/5 max-w-full xxl:max-w-full"
               />
-            </div>
+            </div> */}
             <ul className="flex flex-col gap-4 lg:gap-6 bb-dashed mb-6 pb-6">
               {providersTabData.map(({ title, desc, icon }) => (
                 <li key={title}>
@@ -662,19 +662,19 @@ const PaymentProviders = () => {
                 </li>
               ))}
             </ul>
-            <Link
+            {/* <Link
               className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
               href="#"
             >
               See More{" "}
               <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="col-span-12 md:col-span-7 xl:col-span-8 box xl:p-8">
           <div className="flex justify-between items-center gap-2 bb-dashed pb-4 mb-4 lg:mb-6 lg:pb-6">
             <h4 className="h4">Utility Services</h4>
-            <OptionsHorizontal />
+            {/* <OptionsHorizontal /> */}
           </div>
           <div className="bb-dashed border-secondary1/20 mb-4 pb-4 lg:mb-6 lg:pb-6">
             {providersTabData.map(({ title, services }) => (
@@ -706,7 +706,7 @@ const PaymentProviders = () => {
                               {title}
                             </h5>
                             <span className="bg-primary py-1 px-3 rounded-xl text-n0">
-                              ${price}
+                              €{price}
                             </span>
                           </div>
                         ))}

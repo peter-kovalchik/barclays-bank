@@ -5,13 +5,13 @@ const twofactorsettings1 = [
     id: 1,
     title: "Authentication app",
     desc: "Google auth app",
-    status: true,
+    status: false,
   },
   {
     id: 2,
     title: "Primary email",
     desc: "E-mail used to send notifications",
-    status: true,
+    status: false,
   },
   {
     id: 3,
@@ -25,13 +25,13 @@ const twofactorsettings2 = [
     id: 1,
     title: "Mobile Authenticator",
     desc: "Enhance security with a mobile authentication app.",
-    status: true,
+    status: false,
   },
   {
     id: 2,
     title: "Email Notifications",
     desc: "Receive important notifications via your primary email.",
-    status: true,
+    status: false,
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const TwoFactor = () => {
     <div className="box xl:p-8">
       <div className="flex justify-between items-center  bb-dashed mb-4 pb-4 lg:mb-6 lg:pb-6">
         <h4 className="h4">Two-Factor Authentication</h4>
-        <OptionsVertical />
+        {/* <OptionsVertical /> */}
       </div>
       <div className="grid grid-cols-2 md:divide-x rtl:md:divide-x-reverse max-md:gap-4 divide-dashed divide-primary">
         <div className="col-span-2 md:col-span-1 md:ltr:pr-5 md:rtl:pl-5 flex flex-col gap-4 xxl:gap-6">

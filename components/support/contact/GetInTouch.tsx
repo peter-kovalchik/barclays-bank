@@ -34,7 +34,7 @@ const GetInTouch = () => {
             required
           />
         </div>
-        <div className="col-span-2 md:col-span-1">
+        {/* <div className="col-span-2 md:col-span-1">
           <label htmlFor="phone" className="md:text-lg font-medium block mb-4">
             Phone
           </label>
@@ -45,8 +45,8 @@ const GetInTouch = () => {
             id="phone"
             required
           />
-        </div>
-        <div className="col-span-2 md:col-span-1">
+        </div> */}
+        {/* <div className="col-span-2 md:col-span-1">
           <label
             htmlFor="country"
             className="md:text-lg font-medium block mb-4"
@@ -60,7 +60,7 @@ const GetInTouch = () => {
             btnClass="rounded-[32px] bg-secondary1/5 py-2.5 md:py-3 md:px-5"
             contentClass="w-full"
           />
-        </div>
+        </div> */}
         <div className="col-span-2">
           <label
             htmlFor="message"

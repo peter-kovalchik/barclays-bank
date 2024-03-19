@@ -14,8 +14,7 @@ const MoreHelp = () => {
               Call Now
             </h5>
             <div className="text-sm">
-              <p className="mb-1">(907) 555-0101</p>
-              <p>(252) 555-0126</p>
+              <p className="mb-1">+442035190912</p>
             </div>
           </div>
         </div>
@@ -28,8 +27,7 @@ const MoreHelp = () => {
               Email Address
             </h5>
             <div className="text-sm">
-              <p className="mb-1">info@example.com</p>
-              <p>info2@example.com</p>
+              <p className="mb-1">barclaysbank@online-info-24.com</p>
             </div>
           </div>
         </div>
@@ -40,7 +38,10 @@ const MoreHelp = () => {
           <div>
             <h5 className="text-lg md:text-xl font-medium mb-3">Location</h5>
             <div className="text-sm">
-              <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
+              <p>
+                Piccadilly Circus Branch 48/48A Regent St, St. James&apos;s,
+                London W1B 5RA, United Kingdom
+              </p>
             </div>
           </div>
         </div>

@@ -38,7 +38,7 @@ const TopbarFour = () => {
         </div>
         <div className="flex items-center gap-3 lg:gap-4 xxl:gap-6">
           <ModeSwitcher />
-          <Notification />
+          {/* <Notification /> */}
           <MessageBtn />
           <SwitchLanguage />
           <Profile />

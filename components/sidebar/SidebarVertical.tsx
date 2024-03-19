@@ -171,8 +171,8 @@ const SidebarVertical = ({
             </React.Fragment>
           ))}
         </div>
-        <div className="px-4 xxl:px-6 xxxl:px-8 pb-28">
-          <p className="text-xs font-semibold py-4 lg:py-6 border-t-2 border-dashed border-primary/20">
+        <div className="px-4 xxl:px-6 xxxl:px-8 pb-100">
+          {/* <p className="text-xs font-semibold py-4 lg:py-6 border-t-2 border-dashed border-primary/20">
             Balance
           </p>
           <ul>
@@ -234,7 +234,7 @@ const SidebarVertical = ({
             <Link href="#" className="btn flex w-full justify-center">
               Upgrade Now
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </aside>

@@ -4,7 +4,7 @@ import Banner from "@/components/shared/Banner";
 const ReportsStyleTwoPage = () => {
   return (
     <div>
-      <Banner title="Reports Style 02" />
+      <Banner title="Report Details" />
       <AccountOverview />
     </div>
   );

@@ -42,7 +42,7 @@ const PaymentProviders = () => {
     <div className="box">
       <div className="flex justify-between items-center bb-dashed border-secondary1/20 pb-4 mb-4 lg:pb-6 lg:mb-6">
         <h4 className="h4">Payment Providers</h4>
-        <OptionsHorizontal />
+        {/* <OptionsHorizontal /> */}
       </div>
       <ul className="flex flex-col gap-4 lg:gap-6">
         {providerslist.map(({ title, desc, icon }) => (

@@ -4,7 +4,7 @@ import Banner from "@/components/shared/Banner";
 const InvoiceStyleOnePage = () => {
   return (
     <div>
-      <Banner title="Invoice Style 01" />
+      <Banner title="Invoice Details" />
       <RecentInvoice />
     </div>
   );

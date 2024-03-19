@@ -6,13 +6,15 @@ import SearchBar from "@/components/shared/SearchBar";
 import usePagination from "@/utils/usePagination";
 import { IconSelector } from "@tabler/icons-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { transactionsData } from "../bank-account/PaymentAccount";
+import { UserType } from "@/utils/UserContext";
+import { client } from "@/utils/sanityClient";
+import { useCookies } from "next-client-cookies";
 
 enum TransactionStatus {
-  Successful = "Successful",
+  Active = "Active",
   Pending = "Pending",
-  Cancelled = "Cancelled",
   Frozen = "Frozen",
 }
 
@@ -38,8 +40,36 @@ type SortDataFunction = (col: keyof Transaction) => void;
 
 const sortOptions = ["Recent", "Name", "Amount"];
 
+const formatCurrency = (amount = 0, locale = "en-US", currency = "EUR") => {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(amount);
+};
+
 const PaymentAccount = () => {
-  const [tableData, setTableData] = useState<any>(transactionsData);
+  const cookies = useCookies();
+  const [user, setUser] = useState<UserType>(
+    JSON.parse(cookies.get("currentUser") as string),
+  );
+  const [tableData, setTableData] = useState<any>([
+    {
+      id: 4,
+      account: `${user.bank_account}`,
+      icon: "/images/uk-sm.png",
+      expire: `${user.expiry_date}`,
+      currency: {
+        long: "EURO",
+        short: "EUR",
+      },
+      bank: {
+        name: "Barclays Bank",
+        country: "UK",
+      },
+      status: user.status,
+      balance: formatCurrency(user.total_income),
+    },
+  ]);
   const [order, setOrder] = useState<Order>("ASC");
   const [selected, setSelected] = useState(sortOptions[0]);
   const itemsPerPage = 6;
@@ -52,6 +82,50 @@ const PaymentAccount = () => {
     endIndex,
     totalPages,
   } = usePagination(tableData.length, itemsPerPage);
+
+  useEffect(() => {
+    const query = '*[_type == "user" && email == $email]';
+    const params = { email: user.email };
+
+    const subscription = client.listen(query, params).subscribe((update) => {
+      console.log("Update is", update);
+
+      const {
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      } = update.result as UserType | any;
+
+      const newUser = {
+        ...user,
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      };
+
+      console.log("New user is", newUser);
+
+      cookies.set("currentUser", JSON.stringify(newUser));
+
+      setUser(newUser);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [user, cookies]);
 
   const displayedData = tableData.slice(startIndex, endIndex + 1);
 
@@ -196,25 +270,24 @@ const PaymentAccount = () => {
                   </td>
                   <td className="py-2">
                     <div>
-                      <p className="font-medium">${balance.toLocaleString()}</p>
+                      <p className="font-medium">{balance}</p>
                       <span className="text-xs">Account Balance</span>
                     </div>
                   </td>
                   <td className="py-2">
                     <span
                       className={`block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 ${
-                        status === TransactionStatus.Successful &&
+                        status === TransactionStatus.Active.toLowerCase() &&
                         "bg-primary/10 dark:bg-bg3 text-primary"
                       } ${
-                        status === TransactionStatus.Cancelled ||
-                        (TransactionStatus.Frozen &&
-                          "bg-secondary2/10 dark:bg-bg3 text-secondary2")
+                        status === TransactionStatus.Frozen.toLowerCase() &&
+                        "bg-secondary2/10 dark:bg-bg3 text-secondary2"
                       } ${
-                        status == TransactionStatus.Pending &&
+                        status == TransactionStatus.Pending.toLowerCase() &&
                         "bg-secondary3/10 dark:bg-bg3 text-secondary3"
                       }`}
                     >
-                      {status}
+                      {status.toUpperCase()}
                     </span>
                   </td>
                   {/* <td className="py-2">

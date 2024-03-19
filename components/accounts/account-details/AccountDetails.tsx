@@ -1,21 +1,78 @@
 "use client";
 import Dropdown from "@/components/shared/Dropdown";
+import { UserType } from "@/utils/UserContext";
+import { client } from "@/utils/sanityClient";
+import { useCookies } from "next-client-cookies";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const options = ["Visa"];
 
-const cardDetails = {
-  "Card Type": "Visa",
-  "Card Holder": "Felecia Brown",
-  Expires: "12/27",
-  "Card Number": "325 541 565 546",
-  "Total Balance": "99,245.54 USD",
-  "Total Debt": "9,546.45 USD",
+const formatCurrency = (amount = 0, locale = "en-US", currency = "EUR") => {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(amount);
 };
 
 const AccountDetails = () => {
   const [selectedCard, setSelectedCard] = useState(options[0]);
+  const cookies = useCookies();
+  const [user, setUser] = useState<UserType>(
+    JSON.parse(cookies.get("currentUser") as string),
+  );
+
+  useEffect(() => {
+    const query = '*[_type == "user" && email == $email]';
+    const params = { email: user.email };
+
+    const subscription = client.listen(query, params).subscribe((update) => {
+      const {
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      } = update.result as UserType | any;
+
+      const newUser = {
+        ...user,
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      };
+
+      console.log("New user is", newUser);
+
+      cookies.set("currentUser", JSON.stringify(newUser));
+
+      setUser(newUser);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [user, cookies]);
+
+  const cardDetails = {
+    "Card Type": "Visa",
+    "Card Holder": `${user.name}`,
+    Expires: "01/26",
+    "Card Number": "4917 4845 8989 7107",
+    "Total Balance": `${formatCurrency(user.total_income)}`,
+    "Total Debt": "€ 0",
+  };
+
   return (
     <div className="box col-span-12 md:col-span-5 xxl:col-span-4">
       <div className="bb-dashed pb-4 mb-4 lg:mb-6 lg:pb-6 flex justify-between items-center">
@@ -41,7 +98,7 @@ const AccountDetails = () => {
           <div className="flex justify-between items-start mb-14">
             <div>
               <p className="text-xs mb-1">Current Balance</p>
-              <h4 className="h4">80,700.00 USD</h4>
+              <h4 className="h4">{formatCurrency(user.total_income)}</h4>
             </div>
             <Image
               src="/images/visa-sm.png"
@@ -52,10 +109,10 @@ const AccountDetails = () => {
           </div>
           <div className="flex justify-between items-end">
             <div>
-              <p className="mb-1">Felecia Brown</p>
-              <p className="text-xs">•••• •••• •••• 8854</p>
+              <p className="mb-1">{user.name}</p>
+              <p className="text-xs">4917 4845 8989 7107</p>
             </div>
-            <p className="text-n700 relative z-[1]">12/27</p>
+            <p className="text-n700 relative z-[1]">01/26</p>
           </div>
         </div>
         <ul className="flex flex-col gap-4">
@@ -66,7 +123,7 @@ const AccountDetails = () => {
           ))}
         </ul>
       </div>
-      <div>
+      {/* <div>
         <p className="text-lg font-medium mb-6">Active card</p>
         <div className="border border-primary border-dashed bg-primary/5 justify-between dark:bg-bg3 rounded-lg p-3 flex items-center gap-4 mb-6 lg:mb-8">
           <div className="grow flex items-center gap-4">
@@ -83,12 +140,12 @@ const AccountDetails = () => {
           </div>
           <p>= 10,000 BTC</p>
         </div>
-        {/* <Link
+        <Link
           href="#"
           className="text-primary font-semibold flex items-center gap-2  mb-6 lg:mb-8 bb-dashed pb-6">
           More Card <i className="las la-arrow-right"></i>
-        </Link> */}
-        {/* <div className="flex gap-4 lg:gap-6">
+        </Link>
+        <div className="flex gap-4 lg:gap-6">
           <Link href="#" className="btn flex justify-center w-full lg:py-2.5">
             Pay Debt
           </Link>
@@ -97,8 +154,8 @@ const AccountDetails = () => {
             className="btn-outline flex justify-center w-full lg:py-2.5">
             Cancel
           </Link>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
     </div>
   );
 };

@@ -450,7 +450,7 @@ const UsdToEuroChart = () => {
       </div>
       <div className="mb-6 lg:mb-8">
         <p className="mb-3">{new Date().toLocaleString()}</p>
-        <h2 className="h2">1 USD = 2.93 EUR</h2>
+        <h2 className="h2">1 USD = 0.93 EUR</h2>
       </div>
       <ReactApexChart
         options={chartData}

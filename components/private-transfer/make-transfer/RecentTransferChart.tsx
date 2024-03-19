@@ -94,29 +94,28 @@ const RecentTransferChart = () => {
       show: false,
     },
     labels: [
-      "23 Dec",
-      "25 Dec",
-      "29 Dec",
-      "31 Dec",
-      "02 Jan",
-      "04 Jan",
-      "06 Jan",
-      "08 Jan",
-      "10 Jan",
-      "12 Jan",
-      "15 Dec",
-      "19 Dec",
-      "21 Dec",
-      "22 Jan",
-      "24 Jan",
-      "26 Jan",
-      "28 Jan",
+      "23 Jan",
+      "25 Jan",
+      "29 Jan",
       "31 Jan",
       "02 Feb",
       "04 Feb",
       "06 Feb",
-      "04 Feb",
       "08 Feb",
+      "10 Feb",
+      "12 Feb",
+      "15 Feb",
+      "19 Feb",
+      "21 Feb",
+      "22 Feb",
+      "24 Feb",
+      "26 Feb",
+      "28 Feb",
+      "02 Mar",
+      "04 Mar",
+      "06 Mar",
+      "04 Mar",
+      "08 Mar",
     ],
     colors: ["#00aeef"],
     xaxis: {
@@ -181,7 +180,7 @@ const RecentTransferChart = () => {
   return (
     <div className="col-span-12 box overflow-x-hidden">
       <div className="flex justify-between flex-wrap gap-5 items-center bb-dashed mb-4 pb-4">
-        <h4 className="h4">Recent transfer</h4>
+        <h4 className="h4">Recent transfers</h4>
         <div className="flex items-center gap-3 whitespace-nowrap">
           <span>Sort By : </span>
           <Dropdown

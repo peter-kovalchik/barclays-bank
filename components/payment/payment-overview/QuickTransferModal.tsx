@@ -14,6 +14,9 @@ const QuickTransferModal = ({ open, toggleOpen }: TransferType) => {
         <div className="bb-dashed pb-4 mb-4 lg:mb-6 lg:pb-6 flex justify-between items-center">
           <p className="font-medium">Quick Transfer</p>
         </div>
+        <p className="font-medium mb-10">
+          This feature is disabled for your account
+        </p>
         <div className="bb-dashed pb-4 mb-4 lg:mb-6 lg:pb-6 flex flex-col">
           <div
             className={`box border border-n30 dark:border-n500 bg-primary/5 dark:bg-bg3 ${
@@ -59,7 +62,7 @@ const QuickTransferModal = ({ open, toggleOpen }: TransferType) => {
           </div>
         </div>
         <div>
-          <p className="text-lg font-medium mb-6">Payment Method</p>
+          {/* <p className="text-lg font-medium mb-6">Payment Method</p>
           <div className="border border-primary border-dashed bg-primary/5 rounded-lg p-3 flex items-center gap-4 mb-6 lg:mb-8">
             <Image
               src="/images/card-sm-1.png"
@@ -71,8 +74,12 @@ const QuickTransferModal = ({ open, toggleOpen }: TransferType) => {
               <p className="font-medium mb-1">John Snow - Metal</p>
               <span className="text-xs">**4291 - Exp: 12/26</span>
             </div>
-          </div>
-          <Link href="#" className="btn flex justify-center w-full">
+          </div> */}
+          <Link
+            href="#"
+            aria-disabled
+            className="btn flex justify-center w-full aria-disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+          >
             Send Now
           </Link>
         </div>

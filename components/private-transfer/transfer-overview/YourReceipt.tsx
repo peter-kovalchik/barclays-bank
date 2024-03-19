@@ -12,13 +12,13 @@ const transactionsData = [
     medium: "Paypal",
     amount: 2141212,
   },
-  {
-    title: "Salaries",
-    icon: "/images/paypal.png",
-    time: "11 Aug, 24. 10:36 am",
-    medium: "Paypal",
-    amount: 2521212,
-  },
+  // {
+  //   title: "Salaries",
+  //   icon: "/images/paypal.png",
+  //   time: "11 Aug, 24. 10:36 am",
+  //   medium: "Paypal",
+  //   amount: 2521212,
+  // },
   {
     title: "Massive Dynamic",
     icon: "/images/visa.png",
@@ -85,7 +85,7 @@ const YourReceipt = () => {
     <div className="box">
       <div className="flex flex-wrap gap-4  justify-between items-center bb-dashed mb-4 pb-4 lg:mb-6 lg:pb-6">
         <h4 className="h4">Your Receipt</h4>
-        <OptionsHorizontal />
+        {/* <OptionsHorizontal /> */}
       </div>
       <div className="overflow-x-auto">
         <table className="w-full whitespace-nowrap">
@@ -129,21 +129,21 @@ const YourReceipt = () => {
                   </div>
                 </td>
                 <td className="py-2">${amount.toLocaleString()}</td>
-                <td className="py-2">
+                {/* <td className="py-2">
                   <i className="las la-download"></i>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <Link
+      {/* <Link
         className="text-primary font-semibold inline-flex gap-1 items-center mt-6 group"
         href="#"
       >
         See More{" "}
         <i className="las la-arrow-right group-hover:pl-2 duration-300"></i>
-      </Link>
+      </Link> */}
     </div>
   );
 };

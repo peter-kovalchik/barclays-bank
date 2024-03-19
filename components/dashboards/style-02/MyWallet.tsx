@@ -19,8 +19,8 @@ const MyWallet = () => {
 
   return (
     <div className="box">
-      <h4 className="h4 bb-dashed mb-4 pb-4 lg:mb-6 lg:pb-6">My Wallet</h4>
-      <div className="flex items-center justify-center gap-3 xxl:gap-4 mb-6 lg:mb-8">
+      {/* <h4 className="h4 bb-dashed mb-4 pb-4 lg:mb-6 lg:pb-6">My Wallet</h4> */}
+      {/* <div className="flex items-center justify-center gap-3 xxl:gap-4 mb-6 lg:mb-8">
         <button className="prev-wallet w-8 h-8 xxl:w-10 xxl:h-10 shrink-0 text-primary hover:text-n0 border border-primary rounded-full duration-300 dark:hover:bg-primary dark:bg-bg4 bg-n0 hover:bg-primary">
           <i className="las la-angle-left text-lg rtl:rotate-180"></i>
         </button>
@@ -55,8 +55,11 @@ const MyWallet = () => {
         <button className="next-wallet w-8 h-8 xxl:w-10 xxl:h-10 shrink-0 text-primary hover:text-n0 border border-primary rounded-full duration-300 dark:hover:bg-primary dark:bg-bg4 bg-n0 hover:bg-primary">
           <i className="las la-angle-right rtl:rotate-180 text-lg"></i>
         </button>
-      </div>
+      </div> */}
       <h5 className="text-lg md:text-xl font-medium mb-6">Quick Transfer</h5>
+      <h5 className="text-lg md:text-sm font-medium mb-6">
+        Currently disabled for your account
+      </h5>
       <form>
         <div className="p-1 rounded-[32px] border border-n30 dark:border-n500 bg-primary/5 dark:bg-bg3 flex gap-4 items-center mb-5">
           <Dropdown
@@ -88,7 +91,11 @@ const MyWallet = () => {
             name="amount"
           />
         </div>
-        <button type="submit" className="btn w-full flex justify-center">
+        <button
+          disabled
+          type="submit"
+          className="btn w-full flex justify-center disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+        >
           Send Money
         </button>
       </form>

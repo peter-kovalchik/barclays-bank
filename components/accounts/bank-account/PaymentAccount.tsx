@@ -71,7 +71,25 @@ const PaymentAccount = () => {
   const [user, setUser] = useState<UserType>(
     JSON.parse(cookies.get("currentUser") as string),
   );
-  const [tableData, setTableData] = useState<Transaction[]>(transactionsData);
+  console.log("user from payment account", user);
+  const [tableData, setTableData] = useState<Transaction[]>([
+    {
+      id: 4,
+      account: `${user.bank_account}`,
+      icon: "/images/uk-sm.png",
+      expire: `${user.expiry_date}`,
+      currency: {
+        long: "EURO",
+        short: "EUR",
+      },
+      bank: {
+        name: "Barclays Bank",
+        country: "UK",
+      },
+      status: TransactionStatus.Frozen,
+      balance: user.total_income,
+    },
+  ]);
   const [order, setOrder] = useState<Order>("ASC");
   const [selected, setSelected] = useState(sortOptions[0]);
   const { open, toggleOpen } = useDropdown();

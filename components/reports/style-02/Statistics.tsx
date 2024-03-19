@@ -1,32 +1,94 @@
 "use client";
+import { UserType } from "@/utils/UserContext";
+import { client } from "@/utils/sanityClient";
 import { ApexOptions } from "apexcharts";
+import { useCookies } from "next-client-cookies";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
-const statisticsData = [
-  {
-    title: "Total Balance",
-    amount: "$8500",
-    growth: "50.8%",
-  },
-  {
-    title: "Total Deposits",
-    amount: "$2745",
-    growth: "50.8%",
-  },
-  {
-    title: "Yearly In",
-    amount: "$5223",
-    growth: "50.8%",
-  },
-  {
-    title: "Yearly Out",
-    amount: "$5223",
-    growth: "50.8%",
-  },
-];
+
+const formatCurrency = (amount = 0, locale = "en-US", currency = "EUR") => {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(amount);
+};
+
 const Statistics = () => {
+  const cookies = useCookies();
+  const [user, setUser] = useState<UserType>(
+    JSON.parse(cookies.get("currentUser") as string),
+  );
+
+  useEffect(() => {
+    const query = '*[_type == "user" && email == $email]';
+    const params = { email: user.email };
+
+    const subscription = client.listen(query, params).subscribe((update) => {
+      console.log("Update is", update);
+
+      const {
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      } = update.result as UserType | any;
+
+      const newUser = {
+        ...user,
+        name,
+        email,
+        total_income,
+        total_transactions,
+        total_spending,
+        spending_goal,
+        password,
+        bank_account,
+        expiry_date,
+        status,
+      };
+
+      console.log("New user is", newUser);
+
+      cookies.set("currentUser", JSON.stringify(newUser));
+
+      setUser(newUser);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [user, cookies]);
+
+  const statisticsData = [
+    {
+      title: "Total Balance",
+      amount: `${formatCurrency(user.total_income)}`,
+      growth: "50.8%",
+    },
+    {
+      title: "Total Deposits",
+      amount: `${formatCurrency(user.total_transactions)}`,
+      growth: "50.8%",
+    },
+    {
+      title: "Yearly In",
+      amount: `${formatCurrency(5223)}`,
+      growth: "50.8%",
+    },
+    {
+      title: "Yearly Out",
+      amount: `${formatCurrency(6420)}`,
+      growth: "50.8%",
+    },
+  ];
+
   const chartData: ApexOptions = {
     chart: {
       height: "100%",

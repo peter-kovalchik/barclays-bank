@@ -18,6 +18,9 @@ const Profile = () => {
           <h4 className="h4 bb-dashed mb-4 pb-4 md:mb-6 md:pb-6">
             Account Settings
           </h4>
+          <h6 className="h6 bb-dashed mb-4 pb-4 md:mb-6 md:pb-6">
+            This feature is disabled for your account
+          </h6>
           <p className="text-lg font-medium mb-4">Profile Photo</p>
           <div className="flex flex-wrap gap-6 xxl:gap-10 items-center bb-dashed mb-6 pb-6">
             <Image
@@ -48,7 +51,6 @@ const Profile = () => {
                 className="w-full text-sm bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
                 id="fname"
                 placeholder="First Name"
-                defaultValue="Darrel"
                 required
               />
             </div>
@@ -63,7 +65,6 @@ const Profile = () => {
                 type="text"
                 className="w-full text-sm bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
                 placeholder="Enter Last Name"
-                defaultValue="Steward"
                 id="lname"
                 required
               />
@@ -79,7 +80,6 @@ const Profile = () => {
                 type="email"
                 className="w-full text-sm bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
                 placeholder="Enter Email"
-                defaultValue="example@mail.com"
                 id="email"
                 required
               />
@@ -95,7 +95,6 @@ const Profile = () => {
                 type="text"
                 className="w-full text-sm bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
                 placeholder="Enter Phone"
-                defaultValue="91021421144"
                 id="phone"
                 required
               />
@@ -163,8 +162,18 @@ const Profile = () => {
                 <CheckboxCustom label="I agree with all terms & conditions" />
               </div>
               <div className="flex mt-6 xxl:mt-10 gap-4">
-                <button className="btn px-5">Save Changes</button>
-                <button className="btn-outline px-5">Cancel</button>
+                <button
+                  disabled
+                  className="btn px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+                >
+                  Save Changes
+                </button>
+                <button
+                  disabled
+                  className="btn-outline px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </form>
@@ -201,7 +210,6 @@ const Profile = () => {
                 type="text"
                 className="w-full text-sm bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
                 placeholder="Enter Address 1"
-                defaultValue="Road 12, House 3, New York"
                 id="address1"
                 required
               />
@@ -217,7 +225,6 @@ const Profile = () => {
                 type="text"
                 className="w-full text-sm bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
                 placeholder="Enter Address 2"
-                defaultValue="Road 12, House 3, Los angelos"
                 id="address2"
                 required
               />
@@ -233,14 +240,23 @@ const Profile = () => {
                 type="text"
                 className="w-full text-sm bg-primary/5 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl px-3 md:px-6 py-2 md:py-3"
                 placeholder="Enter Zip Code"
-                defaultValue="2250"
                 id="zip"
                 required
               />
             </div>
             <div className="col-span-2 flex pt-4 gap-4">
-              <button className="btn px-5">Save Changes</button>
-              <button className="btn-outline px-5">Cancel</button>
+              <button
+                disabled
+                className="btn px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+              >
+                Save Changes
+              </button>
+              <button
+                disabled
+                className="btn-outline px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>
@@ -264,8 +280,18 @@ const Profile = () => {
               />
             </div>
             <div className="col-span-2 flex pt-4 gap-4">
-              <button className="btn px-5">Save Changes</button>
-              <button className="btn-outline px-5">Cancel</button>
+              <button
+                disabled
+                className="btn px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+              >
+                Save Changes
+              </button>
+              <button
+                disabled
+                className="btn-outline px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>
@@ -282,7 +308,12 @@ const Profile = () => {
             </p>
             <CheckboxCustom label="Confirm that I want to delete my account." />
             <div className="col-span-2 flex mt-6 xxl:mt-10 gap-4">
-              <button className="btn-outline px-5">Delete</button>
+              <button
+                disabled
+                className="btn-outline px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+              >
+                Delete
+              </button>
             </div>
           </form>
         </div>

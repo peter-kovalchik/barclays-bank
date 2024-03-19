@@ -58,7 +58,7 @@ const DemoPage = () => {
       </section>
       {/* Footer */}
       <DiscoverApps />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

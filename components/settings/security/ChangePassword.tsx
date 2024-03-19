@@ -14,6 +14,9 @@ const ChangePassword = () => {
       <h4 className="h4 bb-dashed pb-4 mb-4 md:mb-6 md:pb-6">
         Change Password
       </h4>
+      <h6 className="h6 bb-dashed pb-4 mb-4 md:mb-6 md:pb-6">
+        This feature is disabled for your account
+      </h6>
       <form className="mt-6 xl:mt-8 grid grid-cols-2 gap-4 xxxl:gap-6">
         <div className="col-span-2 md:col-span-1">
           <label htmlFor="email" className="md:text-lg font-medium block mb-4">
@@ -44,8 +47,18 @@ const ChangePassword = () => {
           </ul>
         </div>
         <div className="col-span-2 flex gap-4">
-          <button className="btn px-5">Save Changes</button>
-          <button className="btn-outline px-5">Cancel</button>
+          <button
+            disabled
+            className="btn px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+          >
+            Save Changes
+          </button>
+          <button
+            disabled
+            className="btn-outline px-5 disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+          >
+            Cancel
+          </button>
         </div>
       </form>
     </div>

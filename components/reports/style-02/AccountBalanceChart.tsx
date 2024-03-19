@@ -17,10 +17,10 @@ const AccountBalanceChart = () => {
       {
         name: "Recent Year",
         type: "line",
-        data: [20, 38, 38, 73, 55, 63, 44, 75, 53, 80, 40, 80],
+        data: [20, 38, 38],
       },
       {
-        name: "Last 5 Years",
+        name: "Last 1 Year",
         type: "line",
         data: [85, 66, 76, 38, 86, 35, 62, 40, 40, 64, 50, 87],
       },

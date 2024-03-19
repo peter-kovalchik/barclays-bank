@@ -117,7 +117,7 @@ const LatestTransactions = () => {
                         </span>
                       </div>
                     </td>
-                    <td>
+                    {/* <td>
                       <div className="bg-secondary1/5 dark:bg-bg3 px-3 py-5 rounded-e-xl flex justify-end pr-5">
                         <Action
                           onDelete={() => onDelete(id)}
@@ -128,7 +128,7 @@ const LatestTransactions = () => {
                           }
                         />
                       </div>
-                    </td>
+                    </td> */}
                   </tr>
                 ),
               )}

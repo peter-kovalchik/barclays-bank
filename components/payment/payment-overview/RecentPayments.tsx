@@ -351,7 +351,7 @@ const RecentPayments = () => {
                   Status <IconSelector size={18} />
                 </div>
               </th>
-              <th className="text-center p-5 ">Action</th>
+              {/* <th className="text-center p-5 ">Action</th> */}
             </tr>
           </thead>
           <tbody>
@@ -395,7 +395,7 @@ const RecentPayments = () => {
                       {status}
                     </span>
                   </td>
-                  <td className="py-5">
+                  {/* <td className="py-5">
                     <div className="flex justify-center">
                       <Action
                         onDelete={() => onDelete(id)}
@@ -405,7 +405,7 @@ const RecentPayments = () => {
                         }
                       />
                     </div>
-                  </td>
+                  </td> */}
                 </tr>
               ),
             )}

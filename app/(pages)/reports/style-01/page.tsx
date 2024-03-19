@@ -7,7 +7,7 @@ import Banner from "@/components/shared/Banner";
 const ReportsStyleOnePage = () => {
   return (
     <div>
-      <Banner title="Reports Style 02" />
+      <Banner title="Report Details" />
       <div className="grid grid-cols-12 gap-4 xxl:gap-6">
         <Statistics />
         <div className="col-span-12 lg:col-span-6">

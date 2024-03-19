@@ -8,7 +8,7 @@ const page = () => {
       <Banner title="Bank Account" />
       <div className="flex flex-col gap-4 xxl:gap-6">
         <PopularCards />
-        <YourCredits />
+        {/* <YourCredits /> */}
       </div>
     </div>
   );

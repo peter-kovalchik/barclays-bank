@@ -378,7 +378,7 @@ const RecentPayment = () => {
                     Status <IconSelector size={18} />
                   </div>
                 </th>
-                <th className="text-center p-5 ">PDF</th>
+                {/* <th className="text-center p-5 ">PDF</th> */}
               </tr>
             </thead>
             <tbody>
@@ -437,13 +437,13 @@ const RecentPayment = () => {
                         {status}
                       </span>
                     </td>
-                    <td className="py-3">
+                    {/* <td className="py-3">
                       <div className="flex justify-center">
                         <button>
                           <i className="las la-download"></i>
                         </button>
                       </div>
-                    </td>
+                    </td> */}
                   </tr>
                 ),
               )}

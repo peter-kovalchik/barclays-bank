@@ -59,7 +59,7 @@ const TopbarFive = ({
           <MobileSearch />
           <SelectLayout />
           <ModeSwitcher />
-          <Notification />
+          {/* <Notification /> */}
           <MessageBtn />
           <SwitchLanguage />
           <Profile />

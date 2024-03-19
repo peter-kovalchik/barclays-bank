@@ -300,7 +300,7 @@ const TotalExchange = () => {
         <h4 className="h4">Total Exchange</h4>
         <div className="flex items-center gap-4">
           <SearchBar handleSearch={handleSearch} classes="bg-primary/5" />
-          <div className="flex items-center gap-3 whitespace-nowrap">
+          {/* <div className="flex items-center gap-3 whitespace-nowrap">
             <span>Sort By : </span>
             <Dropdown
               setSelected={setSelected}
@@ -309,7 +309,7 @@ const TotalExchange = () => {
               btnClass="rounded-[32px] lg:py-2.5"
               contentClass="w-full"
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="overflow-x-auto mb-4 lg:mb-6">
@@ -350,7 +350,7 @@ const TotalExchange = () => {
                   Status <IconSelector size={18} />
                 </div>
               </th>
-              <th className="text-center p-5 ">Action</th>
+              {/* <th className="text-center p-5 ">Action</th> */}
             </tr>
           </thead>
           <tbody>
@@ -389,7 +389,7 @@ const TotalExchange = () => {
                       {status}
                     </span>
                   </td>
-                  <td className="py-5">
+                  {/* <td className="py-5">
                     <div className="flex justify-center">
                       <Action
                         onDelete={() => onDelete(id)}
@@ -399,7 +399,7 @@ const TotalExchange = () => {
                         }
                       />
                     </div>
-                  </td>
+                  </td> */}
                 </tr>
               ),
             )}

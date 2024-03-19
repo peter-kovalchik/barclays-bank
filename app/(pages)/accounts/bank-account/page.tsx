@@ -10,7 +10,7 @@ const page = () => {
       <div className="grid grid-cols-1 gap-4 xxl:gap-6">
         <PaymentAccount />
         <TotalDeposits />
-        <YourCredits />
+        {/* <YourCredits /> */}
       </div>
     </div>
   );

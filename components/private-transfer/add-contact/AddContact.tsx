@@ -14,8 +14,9 @@ const AddContact = () => {
     <div className="box mb-4 xxxl:mb-6">
       <div className="mb-6 pb-6 bb-dashed flex justify-between items-center">
         <h4 className="h4">Add New Contact</h4>
-        <OptionsHorizontal />
+        {/* <OptionsHorizontal /> */}
       </div>
+      <h6 className="h6 mb-10">Currently disabled for your account</h6>
       <form className="grid grid-cols-2 gap-4 xxxl:gap-6">
         <div className="col-span-2 md:col-span-1">
           <label htmlFor="name" className="mb-4 md:text-lg font-medium block">
@@ -126,10 +127,18 @@ const AddContact = () => {
           />
         </div>
         <div className="col-span-2 flex gap-4 md:gap-6 mt-2">
-          <button className="btn" type="submit">
+          <button
+            disabled
+            className="btn disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+            type="submit"
+          >
             Create Account
           </button>
-          <button className="btn-outline" type="reset">
+          <button
+            disabled
+            className="btn-outline disabled:bg-gray-300 text-gray-500 py-2 px-4 rounded cursor-not-allowed opacity-50"
+            type="reset"
+          >
             Cancel
           </button>
         </div>

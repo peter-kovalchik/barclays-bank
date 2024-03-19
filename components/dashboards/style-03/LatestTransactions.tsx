@@ -8,42 +8,42 @@ const transactionsData = [
   {
     title: "Hooli INV-79820",
     icon: "/images/paypal.png",
-    time: "11 Aug, 24. 10:36 am",
+    time: "11 Jan, 24. 10:36 am",
     medium: "Paypal",
     amount: 1121212,
   },
   {
     title: "Initech INV-24792",
     icon: "/images/paypal.png",
-    time: "11 Aug, 24. 10:36 am",
+    time: "06 Feb, 24. 02:12 am",
     medium: "Paypal",
     amount: 8921212,
   },
   {
     title: "Bluth Company INV-84732",
     icon: "/images/paypal.png",
-    time: "11 Aug, 24. 10:36 am",
+    time: "08 Feb, 24. 04:45 am",
     medium: "Paypal",
     amount: 2141212,
   },
   {
     title: "Salaries",
     icon: "/images/paypal.png",
-    time: "11 Aug, 24. 10:36 am",
+    time: "19 Feb, 24. 05:02 am",
     medium: "Paypal",
     amount: 2521212,
   },
   {
     title: "Massive Dynamic INV-90874",
     icon: "/images/visa.png",
-    time: "11 Aug, 24. 10:36 am",
+    time: "03 Mar, 24. 03:16 am",
     medium: "Visa",
     amount: 554100,
   },
   {
     title: "Jack Collingwood Card reload",
     icon: "/images/payoneer.png",
-    time: "11 Aug, 24. 10:36 am",
+    time: "12 Mar, 24. 11:52 am",
     medium: "Payoneer",
     amount: 1420012,
   },
@@ -98,7 +98,7 @@ const LatestTransactions = () => {
   return (
     <div className="box col-span-12 lg:col-span-6">
       <div className="flex flex-wrap gap-4  justify-between items-center bb-dashed mb-4 pb-4 lg:mb-6 lg:pb-6">
-        <h4 className="h4">Latest Transaction</h4>
+        <h4 className="h4">Latest Transactions</h4>
         {/* <OptionsHorizontal /> */}
       </div>
       <div className="overflow-x-auto">

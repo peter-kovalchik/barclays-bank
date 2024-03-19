@@ -18,14 +18,14 @@ export const profileLinks = [
     url: "/settings/profile",
     title: "My Profile",
   },
-  {
-    icon: <IconMessage size={18} />,
-    url: "/private/chat",
-    title: "Meassages",
-  },
+  // {
+  //   icon: <IconMessage size={18} />,
+  //   url: "/private/chat",
+  //   title: "Meassages",
+  // },
   {
     icon: <IconLifebuoy size={18} />,
-    url: "/support/help-center",
+    url: "/support/contact-us",
     title: "Help",
   },
   {
