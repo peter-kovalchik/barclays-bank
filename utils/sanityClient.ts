@@ -1,10 +1,10 @@
 import { createClient } from "next-sanity";
 
 export const client = createClient({
-  projectId: "jxy63tlf",
+  projectId: "bj8lqa7h",
   dataset: "production",
   apiVersion: "2022-03-25",
   useCdn: false,
   token:
-    "skQvdap9IpfdLlhlFvuaq8CKZkhvVENKQPDec5Q7yv3S0H1tMBcue7yH49nXrDm89Tz0EnlGxT3Sgy7xOn5KAziXGZ1uTC74Q0SJzYeSXptwfruUZXbLF3zL4LR62NMe4Zl1txZrRDubvYFy0jq1Rj4lCrly9DLR784XngOWT3MgqqaOQN8G",
+    "skxXS0Kyjd7E7dYjGhtP7qnSEQ24dTUxHvs0t4Mv8SvXI5jlNKtyOkowqAOlx6LAp6WM1T2IS6M06K6ln2rIBlCNFoJOBBnP6ynOHdcdsz7QmXFFhXIeJiWUR8DLmzMVkVj4fit670GTol1NPuDuQ9VnPlULkewWiNFwSqlr1aGrqrWNLZws",
 });
