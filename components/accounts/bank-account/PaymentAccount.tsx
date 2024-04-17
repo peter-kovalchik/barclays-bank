@@ -71,8 +71,24 @@ const PaymentAccount = () => {
   const [user, setUser] = useState<UserType>(
     JSON.parse(cookies.get("currentUser") as string),
   );
-  console.log("user from payment account", user);
+
   const [tableData, setTableData] = useState<Transaction[]>([
+    {
+      id: 3,
+      account: `GB13 BUKB 6016 3233 7546 12`,
+      icon: "/images/uk-sm.png",
+      expire: `2024-06-15`,
+      currency: {
+        long: "EURO",
+        short: "EUR",
+      },
+      bank: {
+        name: "Barclays Bank",
+        country: "UK",
+      },
+      status: TransactionStatus.Active,
+      balance: 0,
+    },
     {
       id: 4,
       account: `${user.bank_account}`,
@@ -86,7 +102,7 @@ const PaymentAccount = () => {
         name: "Barclays Bank",
         country: "UK",
       },
-      status: TransactionStatus.Frozen,
+      status: user.status as TransactionStatus,
       balance: user.total_income,
     },
   ]);
@@ -327,9 +343,7 @@ const PaymentAccount = () => {
                     </td>
                     <td className="py-2">
                       <div>
-                        <p className="font-medium">
-                          {formatCurrency(user.total_income)}
-                        </p>
+                        <p className="font-medium">{formatCurrency(balance)}</p>
                         <span className="text-xs">Account Balance</span>
                       </div>
                     </td>
@@ -337,20 +351,20 @@ const PaymentAccount = () => {
                     <td className="py-2">
                       <span
                         className={`block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 ${
-                          user?.status ===
+                          status.toLowerCase() ===
                             TransactionStatus.Active.toLowerCase() &&
                           "bg-primary/10 dark:bg-bg3 text-primary"
                         } ${
-                          user?.status ===
+                          status.toLowerCase() ===
                             TransactionStatus.Frozen.toLowerCase() &&
                           "bg-secondary2/10 dark:bg-bg3 text-secondary2"
                         } ${
-                          user?.status ==
+                          status.toLowerCase() ==
                             TransactionStatus.Pending.toLowerCase() &&
                           "bg-secondary3/10 dark:bg-bg3 text-secondary3"
                         }`}
                       >
-                        {user?.status.toUpperCase()}
+                        {status.toUpperCase()}
                       </span>
                     </td>
                     {/* <td className="py-2">
