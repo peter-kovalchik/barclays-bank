@@ -13,6 +13,8 @@ import TopBarTwo from "@/components/topbar/topbarTwo/TopBarTwo";
 import { useLayout } from "@/utils/LayoutContext";
 import useWindowSize from "@/utils/useWindowSize";
 import { useEffect, useState } from "react";
+import Intercom, { show } from "@intercom/messenger-js-sdk";
+import { useCookies } from "next-client-cookies";
 
 export default function RootLayout({
   children,
@@ -23,6 +25,12 @@ export default function RootLayout({
   const { layout } = useLayout();
   const { windowSize } = useWindowSize();
   const [customizerOpen, setCustomizerOpen] = useState(false);
+  const cookies = useCookies();
+  let user = undefined;
+
+  if (cookies.get("currentUser")) {
+    user = JSON.parse(cookies.get("currentUser") as string);
+  }
 
   useEffect(() => {
     if (window.innerWidth > 1200) {
@@ -44,6 +52,17 @@ export default function RootLayout({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  console.log("User is", user);
+
+  Intercom({
+    app_id: "dyyxq2g5",
+    user_id: user._id, // IMPORTANT: Replace "user.id" with the variable you use to capture the user's ID
+    name: user.name, // IMPORTANT: Replace "user.name" with the variable you use to capture the user's name
+    email: user.email,
+  });
+
+  show();
 
   return (
     <>

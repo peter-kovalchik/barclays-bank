@@ -12,6 +12,7 @@ import { signOut } from "next-auth/react";
 import { useCookies } from "next-client-cookies";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 export const profileLinks = [
   {
     icon: <IconUser size={18} />,
@@ -41,9 +42,14 @@ export const profileLinks = [
 ];
 
 const Profile = () => {
+  const router = useRouter();
   const { open, ref, toggleOpen } = useDropdown();
   const cookies = useCookies();
-  const user = JSON.parse(cookies.get("currentUser") as string);
+  let user = undefined;
+
+  if (cookies.get("currentUser")) {
+    user = JSON.parse(cookies.get("currentUser") as string);
+  }
 
   const logout = () => {
     signOut();
